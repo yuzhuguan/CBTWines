@@ -1,12 +1,19 @@
 <template>
   <v-app>
-    <v-app-bar app>
+    <v-app-bar app :elevation="0">
+
+      <nuxt-link to="/"><v-icon>supervisor_account</v-icon> Login</nuxt-link>
+      <v-spacer></v-spacer>
+
       <v-toolbar-title><nuxt-link to="/" id="title">CBT Wines</nuxt-link></v-toolbar-title>
       
       <v-spacer></v-spacer>
       
-      <nuxt-link to="/addRecipe"><v-btn text>Add New</v-btn></nuxt-link>    
-          
+      <v-btn text @click="changeLang">繁</v-btn> | 
+      <v-btn text @click="changeLang">简</v-btn> | 
+      <v-btn text @click="changeLang">ENG</v-btn>
+      
+
     </v-app-bar>
 
     <v-content app>
@@ -15,6 +22,40 @@
       </v-container>
     </v-content>
 
+     <v-navigation-drawer
+      v-model="drawer"
+      absolute
+      temporary
+      right
+      app
+    >
+      <v-list-item>
+        <v-list-item-content>
+            <v-list-item-title> <v-btn text @click="changeLang">繁</v-btn> | 
+            <v-btn text @click="changeLang">简</v-btn> | 
+            <v-btn text @click="changeLang">ENG</v-btn></v-list-item-title>
+          </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+
+      <v-list dense>
+
+        <v-list-item
+          v-for="item in items"
+          :key="item.title"
+          link
+        >
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
 
     <v-footer
       class="font-weight-medium"
@@ -33,9 +74,17 @@
 export default {
   data() {
     return {
+      drawer: null,
+        items: [
+          { title: 'Home', icon: 'dashboard' },
+          { title: 'About', icon: 'question_answer' },
+        ]
     }
   },
   methods: {
+    changeLang() {
+      console.log("wa")
+    }
   },
   mounted() {
   }
