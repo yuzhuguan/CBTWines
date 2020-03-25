@@ -1,19 +1,24 @@
 <template>
-  <v-app>
-    <v-app-bar app :elevation="0">
-
-      <nuxt-link to="/"><v-icon>supervisor_account</v-icon> Login</nuxt-link>
-      <v-spacer></v-spacer>
-
-      <v-toolbar-title><nuxt-link to="/" id="title">CBT Wines</nuxt-link></v-toolbar-title>
+  <v-app :style="{ 'background-image': 'url(/img/BG.png)'}">
+    <v-app-bar app :elevation="0" color="white" :style="{'opacity': 0.8}">
+      
+      <v-toolbar-item>
+        <nuxt-link to="/"><v-icon>supervisor_account</v-icon> Login</nuxt-link>
+      </v-toolbar-item>
       
       <v-spacer></v-spacer>
-      
-      <v-btn text @click="changeLang">繁</v-btn> | 
-      <v-btn text @click="changeLang">简</v-btn> | 
-      <v-btn text @click="changeLang">ENG</v-btn>
-      
 
+      <v-toolbar-item>
+        <v-toolbar-title><nuxt-link to="/" id="title"><img class="logo" src="/img/logo.png" alt="logo"/></nuxt-link></v-toolbar-title>
+      </v-toolbar-item>
+        
+      <v-spacer></v-spacer>
+
+      <v-toolbar-item>
+          <v-btn text @click="changeLang('traditionalChinese')">繁</v-btn> | 
+          <v-btn text @click="changeLang('simplifiedChinese')">简</v-btn> | 
+          <v-btn text @click="changeLang('english')">ENG</v-btn>  
+      </v-toolbar-item>
     </v-app-bar>
 
     <v-content app>
@@ -22,41 +27,6 @@
       </v-container>
     </v-content>
 
-     <v-navigation-drawer
-      v-model="drawer"
-      absolute
-      temporary
-      right
-      app
-    >
-      <v-list-item>
-        <v-list-item-content>
-            <v-list-item-title> <v-btn text @click="changeLang">繁</v-btn> | 
-            <v-btn text @click="changeLang">简</v-btn> | 
-            <v-btn text @click="changeLang">ENG</v-btn></v-list-item-title>
-          </v-list-item-content>
-      </v-list-item>
-
-      <v-divider></v-divider>
-
-      <v-list dense>
-
-        <v-list-item
-          v-for="item in items"
-          :key="item.title"
-          link
-        >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-
     <v-footer
       class="font-weight-medium"
     >
@@ -64,7 +34,7 @@
         class="text-center"
         cols="12"
       >
-        &copy; CBT Wines 2020; Designed by&nbsp;<a href="https://github.com/laub1199">Sennett Lau</a>
+        &copy; 2020 CBT WINES CO. LIMITED; Designed by&nbsp;<a href="https://github.com/laub1199">Sennett Lau</a>
       </v-col>
     </v-footer>
   </v-app>
@@ -74,16 +44,19 @@
 export default {
   data() {
     return {
-      drawer: null,
-        items: [
-          { title: 'Home', icon: 'dashboard' },
-          { title: 'About', icon: 'question_answer' },
-        ]
     }
   },
   methods: {
-    changeLang() {
-      console.log("wa")
+    changeLang(lang) {
+      if (lang === 'traditionalChinese') {
+        this.$router.push('/hk')
+      }
+      else if (lang === 'simplifiedChinese') {
+        this.$router.push('/cn')
+      }
+      else {
+        this.$router.push('/')
+      }
     }
   },
   mounted() {
@@ -99,5 +72,13 @@ export default {
 
 a{
   text-decoration: none;
+}
+
+.logo {
+  position: absolute;
+  height: 55px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 4px;
 }
 </style>
