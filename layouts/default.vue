@@ -1,9 +1,9 @@
 <template>
-  <v-app :style="{ 'background-image': 'url(/img/BG.png)'}">
+  <v-app :style="{ 'background-image': 'url(/img/BG.png)'}" dark>
     <v-app-bar app :elevation="0" color="white" :style="{'opacity': 0.8}">
       
-      <v-toolbar-item>
-        <nuxt-link to="/"><v-icon>supervisor_account</v-icon> Login</nuxt-link>
+      <v-toolbar-item class="font-weight-light">
+        <nuxt-link to="/" class="black--text"><v-icon>supervisor_account</v-icon > Login</nuxt-link>
       </v-toolbar-item>
       
       <v-spacer></v-spacer>
@@ -28,13 +28,13 @@
     </v-content>
 
     <v-footer
-      class="font-weight-medium"
+      class="font-weight-light"
     >
       <v-col
         class="text-center"
         cols="12"
       >
-        &copy; 2020 CBT WINES CO. LIMITED; Designed by&nbsp;<a href="https://github.com/laub1199">Sennett Lau</a>
+        &copy; 2020 CBT WINES CO. LIMITED; Designed by&nbsp;<a href="https://github.com/laub1199" class="black--text">Sennett Lau</a>
       </v-col>
     </v-footer>
   </v-app>
