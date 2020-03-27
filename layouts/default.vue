@@ -3,7 +3,7 @@
     <v-app-bar app :elevation="0" color="white" :style="{'opacity': 0.8}">
       
       <v-toolbar-item class="font-weight-light">
-        <nuxt-link to="/" class="black--text"><v-icon>supervisor_account</v-icon > Login</nuxt-link>
+        <nuxt-link to="/backstage" class="black--text"><v-icon>supervisor_account</v-icon > Login</nuxt-link>
       </v-toolbar-item>
       
       <v-spacer></v-spacer>
@@ -26,7 +26,17 @@
         <nuxt />
       </v-container>
     </v-content>
-
+    
+    <v-footer
+      class="font-weight-light"
+    >
+      <v-col
+        class="text-center"
+        cols="12"
+      >
+        Under the law of Hong Kong, intoxicating liquor must not be sold or supplied to a minor (under 18) in the course of business.根據香港法律,不得在業務過程中,向未成年人(18歲以下人士)售賣或供應令人醺醉的酒類。
+      </v-col>
+    </v-footer>
     <v-footer
       class="font-weight-light"
     >

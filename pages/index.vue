@@ -7,7 +7,7 @@
             <v-card-title class="mx-4 pt-5" :style="{'opacity': 0.5}">
               About Us
             </v-card-title>
-            <v-card-text class="blockquote grey--text text--darken-2 text-justify ">
+            <v-card-text class="blockquote grey--text text--darken-2 text-justify">
               Like a fingerprint, every bottle of wine is unique. In our belief, every customer pursues a unique flavor in wines. Assisting customers in choosing the most suitable wines according to customers' distinctive characters is our mission. With wines from various countries and places, customers can select their wine from a wide range of choices with quality guaranteed. Through Touch &amp; Taste, every customer will gain satisfaction with their favorite bottle of wine after visiting CBT WINES COMPANY LIMITED.
             </v-card-text>
           </v-card>
@@ -34,13 +34,23 @@
     >
       <v-col :cols="12">
         <v-card flat olor="transparent">
+          <v-card-title>
+            <v-text-field
+              v-model="search"
+              append-icon="search"
+              label="Search"
+              single-line
+              hide-details
+            ></v-text-field>
+          </v-card-title>
           <v-data-table
           :headers="headers"
           :items="wines.data"
           :items-per-page="10"
-          dark
-          :style="{'opacity': .9, 'background-image': 'url(/img/dataBG.png)'}"
-          ></v-data-table>
+          :search="search"
+          :sort-by="['appellation', 'name', 'vintage']"
+          >
+          </v-data-table>
         </v-card>
       </v-col>
     </v-row>
@@ -65,7 +75,7 @@
     </v-card>
   </v-container>
 </template>
-Unit B3, 6F Cheung Lung Industrial Building, 10 Cheung Yee Street, Kowloon
+
 <script>
 import { mapState } from 'vuex'
 
@@ -74,12 +84,13 @@ export default {
   },
   data() {
     return {
+      search: '',
       headers: [
           { text: 'Name', value: 'name'},
+          { text: 'Chinese Name', value: 'chineseName' },
           { text: 'Appellation', value: 'appellation'},
-          { text: 'Chinese Name', value: 'namess' },
           { text: 'Vintage', value: 'vintage'},
-          { text: 'Stock', value: 'stock'},
+          { text: 'Rating', value: 'rating'},
           { text: 'Price(HKD)', value: 'price'}
       ]
     }
