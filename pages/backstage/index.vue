@@ -80,6 +80,46 @@
             </template>
           </v-data-table>
         </v-card>
+
+        <v-card class="transparent my-7" flat width="100%">
+            <v-img src="/img/divider.png" alt="divider" :style="{'opacity': 0.3}"/>
+        </v-card>
+
+        <v-alert :type="alertType" :value="!msg==''" transition="scale-transition">
+            {{ msg }}
+        </v-alert>
+
+        <v-card class="container">
+            <v-title class="title mx-3"> <v-icon color="blue lighten-3" class="mb-1 mr-3">account_box</v-icon>Create an Account</v-title>
+            
+            <v-form
+                ref="form"
+                v-model="valid"
+            >
+                <v-text-field
+                    v-model="username"
+                    :counter="10"
+                    :rules="usernameRules"
+                    label="Username"
+                    required
+                    class="mx-3"
+                ></v-text-field>
+
+                <v-text-field
+                    v-model="password"
+                    :rules="passwordRules"
+                    label="Password"
+                    type="password"
+                    required
+                    class="mx-3"
+                ></v-text-field>
+
+                <div class="text-right">
+                    <v-btn color="error" @click="reset" class="btn">Reset</v-btn>
+                    <v-btn color="success" @click="createAccount" class="btn" :disabled="!valid">Sign Up</v-btn>
+                </div>
+            </v-form>
+        </v-card>
   </v-container>
 </template>
 
@@ -121,10 +161,26 @@ export default {
                 vintage: '',
                 rating: '',
                 price: 0
-            }
+            },
+            valid: true,
+            username: "",
+            usernameRules: [
+                v => !!v || 'Username is required',
+                v => (v && v.length <= 10) || 'Username must be less than 10 characters',
+            ],
+            password: "",
+            passwordRules: [
+                v => !!v || 'Password is required',
+                v => (v && v.length >= 6) || 'Password must has at least 6 characters',
+            ],
+            msg: "",
+            alertType: ''
         }
     },
     mounted() {
+        if(!localStorage.getItem('token')) {
+            this.$router.push('/')
+        }
     },
     computed: {
         ...mapState(['wines']),
@@ -184,6 +240,28 @@ export default {
             }
             this.close()
         },
+        createAccount() {
+            axios.post('/api/backstage/sign-up', {
+                username: this.username,
+                password: this.password
+            })
+            .then(
+                res => {
+                    console.log(res);
+                    //this.$router.push('/signin');
+                    this.msg = 'success'
+                    this.alertType = 'success'
+                },
+                err => {
+                    console.log(err.response)
+                    this.msg = err.response.data.msg;
+                    this.alertType = 'error'
+                }
+            )
+        },
+        reset () {
+            this.$refs.form.reset()
+        }
     }
 }
 </script>
