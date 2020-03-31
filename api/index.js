@@ -133,7 +133,13 @@ app.post('/backstage/add-wine', passport.authenticate('jwt', { session: false })
     });
     
     newWine.save()
-        .then(result => console.log(result))
+        .then(
+            result => {console.log(result)
+            res.status(200).json({
+                title: "Done.",
+                message: result.name + "has bee added"
+            })}
+        )
         .catch(err => console.log(err));
 });
 

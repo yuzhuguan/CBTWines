@@ -114,8 +114,8 @@
             tabindex="0"
           ></iframe>
         </v-col>
-        <v-col :cols="undefined">
-          <v-row class="mx-0 my-n1">
+        <v-col :cols="undefined" class="pt-11">
+          <v-row class="mx-0 my-2">
             <v-col :cols="2" >
               <v-row><v-icon>place</v-icon></v-row>
             </v-col>
@@ -126,7 +126,7 @@
               <v-row>6樓 B3室</v-row>
             </v-col>
           </v-row>
-          <v-row class="mx-0 my-n2">
+          <v-row class="mx-0 my-2">
             <v-col :cols="2" >
               <v-row><v-icon>call</v-icon></v-row>
             </v-col>
@@ -134,7 +134,7 @@
               <v-row>+852 3996 9178 </v-row>
             </v-col>
           </v-row>
-          <v-row class="mx-0 my-n1">
+          <v-row class="mx-0 my-1">
             <v-col :cols="2" >
               <v-row><v-icon>print</v-icon></v-row>
             </v-col>
@@ -142,7 +142,7 @@
               <v-row>+852 3996 9179 </v-row>
             </v-col>
           </v-row>
-          <v-row class="mx-0 my-n1">
+          <v-row class="mx-0 my-1">
             <v-col :cols="2" >
               <v-row><v-icon>email</v-icon></v-row>
             </v-col>
@@ -156,23 +156,6 @@
             </v-col>
             <v-col :cols="undefined" class="text-left font-weight-regular .caption">
               <v-row>8148 1617</v-row>
-            </v-col>
-          </v-row>
-          <v-divider class="mb-3"></v-divider>
-          <v-row class="mx-0 my-n1">
-            <v-col :cols="2" >
-              <v-row><v-icon>person</v-icon></v-row>
-            </v-col>
-            <v-col :cols="undefined" class="text-left font-weight-regular .caption">
-              <v-row>Billy C.M. Choi</v-row>
-            </v-col>
-          </v-row>
-          <v-row class="mx-0 my-n1">
-            <v-col :cols="2" >
-              <v-row><v-icon>smartphone</v-icon></v-row>
-            </v-col>
-            <v-col :cols="undefined" class="text-left font-weight-regular .caption">
-              <v-row>+852 9135 6561</v-row>
             </v-col>
           </v-row>
         </v-col>

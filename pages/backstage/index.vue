@@ -34,7 +34,7 @@
                     <v-container>
                     <v-row>
                         <v-col cols="12" sm="6" md="4">
-                        <v-text-field v-model="editedItem.name" label="Wine Name"></v-text-field>
+                        <v-text-field v-model="editedItem.name" label="Product"></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="6" md="4">
                         <v-text-field v-model="editedItem.appellation" label="Appellation"></v-text-field>
@@ -135,7 +135,7 @@ export default {
             search: '',
             dialog: false,
             headers: [
-            { text: 'Name', value: 'name'},
+            { text: 'Product', value: 'name'},
             { text: 'Chinese Name', value: 'chineseName' },
             { text: 'Appellation', value: 'appellation'},
             { text: 'Vintage', value: 'vintage'},
@@ -205,7 +205,8 @@ export default {
         deleteItem (item) {
             axios.post('/api/backstage/delete-wine', {
                 targetWine: item
-            })
+            },
+            {headers: {token: localStorage.getItem('token')}})
             .then(
                 res => {
                     console.log(res);
@@ -221,7 +222,8 @@ export default {
                 //alert(this.editedItem.price)
                 axios.post('/api/backstage/update-wine', {
                     newDetail: this.editedItem
-                })
+                },
+                {headers: {token: localStorage.getItem('token')}})
                 .then(
                     res => {
                         console.log(res);
@@ -234,7 +236,9 @@ export default {
             } else {
                 axios.post('/api/backstage/add-wine', {
                     newDetail: this.editedItem
-                }).then(
+                },
+                {headers: {token: localStorage.getItem('token')}}   
+                ).then(
                     this.$store.dispatch('loadWineList')
                 )
             }
@@ -244,7 +248,8 @@ export default {
             axios.post('/api/backstage/sign-up', {
                 username: this.username,
                 password: this.password
-            })
+            },
+            {headers: {token: localStorage.getItem('token')}})
             .then(
                 res => {
                     console.log(res);
