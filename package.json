@@ -24,7 +24,8 @@
     "nuxt": "^2.4.0",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "vue-videobg": "^2.0.0"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.10.3",

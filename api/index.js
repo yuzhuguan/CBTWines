@@ -101,6 +101,7 @@ app.post('/backstage/update-wine', passport.authenticate('jwt', { session: false
         const filter = { name: wine.name }
         const update = {
             name: req.body.newDetail.name,
+            origin: req.body.newDetail.origin,
             appellation: req.body.newDetail.appellation,
             chineseName: req.body.newDetail.chineseName,
             vintage: req.body.newDetail.vintage,
@@ -125,6 +126,7 @@ app.post('/backstage/update-wine', passport.authenticate('jwt', { session: false
 app.post('/backstage/add-wine', passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var newWine = new Wines({
         name: req.body.newDetail.name,
+        origin: req.body.newDetail.origin,
         appellation: req.body.newDetail.appellation,
         chineseName: req.body.newDetail.chineseName,
         vintage: req.body.newDetail.vintage,

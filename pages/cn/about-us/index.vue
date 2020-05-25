@@ -1,0 +1,63 @@
+<template>
+  <v-container class="pt-12" fluid>
+    <v-card class="transparent mt-11" flat id="goAboutUs">
+      <v-row>
+        <v-col :cols="12" lg="6" xl='6'>
+          <v-card class="mt-11 transparent" flat>
+            <v-card-title class="ml-2 pt-5 display-1 white--text">
+              关于我们
+            </v-card-title>
+            <v-card-text class="blockquote white--text text-justify subtitle-1 font-weight-light">
+              葡萄酒文化源远流长，
+              每年从各地生产的葡萄酒多不胜数，
+              在如此多种类的葡萄酒中，
+              挑选出符合自己口味的葡萄酒可谓是沙中淘金。
+              我们的使命是替客人在琳琅满目的葡萄酒种类中，
+              根据客人需求及口味，挑选出符合要求的葡萄酒。
+              我们期望每位客人来到香贝田酒业有限公司都能够选择到适合的美酒，
+              在品尝红酒的时候，
+              能够在味觉、视觉、嗅觉中得到独一无二的感受，
+              酒味亦能环绕口中，余韵无穷。
+              本公司提供了多个地区，
+              各具不同香气、口感、风味的葡萄酒，
+              以供客人任意挑选，继而满载而归。
+              我们深信每一瓶葡萄酒有其独特的灵魂及生命，
+              其风味就像诉说它一生的故事，
+              帮助每位客人找到所青睐的葡萄酒，是我们至高无上的荣幸。
+            </v-card-text>
+          </v-card>
+        </v-col>
+        <v-col :cols="12" lg="5" xl='5' class="d-none d-sm-none d-md-none d-lg-flex">
+          <v-card flat class="ma-11">
+            <v-img src="/img/photo1.jpeg" alt="banner" />
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-card>
+  </v-container>
+</template>
+
+<script>
+import VideoBg from 'vue-videobg'
+
+export default {
+  layout: 'vidbg',
+  components: {
+    VideoBg
+  },
+  data() {
+    return {
+    }
+  },
+  mounted() {
+  },
+  computed: {
+  }
+}
+</script>
+
+<style>
+a{
+  text-decoration: none;
+}
+</style>

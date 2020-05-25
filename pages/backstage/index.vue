@@ -6,7 +6,7 @@
           :items="wines.data"
           :items-per-page="10"
           :search="search"
-          :sort-by="['appellation', 'name', 'vintage']"
+          :sort-by="['name', 'vintage']"
           >
           <template v-slot:top>
             <v-dialog v-model="dialog" max-width="500px">
@@ -35,6 +35,9 @@
                     <v-row>
                         <v-col cols="12" sm="6" md="4">
                         <v-text-field v-model="editedItem.name" label="Product"></v-text-field>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="4">
+                        <v-text-field v-model="editedItem.origin" label="Origin"></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="6" md="4">
                         <v-text-field v-model="editedItem.appellation" label="Appellation"></v-text-field>
@@ -137,6 +140,7 @@ export default {
             headers: [
             { text: 'Product', value: 'name'},
             { text: 'Chinese Name', value: 'chineseName' },
+            { text: 'Origin', value: 'origin' },
             { text: 'Appellation', value: 'appellation'},
             { text: 'Vintage', value: 'vintage'},
             { text: 'Rating', value: 'rating'},
@@ -147,6 +151,7 @@ export default {
             editedItem: {
                 _id: null,
                 name: '',
+                origin: '',
                 appellation: '',
                 chineseName: '',
                 vintage: '',
@@ -156,6 +161,7 @@ export default {
             defaultItem: {               
                 _id: null,
                 name: '',
+                origin: '',
                 appellation: '',
                 chineseName: '',
                 vintage: '',
