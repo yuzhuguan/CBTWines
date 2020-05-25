@@ -63,7 +63,7 @@ export default {
       ],
       origins: [
         'All',
-        'Chateau', 
+        'Bordeaux', 
         'Burgundy', 
         'Rhone Valley', 
         'Champagne', 

@@ -10,8 +10,6 @@ import NuxtLoading from './components/nuxt-loading.vue'
 
 import '..\\assets\\style\\app.styl'
 
-import '..\\node_modules\\vuetify\\dist\\vuetify.css'
-
 import _2d4e2fe1 from '..\\layouts\\contact-us.vue'
 import _6f6c098b from '..\\layouts\\default.vue'
 import _b1e5f76a from '..\\layouts\\fullgrid.vue'
@@ -165,10 +163,6 @@ export default {
     },
 
     setLayout (layout) {
-      if(layout && typeof layout !== 'string') {
-        throw new Error('[nuxt] Avoid using non-string value as layout property.')
-      }
-
       if (!layout || !layouts['_' + layout]) {
         layout = 'default'
       }
