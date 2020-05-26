@@ -1,19 +1,19 @@
 <template>
   <v-container class="pt-11" fluid>
     <v-row
-      class="mt-11"
+      class="mt-8"
       no-gutters
     >
       <v-col :cols="2">
         <v-card color="transparent" flat>
-          <v-row class="display-1 my-4 ml-3">產地</v-row>
+          <v-row class="title mt-2 ml-3">產地</v-row>
           <v-row 
             v-for="(origin, i) in origins"
             :key="i"
-            class="title my-2 ml-3 font-weight-light"
-            @click="changeOrigin(origin)"
+            class="subtitle-2 my-2 ml-3"
+            @click="changeOrigin(origin.en)"
           >
-            {{origin}}
+            {{origin.chin}}
           </v-row>
         </v-card>
       </v-col>
@@ -31,7 +31,7 @@
           <v-data-table
           :headers="headers"
           :items="wines.data"
-          :items-per-page="10"
+          :items-per-page="8"
           :search="search"
           :sort-by="['name', 'vintage']"
           >
@@ -62,16 +62,24 @@ export default {
           { text: '價錢(港幣)', value: 'price'}
       ],
       origins: [
-        'All',
-        'Bordeaux', 
-        'Burgundy', 
-        'Rhone Valley', 
-        'Champagne', 
-        'Australia', 
-        'Whisky', 
-        'Italy',
-        'U.S.A.',
-        'Accessory'
+        { en: 'All', chin: '全部'},
+        { en: 'Bordeaux', chin: '波爾多'},
+        { en: 'Margaux', chin: '瑪歌區'},
+        { en: 'Pauillac', chin: '波亞克產區'},
+        { en: 'Saint Emilion', chin: '聖美倫產區'},
+        { en: 'Saint Estephe', chin: '聖愛斯泰夫產區'},
+        { en: 'Saint Julien', chin: '聖祖莉安產區'},
+        { en: 'Pessac Leognan', chin: '佩薩克-雷奧良產區'},
+        { en: 'Haut Medoc', chin: '上美度產區'},
+        { en: 'Sauternes', chin: '蘇岱產區'},
+        { en: 'Burgundy',  chin: '勃艮第'},
+        { en: 'Rhone',  chin: '隆河谷區'},
+        { en: 'Champagne',  chin: '香檳'},
+        { en: 'Australia',  chin: '澳洲'},
+        { en: 'Whisky',  chin: '威士忌'},
+        { en: 'Italy', chin: '義大利'},
+        { en: 'U.S.A.', chin: '美國'},
+        { en: 'Accessory', chin: '其他'},
       ]
     }
   },

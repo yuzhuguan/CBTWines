@@ -1,16 +1,16 @@
 <template>
   <v-container class="pt-11" fluid>
     <v-row
-      class="mt-11"
+      class="mt-8"
       no-gutters
     >
       <v-col :cols="2">
         <v-card color="transparent" flat>
-          <v-row class="display-1 my-4 ml-3">Origin</v-row>
+          <v-row class="title mt-2 ml-3">Region</v-row>
           <v-row 
             v-for="(origin, i) in origins"
             :key="i"
-            class="title my-2 ml-3 font-weight-light"
+            class="subtitle-2 my-2 ml-3"
             @click="changeOrigin(origin)"
           >
             {{origin}}
@@ -31,7 +31,7 @@
           <v-data-table
           :headers="headers"
           :items="wines.data"
-          :items-per-page="10"
+          :items-per-page="8"
           :search="search"
           :sort-by="['name', 'vintage']"
           >
@@ -55,7 +55,7 @@ export default {
       headers: [
           { text: 'Product', value: 'name'},
           { text: 'Chinese Name', value: 'chineseName' },
-          { text: 'Origin', value: 'origin' },
+          { text: 'Region', value: 'origin' },
           { text: 'Appellation', value: 'appellation'},
           { text: 'Vintage', value: 'vintage'},
           { text: 'Rating', value: 'rating'},
@@ -63,9 +63,17 @@ export default {
       ],
       origins: [
         'All',
-        'Bordeaux', 
+        'Bordeaux',
+        'Margaux',
+        'Pauillac',
+        'Saint Emilion',
+        'Saint Estephe',
+        'Saint Julien',
+        'Pessac Leognan',
+        'Haut Medoc',
+        'Sauternes',
         'Burgundy', 
-        'Rhone Valley', 
+        'Rhone', 
         'Champagne', 
         'Australia', 
         'Whisky', 

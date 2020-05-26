@@ -37,7 +37,7 @@
                         <v-text-field v-model="editedItem.name" label="Product"></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="6" md="4">
-                        <v-text-field v-model="editedItem.origin" label="Origin"></v-text-field>
+                        <v-text-field v-model="editedItem.origin" label="Region"></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="6" md="4">
                         <v-text-field v-model="editedItem.appellation" label="Appellation"></v-text-field>
@@ -140,7 +140,7 @@ export default {
             headers: [
             { text: 'Product', value: 'name'},
             { text: 'Chinese Name', value: 'chineseName' },
-            { text: 'Origin', value: 'origin' },
+            { text: 'Region', value: 'origin' },
             { text: 'Appellation', value: 'appellation'},
             { text: 'Vintage', value: 'vintage'},
             { text: 'Rating', value: 'rating'},

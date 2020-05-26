@@ -1,19 +1,19 @@
 <template>
   <v-container class="pt-11" fluid>
     <v-row
-      class="mt-11"
+      class="mt-8"
       no-gutters
     >
       <v-col :cols="2">
         <v-card color="transparent" flat>
-          <v-row class="display-1 my-4 ml-3">产地</v-row>
+          <v-row class="title mt-2 ml-3">产地</v-row>
           <v-row 
             v-for="(origin, i) in origins"
             :key="i"
-            class="title my-2 ml-3 font-weight-light"
-            @click="changeOrigin(origin)"
+            class="subtitle-2 my-2 ml-3"
+            @click="changeOrigin(origin.en)"
           >
-            {{origin}}
+            {{origin.chin}}
           </v-row>
         </v-card>
       </v-col>
@@ -31,7 +31,7 @@
           <v-data-table
           :headers="headers"
           :items="wines.data"
-          :items-per-page="10"
+          :items-per-page="8"
           :search="search"
           :sort-by="['name', 'vintage']"
           >
@@ -62,16 +62,24 @@ export default {
           { text: '价钱(港币)', value: 'price'}
       ],
       origins: [
-        'All',
-        'Bordeaux', 
-        'Burgundy', 
-        'Rhone Valley', 
-        'Champagne', 
-        'Australia', 
-        'Whisky', 
-        'Italy',
-        'U.S.A.',
-        'Accessory'
+        { en: 'All', chin: '全部'},
+        { en: 'Bordeaux', chin: '波尔多'},
+        { en: 'Margaux', chin: '玛歌区'},
+        { en: 'Pauillac', chin: '波亚克产区'},
+        { en: 'Saint Emilion', chin: '圣美伦产区'},
+        { en: 'Saint Estephe', chin: '圣爱斯泰夫产区'},
+        { en: 'Saint Julien', chin: '圣祖莉安产区'},
+        { en: 'Pessac Leognan', chin: '佩萨克-雷奥良产区'},
+        { en: 'Haut Medoc', chin: '上美度产区'},
+        { en: 'Sauternes', chin: '苏岱产区'},
+        { en: 'Burgundy', chin: '勃艮第'},
+        { en: 'Rhone', chin: '隆河谷区'},
+        { en: 'Champagne', chin: '香槟'},
+        { en: 'Australia', chin: '澳洲'},
+        { en: 'Whisky', chin: '威士忌'},
+        { en: 'Italy', chin: '义大利'},
+        { en: 'U.S.A.', chin: '美国'},
+        { en: 'Accessory', chin: '其他'}
       ]
     }
   },
