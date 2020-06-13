@@ -58,7 +58,7 @@
                         <v-select :items="choices" v-model="editedItem.newArrival" label="New Arrival"></v-select>
                         </v-col>
                         <v-col cols="12" sm="6" md="4">
-                        <v-select :items="choices" v-model="editedItem.specialOffer" label="specialOffer"></v-select>
+                        <v-select :items="choices" v-model="editedItem.specialOffer" label="Special Offer"></v-select>
                         </v-col>
                     </v-row>
                     </v-container>
