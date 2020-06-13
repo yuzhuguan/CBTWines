@@ -18,7 +18,7 @@
               customers can select their wine from a wide range of choices with quality guaranteed. 
               Through Touch &amp; 
               Taste, every customer will gain satisfaction with their favorite bottle 
-              of wine after visiting CBT WINES COMPANY LIMITED.
+              of wine after visiting <a href="http://www.cbtwines.co/contact-us" class="font-weight-bold lime--text">CBT WINES COMPANY LIMITED</a>.
             </v-card-text>
           </v-card>
         </v-col>
@@ -52,7 +52,11 @@ export default {
 </script>
 
 <style>
-a{
+a {
   text-decoration: none;
+}
+
+.links {
+  color: #a65053;
 }
 </style>

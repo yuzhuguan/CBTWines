@@ -13,7 +13,8 @@
     >
       <v-icon>keyboard_arrow_up</v-icon>
     </v-btn>
-    <v-app-bar :elevation="0" color="white" :style="{'opacity': 0.8}">
+    <v-app-bar :elevation="0" color="white" :style="{'opacity': 0.7}" app>
+    <div class="border-1 subtitle-2 font-weight-light text-center">Under the law of Hong Kong, intoxicating liquor must not be sold or supplied to a minor (under 18) in the course of business.根據香港法律,不得在業務過程中,向未成年人(18歲以下人士)售賣或供應令人醺醉的酒類。 <span class="close" @click="closeBorder()">X</span></div>
       <v-btn
       color="blue"
       dark
@@ -46,7 +47,11 @@
       </v-toolbar-item>
     </v-app-bar>
 
-    <nuxt />
+    <VideoBg img="/img/bg/new-arrivals.jpg">
+        
+        <div id="div-overlay"></div>
+        <nuxt/>
+    </VideoBg>
 
     <v-footer
       class="font-weight-light"
@@ -58,14 +63,16 @@
         &copy; 2020 CBT WINES CO. LIMITED; Designed by&nbsp;<a href="https://github.com/laub1199" class="black--text">Sennett Lau</a>
       </v-col>
     </v-footer>
-    
-    <div class="border-1 subtitle-2 font-weight-light text-center">Under the law of Hong Kong, intoxicating liquor must not be sold or supplied to a minor (under 18) in the course of business.根據香港法律,不得在業務過程中,向未成年人(18歲以下人士)售賣或供應令人醺醉的酒類。 <span class="close" @click="closeBorder()">X</span></div>
   </v-app>
 </template>
 
 <script>
 import axios from 'axios';
+import VideoBg from 'vue-videobg'
 export default {
+  components: {
+    VideoBg
+  },
   data() {
     return {
       loggedIn: false,
@@ -75,13 +82,13 @@ export default {
   methods: {
     changeLang(lang) {
       if (lang === 'traditionalChinese') {
-        this.$router.push('/hk')
+        this.$router.push('/hk/new-arrivals')
       }
       else if (lang === 'simplifiedChinese') {
-        this.$router.push('/cn')
+        this.$router.push('/cn/new-arrivals')
       }
       else {
-        this.$router.push('/')
+        this.$router.push('/new-arrivals')
       }
     },
     logout() {
@@ -156,12 +163,23 @@ a{
   top: 10px;
 }
 
+#div-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #ebeff1;
+    opacity: 0.75;
+}
+
 .border-1 {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  background: rgb(252, 244, 17)
+  background: rgb(252, 244, 17);
+  z-index: 1
 }
 
 .close {

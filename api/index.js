@@ -106,7 +106,9 @@ app.post('/backstage/update-wine', passport.authenticate('jwt', { session: false
             chineseName: req.body.newDetail.chineseName,
             vintage: req.body.newDetail.vintage,
             rating: req.body.newDetail.rating,
-            price: req.body.newDetail.price
+            price: req.body.newDetail.price,
+            newArrival: req.body.newDetail.newArrival,
+            specialOffer: req.body.newDetail.specialOffer
         }
 
         Wines.findOneAndUpdate(filter, update,{new: true}).then(result => {
@@ -131,7 +133,9 @@ app.post('/backstage/add-wine', passport.authenticate('jwt', { session: false })
         chineseName: req.body.newDetail.chineseName,
         vintage: req.body.newDetail.vintage,
         rating: req.body.newDetail.rating,
-        price: req.body.newDetail.price
+        price: req.body.newDetail.price,
+        newArrival: req.body.newDetail.newArrival,
+        specialOffer: req.body.newDetail.specialOffer
     });
     
     newWine.save()

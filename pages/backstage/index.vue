@@ -54,6 +54,12 @@
                         <v-col cols="12" sm="6" md="4">
                         <v-text-field v-model="editedItem.price" label="Price(HKD)"></v-text-field>
                         </v-col>
+                        <v-col cols="12" sm="6" md="4">
+                        <v-select :items="choices" v-model="editedItem.newArrival" label="New Arrival"></v-select>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="4">
+                        <v-select :items="choices" v-model="editedItem.specialOffer" label="specialOffer"></v-select>
+                        </v-col>
                     </v-row>
                     </v-container>
                 </v-card-text>
@@ -145,6 +151,8 @@ export default {
             { text: 'Vintage', value: 'vintage'},
             { text: 'Rating', value: 'rating'},
             { text: 'Price(HKD)', value: 'price'},
+            { text: 'New Arrival', value: 'newArrival'},
+            { text: 'Special Offer', value: 'specialOffer'},
             { text: 'Actions', value: 'actions', sortable: false },
             ],
             editedIndex: -1,
@@ -156,7 +164,9 @@ export default {
                 chineseName: '',
                 vintage: '',
                 rating: '',
-                price: 0
+                price: 0,
+                newArrival: 'N',
+                specialOffer: 'N'
             },
             defaultItem: {               
                 _id: null,
@@ -166,7 +176,9 @@ export default {
                 chineseName: '',
                 vintage: '',
                 rating: '',
-                price: 0
+                price: 0,
+                newArrival: 'N',
+                specialOffer: 'N'
             },
             valid: true,
             username: "",
@@ -180,7 +192,8 @@ export default {
                 v => (v && v.length >= 6) || 'Password must has at least 6 characters',
             ],
             msg: "",
-            alertType: ''
+            alertType: '',
+            choices: ['Y', 'N']
         }
     },
     mounted() {

@@ -1,6 +1,6 @@
-# Chefiese
+# CBT Wines Company Limited Offical Website
 
-> A Cooking Recipe Blog
+> [CBT Wines Company Limited Offical Website](http://cbtwines.co)
 
 ## Build Setup
 

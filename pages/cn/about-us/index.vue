@@ -24,6 +24,7 @@
               我们深信每一瓶葡萄酒有其独特的灵魂及生命，
               其风味就像诉说它一生的故事，
               帮助每位客人找到所青睐的葡萄酒，是我们至高无上的荣幸。
+              那就是<a href="http://www.cbtwines.co/contact-us" class="font-weight-bold lime--text">香貝田酒業有限公司</a>。
             </v-card-text>
           </v-card>
         </v-col>
