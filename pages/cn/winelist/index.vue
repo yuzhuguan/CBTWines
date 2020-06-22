@@ -28,14 +28,18 @@
               hide-details
             ></v-text-field>
           </v-card-title>
-          <v-data-table
-          :headers="headers"
-          :items="wines.data"
-          :items-per-page="8"
-          :search="search"
-          :sort-by="['name', 'vintage']"
-          >
-          </v-data-table>
+          <v-layout column style="height: 75vh">
+            <v-flex style="overflow: auto">
+              <v-data-table
+                :headers="headers"
+                :items="wines.data"
+                :items-per-page="8"
+                :search="search"
+                :sort-by="['name', 'vintage']"
+              >
+              </v-data-table>
+            </v-flex>
+          </v-layout>
         </v-card>
       </v-col>
     </v-row>

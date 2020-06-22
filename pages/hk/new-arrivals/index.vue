@@ -5,13 +5,17 @@
       <v-card-title>
         <v-text-field v-model="search" append-icon="search" label="Search" single-line hide-details></v-text-field>
       </v-card-title>
-      <v-data-table
-        :headers="headers"
-        :items="newArrivals"
-        :items-per-page="8"
-        :search="search"
-        :sort-by="['name', 'vintage']"
-      ></v-data-table>
+      <v-layout column style="height: 75vh">
+        <v-flex style="overflow: auto">
+          <v-data-table
+            :headers="headers"
+            :items="specialOffers"
+            :items-per-page="8"
+            :search="search"
+            :sort-by="['name', 'vintage']"
+          ></v-data-table>
+        </v-flex>
+      </v-layout>
       <v-card-text class="subtitle-1 ml-n3">
         對我們的<a href="/hk/special-offers">特别推介</a>有興趣嗎? 
         還是看看我們的<a href="/hk/winelist">酒單</a>.

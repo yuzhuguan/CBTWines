@@ -5,48 +5,52 @@
       <v-card-title>
         <v-text-field v-model="search" append-icon="search" label="Search" single-line hide-details></v-text-field>
       </v-card-title>
-      <v-data-table
-        :headers="headers"
-        :items="specialOffers"
-        :items-per-page="8"
-        :search="search"
-        :sort-by="['name', 'vintage']"
-      ></v-data-table>
+      <v-layout column style="height: 75vh">
+        <v-flex style="overflow: auto">
+          <v-data-table
+            :headers="headers"
+            :items="specialOffers"
+            :items-per-page="8"
+            :search="search"
+            :sort-by="['name', 'vintage']"
+          ></v-data-table>
+        </v-flex>
+      </v-layout>
       <v-card-text class="subtitle-1 ml-n3">
-        Do you want some <a href="/new-arrivals">New Arrivals</a>? 
-        Or check out our wine list <a href="/winelist">here</a>.
+        Do you want some
+        <a href="/new-arrivals">New Arrivals</a>?
+        Or check out our wine list
+        <a href="/winelist">here</a>.
       </v-card-text>
     </v-card>
   </v-container>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 export default {
   layout: "new-arrivals",
   components: {},
   data() {
     return {
-      search: '',
+      search: "",
       headers: [
-          { text: 'Product', value: 'name'},
-          { text: 'Chinese Name', value: 'chineseName' },
-          { text: 'Region', value: 'origin' },
-          { text: 'Appellation', value: 'appellation'},
-          { text: 'Vintage', value: 'vintage'},
-          { text: 'Rating', value: 'rating'},
-          { text: 'Price(HKD)', value: 'price'}
+        { text: "Product", value: "name" },
+        { text: "Chinese Name", value: "chineseName" },
+        { text: "Region", value: "origin" },
+        { text: "Appellation", value: "appellation" },
+        { text: "Vintage", value: "vintage" },
+        { text: "Rating", value: "rating" },
+        { text: "Price(HKD)", value: "price" }
       ]
     };
   },
-  mounted() {
-
-  },
+  mounted() {},
   computed: {
-    ...mapState(['specialOffers'])
+    ...mapState(["specialOffers"])
   },
-  async fetch({store}) {
-    await store.dispatch('loadWineList')
+  async fetch({ store }) {
+    await store.dispatch("loadWineList");
   }
 };
 </script>
