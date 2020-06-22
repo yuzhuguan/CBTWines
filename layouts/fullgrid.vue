@@ -59,7 +59,7 @@
       </v-col>
     </v-footer>
     
-    <div class="border-1 subtitle-2 font-weight-light text-center">Under the law of Hong Kong, intoxicating liquor must not be sold or supplied to a minor (under 18) in the course of business.根據香港法律,不得在業務過程中,向未成年人(18歲以下人士)售賣或供應令人醺醉的酒類。 <span class="close" @click="closeBorder()">X</span></div>
+    <div v-if="showBorder" class="border-1 subtitle-2 font-weight-light text-center">Under the law of Hong Kong, intoxicating liquor must not be sold or supplied to a minor (under 18) in the course of business.根據香港法律,不得在業務過程中,向未成年人(18歲以下人士)售賣或供應令人醺醉的酒類。 <span class="close" @click="closeBorder()">X</span></div>
   </v-app>
 </template>
 
@@ -68,8 +68,7 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      loggedIn: false,
-      fab: false
+      loggedIn: false
     }
   },
   methods: {
@@ -97,7 +96,7 @@ export default {
       this.$vuetify.goTo(0)
     },
     closeBorder() {
-      $(".border-1").hide();
+      $('.border-1').hide();
     }
   },
   mounted() {

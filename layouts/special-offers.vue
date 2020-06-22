@@ -75,8 +75,7 @@ export default {
   },
   data() {
     return {
-      loggedIn: false,
-      fab: false
+      loggedIn: false
     }
   },
   methods: {
@@ -104,7 +103,7 @@ export default {
       this.$vuetify.goTo(0)
     },
     closeBorder() {
-      $(".border-1").hide();
+      $('.border-1').hide();
     }
   },
   mounted() {
