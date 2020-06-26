@@ -9,7 +9,7 @@
         <v-flex style="overflow: auto">
           <v-data-table
             :headers="headers"
-            :items="specialOffers"
+            :items="newArrivals"
             :items-per-page="8"
             :search="search"
             :sort-by="['name', 'vintage']"
