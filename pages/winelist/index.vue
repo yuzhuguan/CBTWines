@@ -4,17 +4,19 @@
       class="mt-8"
       no-gutters
     >
-      <v-col :cols="2">
+      <v-col :cols="2" class="pr-2">
         <v-card color="transparent" flat>
           <v-row class="title mt-2 ml-3">Region</v-row>
-          <v-row 
-            v-for="(origin, i) in origins"
-            :key="i"
-            class="subtitle-2 my-2 ml-3"
-            @click="changeOrigin(origin)"
-          >
-            {{origin}}
-          </v-row>
+          <v-layout column style="height: 80vh" class="scrollable-container">
+            <v-flex style="overflow-x: hidden" class="scrollable">
+              <v-row
+                v-for="(origin, i) in origins"
+                :key="i"
+                class="subtitle-2 my-2 ml-3"
+                @click="changeOrigin(origin)"
+              >{{origin}}</v-row>
+            </v-flex>
+          </v-layout>
         </v-card>
       </v-col>
       <v-col :cols="10">
@@ -78,7 +80,8 @@ export default {
         'Sauternes',
         'Burgundy', 
         'Rhone', 
-        'Champagne', 
+        'Champagne',
+        'Alsace', 
         'Australia', 
         'Whisky', 
         'Italy',
@@ -109,5 +112,21 @@ export default {
 <style>
 a{
   text-decoration: none;
+}
+.scrollable::-webkit-scrollbar { 
+    height: 10px;
+    width: 10px;
+    background-color: transparent;
+}
+.scrollable::-webkit-scrollbar-thumb {
+    background-color: rgb(146, 145, 145);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+.scrollable::-webkit-scrollbar-track {
+    background-color: transparent;
 }
 </style>
