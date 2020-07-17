@@ -39,6 +39,9 @@
                 :search="search"
                 :sort-by="['name', 'vintage']"
               >
+              <template v-slot:item.name="{ item }" >
+                <p :class="red+'--text text--=lighten-4'" style="margin: 0">{{item.name}}</p>
+              </template>
               </v-data-table>
             </v-flex>
           </v-layout>
@@ -57,6 +60,7 @@ export default {
   },
   data() {
     return {
+      red: 'green',
       search: '',
       headers: [
           { text: 'Product', value: 'name'},

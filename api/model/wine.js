@@ -9,7 +9,8 @@ const wineSchema = mongoose.Schema({
     rating: String,
     price: Number,
     newArrival: String,
-    specialOffer: String
+    specialOffer: String,
+    discountPrice: Number,
 });
 
 module.exports = mongoose.model('Wines', wineSchema);

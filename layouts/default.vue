@@ -46,11 +46,8 @@
       </v-toolbar-item>
     </v-app-bar>
 
-    <v-content app>
-      <v-container>
-        <nuxt />
-      </v-container>
-    </v-content>
+    <nuxt />
+    
     <v-footer
       class="font-weight-light"
     >

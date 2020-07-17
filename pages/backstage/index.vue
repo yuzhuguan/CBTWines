@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <div class="container">
     <v-card flat olor="transparent">
           <v-data-table
           :headers="headers"
@@ -53,6 +53,9 @@
                         </v-col>
                         <v-col cols="12" sm="6" md="4">
                         <v-text-field v-model="editedItem.price" label="Price(HKD)"></v-text-field>
+                        </v-col>
+                        <v-col cols="12" sm="6" md="4">
+                        <v-text-field v-model="editedItem.discountPrice" label="Discounted Price"></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="6" md="4">
                         <v-select :items="choices" v-model="editedItem.newArrival" label="New Arrival"></v-select>
@@ -129,7 +132,7 @@
                 </div>
             </v-form>
         </v-card>
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -151,6 +154,7 @@ export default {
             { text: 'Vintage', value: 'vintage'},
             { text: 'Rating', value: 'rating'},
             { text: 'Price(HKD)', value: 'price'},
+            { text: 'Discounted Price', value: 'discountPrice'},
             { text: 'New Arrival', value: 'newArrival'},
             { text: 'Special Offer', value: 'specialOffer'},
             { text: 'Actions', value: 'actions', sortable: false },
@@ -165,6 +169,7 @@ export default {
                 vintage: '',
                 rating: '',
                 price: 0,
+                discountPrice: null,
                 newArrival: 'N',
                 specialOffer: 'N'
             },
@@ -177,6 +182,7 @@ export default {
                 vintage: '',
                 rating: '',
                 price: 0,
+                discountPrice: null,
                 newArrival: 'N',
                 specialOffer: 'N'
             },
@@ -290,5 +296,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.container{
+    margin-top: 75px;
+    width: 90%;
+    max-width: 100%;
+}
 </style>

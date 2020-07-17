@@ -39,7 +39,8 @@ export default {
           { text: '產區', value: 'appellation'},
           { text: '年份', value: 'vintage'},
           { text: '評級', value: 'rating'},
-          { text: '價錢(港幣)', value: 'price'}
+          { text: '價錢(港幣)', value: 'price'},
+          { text: '折後價', value: 'discountPrice'},
       ]
     };
   },

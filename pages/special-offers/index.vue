@@ -41,7 +41,8 @@ export default {
         { text: "Appellation", value: "appellation" },
         { text: "Vintage", value: "vintage" },
         { text: "Rating", value: "rating" },
-        { text: "Price(HKD)", value: "price" }
+        { text: "Price(HKD)", value: "price" },
+        { text: 'Discounted Price', value: 'discountPrice'},
       ]
     };
   },

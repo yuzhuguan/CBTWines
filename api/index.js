@@ -107,6 +107,7 @@ app.post('/backstage/update-wine', passport.authenticate('jwt', { session: false
             vintage: req.body.newDetail.vintage,
             rating: req.body.newDetail.rating,
             price: req.body.newDetail.price,
+            discountPrice: req.body.newDetail.discountPrice,
             newArrival: req.body.newDetail.newArrival,
             specialOffer: req.body.newDetail.specialOffer
         }
