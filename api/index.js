@@ -109,7 +109,15 @@ app.post('/backstage/update-wine', passport.authenticate('jwt', { session: false
             price: req.body.newDetail.price,
             discountPrice: req.body.newDetail.discountPrice,
             newArrival: req.body.newDetail.newArrival,
-            specialOffer: req.body.newDetail.specialOffer
+            specialOffer: req.body.newDetail.specialOffer,
+            colorName: req.body.newDetail.colorName,
+            colorOrigin: req.body.newDetail.colorOrigin,
+            colorAppellation: req.body.newDetail.colorAppellation,
+            colorChineseName: req.body.newDetail.colorChineseName,
+            colorVintage: req.body.newDetail.colorVintage,
+            colorRating: req.body.newDetail.colorRating,
+            colorPrice: req.body.newDetail.colorPrice,
+            colorDiscountPrice: req.body.newDetail.colorDiscountPrice,
         }
 
         Wines.findOneAndUpdate(filter, update,{new: true}).then(result => {
@@ -135,8 +143,17 @@ app.post('/backstage/add-wine', passport.authenticate('jwt', { session: false })
         vintage: req.body.newDetail.vintage,
         rating: req.body.newDetail.rating,
         price: req.body.newDetail.price,
+        discountPrice: req.body.newDetail.discountPrice,
         newArrival: req.body.newDetail.newArrival,
-        specialOffer: req.body.newDetail.specialOffer
+        specialOffer: req.body.newDetail.specialOffer,
+        colorName: req.body.newDetail.colorName,
+        colorOrigin: req.body.newDetail.colorOrigin,
+        colorAppellation: req.body.newDetail.colorAppellation,
+        colorChineseName: req.body.newDetail.colorChineseName,
+        colorVintage: req.body.newDetail.colorVintage,
+        colorRating: req.body.newDetail.colorRating,
+        colorPrice: req.body.newDetail.colorPrice,
+        colorDiscountPrice: req.body.newDetail.colorDiscountPrice,
     });
     
     newWine.save()
