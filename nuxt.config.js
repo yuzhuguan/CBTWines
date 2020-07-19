@@ -43,6 +43,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/i18n.js'
   ],
 
   /*
@@ -55,9 +56,25 @@ module.exports = {
   /*
   ** Nuxt.js serverMiddleware
   */
- serverMiddleware: [
-   '~/api/index.js'
- ],
+  serverMiddleware: [
+    '~/api/index.js'
+  ],
+
+  /*
+  ** Nuxt.js router
+  */
+
+  router: {
+    middleware: 'i18n'
+  },
+
+  /*
+  ** Nuxt.js generate
+  */
+
+  generate: {
+    routes: ['/test', '/hk/test']
+  },
 
   /*
   ** Build configuration
