@@ -172,6 +172,7 @@
 
               <v-card-actions>
                 <v-spacer></v-spacer>
+                <v-btn color="blue darken-1" text @click="resetColors">Reset Colors</v-btn>
                 <v-btn color="blue darken-1" text @click="close">Cancel</v-btn>
                 <v-btn color="blue darken-1" text @click="save">Save</v-btn>
               </v-card-actions>
@@ -281,14 +282,14 @@ export default {
         discountPrice: null,
         newArrival: "N",
         specialOffer: "N",
-        colorName: "black",
-        colorOrigin: "black",
-        colorAppellation: "black",
-        colorChineseName: "black",
-        colorVintage: "black",
-        colorRating: "black",
-        colorPrice: "black",
-        colorDiscountPrice: "black"
+        colorName: "",
+        colorOrigin: "",
+        colorAppellation: "",
+        colorChineseName: "",
+        colorVintage: "",
+        colorRating: "",
+        colorPrice: "",
+        colorDiscountPrice: ""
       },
       valid: true,
       username: "",
@@ -305,13 +306,15 @@ export default {
       alertType: "",
       choices: ["Y", "N"],
       colors: [
-        { color: "red", class: "red--text text--lighten-3" },
-        { color: "pink", class: "pink--text text--lighten-3" },
-        { color: "purple", class: "purple--text text--lighten-3" },
-        { color: "blue", class: "blue--text text--lighten-3" },
-        { color: "green", class: "green--text text--accent-3" },
-        { color: "orange", class: "orange--text text--lighten-2" },
-        { color: "black", class: "grey--text text--dark-4" }
+        { color: "red", class: "red--text text--accent-4" },
+        { color: "pink", class: "pink--text text--accent-3" },
+        { color: "purple", class: "purple--text text--darken-" },
+        { color: "blue", class: "light-blue--text text--darken-2" },
+        { color: "green", class: "green--text text--darken-2" },
+        { color: "yellow", class: "yellow--text text--darken-2" },
+        { color: "orange", class: "orange--text text--darken-2" },
+        { color: "brown", class: "brown--text text--darken-1" },
+        { color: "default", class: "" }
       ]
     };
   },
@@ -414,6 +417,16 @@ export default {
     },
     reset() {
       this.$refs.form.reset();
+    },
+    resetColors() {
+      this.editedItem.colorName = ""
+      this.editedItem.colorOrigin = ""
+      this.editedItem.colorAppellation = ""
+      this.editedItem.colorChineseName = ""
+      this.editedItem.colorVintage = ""
+      this.editedItem.colorRating = ""
+      this.editedItem.colorPrice = ""
+      this.editedItem.colorDiscountPrice = ""   
     }
   }
 };
