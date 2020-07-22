@@ -73,7 +73,7 @@ module.exports = {
   */
 
   generate: {
-    routes: ['/test', '/hk/test']
+    routes: ['/test', '/hk/test', '/cn/test', '/', '/hk', '/cn']
   },
 
   /*
