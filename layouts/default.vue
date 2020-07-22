@@ -14,22 +14,6 @@
       <v-icon>keyboard_arrow_up</v-icon>
     </v-btn>
     <v-app-bar app :elevation="0" color="white" :style="{'opacity': 0.8}">
-      <v-btn
-      color="blue"
-      dark
-      small
-      absolute
-      class="backstageBtn"
-      fab
-      to="/backstage"
-      v-if="loggedIn"
-    >
-      <v-icon>settings</v-icon>
-    </v-btn>
-      <v-toolbar-item class="font-weight-light">
-        <nuxt-link to="/login" class="black--text" v-if="!loggedIn"><v-btn text><v-icon>supervisor_account</v-icon > Login</v-btn></nuxt-link>
-        <nuxt-link to="/" class="black--text" v-if="loggedIn"><v-btn text @click="logout"><v-icon>supervisor_account</v-icon > Logout</v-btn></nuxt-link>
-      </v-toolbar-item>
       
       <v-spacer></v-spacer>
 
