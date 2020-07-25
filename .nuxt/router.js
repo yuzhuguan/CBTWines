@@ -5,12 +5,11 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _a441dadc = () => interopDefault(import('..\\pages\\about-us\\index.vue' /* webpackChunkName: "pages_about-us_index" */))
 const _92292ce6 = () => interopDefault(import('..\\pages\\backstage\\index.vue' /* webpackChunkName: "pages_backstage_index" */))
-const _466cf565 = () => interopDefault(import('..\\pages\\cn\\index.vue' /* webpackChunkName: "pages_cn_index" */))
 const _7f505c65 = () => interopDefault(import('..\\pages\\contact-us\\index.vue' /* webpackChunkName: "pages_contact-us_index" */))
-const _5031b466 = () => interopDefault(import('..\\pages\\hk\\index.vue' /* webpackChunkName: "pages_hk_index" */))
 const _16695b4a = () => interopDefault(import('..\\pages\\login\\index.vue' /* webpackChunkName: "pages_login_index" */))
 const _2591a8ae = () => interopDefault(import('..\\pages\\new-arrivals\\index.vue' /* webpackChunkName: "pages_new-arrivals_index" */))
 const _262a47a5 = () => interopDefault(import('..\\pages\\special-offers\\index.vue' /* webpackChunkName: "pages_special-offers_index" */))
+const _cf7582b8 = () => interopDefault(import('..\\pages\\test.vue' /* webpackChunkName: "pages_test" */))
 const _c6f718ae = () => interopDefault(import('..\\pages\\winelist\\index.vue' /* webpackChunkName: "pages_winelist_index" */))
 const _60208ef2 = () => interopDefault(import('..\\pages\\cn\\about-us\\index.vue' /* webpackChunkName: "pages_cn_about-us_index" */))
 const _5fcf591a = () => interopDefault(import('..\\pages\\cn\\contact-us\\index.vue' /* webpackChunkName: "pages_cn_contact-us_index" */))
@@ -23,6 +22,8 @@ const _7a19acf4 = () => interopDefault(import('..\\pages\\hk\\new-arrivals\\inde
 const _7cde4242 = () => interopDefault(import('..\\pages\\hk\\special-offers\\index.vue' /* webpackChunkName: "pages_hk_special-offers_index" */))
 const _c4082ff4 = () => interopDefault(import('..\\pages\\hk\\winelist\\index.vue' /* webpackChunkName: "pages_hk_winelist_index" */))
 const _ed8f5da0 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
+const _cb5c9f12 = () => interopDefault(import('..\\pages\\_lang\\index.vue' /* webpackChunkName: "pages__lang_index" */))
+const _0c6f5a7d = () => interopDefault(import('..\\pages\\_lang\\test.vue' /* webpackChunkName: "pages__lang_test" */))
 
 // TODO: remove in Nuxt 3
 const emptyFn = () => {}
@@ -49,17 +50,9 @@ export const routerOptions = {
     component: _92292ce6,
     name: "backstage"
   }, {
-    path: "/cn",
-    component: _466cf565,
-    name: "cn"
-  }, {
     path: "/contact-us",
     component: _7f505c65,
     name: "contact-us"
-  }, {
-    path: "/hk",
-    component: _5031b466,
-    name: "hk"
   }, {
     path: "/login",
     component: _16695b4a,
@@ -72,6 +65,10 @@ export const routerOptions = {
     path: "/special-offers",
     component: _262a47a5,
     name: "special-offers"
+  }, {
+    path: "/test",
+    component: _cf7582b8,
+    name: "test"
   }, {
     path: "/winelist",
     component: _c6f718ae,
@@ -120,6 +117,14 @@ export const routerOptions = {
     path: "/",
     component: _ed8f5da0,
     name: "index"
+  }, {
+    path: "/:lang",
+    component: _cb5c9f12,
+    name: "lang"
+  }, {
+    path: "/:lang/test",
+    component: _0c6f5a7d,
+    name: "lang-test"
   }],
 
   fallback: false

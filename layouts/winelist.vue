@@ -81,13 +81,13 @@ export default {
   methods: {
     changeLang(lang) {
       if (lang === 'traditionalChinese') {
-        this.$router.push('/hk/winelist')
+        this.$router.push('/hk/wine-list')
       }
       else if (lang === 'simplifiedChinese') {
-        this.$router.push('/cn/winelist')
+        this.$router.push('/cn/wine-list')
       }
       else {
-        this.$router.push('/winelist')
+        this.$router.push('/wine-list')
       }
     },
     logout() {

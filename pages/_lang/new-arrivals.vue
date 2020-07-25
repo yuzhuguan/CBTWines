@@ -1,15 +1,15 @@
 <template>
   <v-container class="pt-11" fluid>
     <v-card class="transparent" flat>
-      <h1 class="mt-11 mb-n5 font-weight-thin display-1">特别推介</h1>
+      <h1 class="mt-11 mb-n5 font-weight-thin display-1">{{ $t('new-arrivals.title') }}</h1>
       <v-card-title>
         <v-text-field v-model="search" append-icon="search" label="Search" single-line hide-details></v-text-field>
       </v-card-title>
-      <v-layout column style="height: 75vh">
+      <v-layout column style="height: 64vh">
         <v-flex style="overflow: auto">
           <v-data-table
-            :headers="headers"
-            :items="specialOffers"
+            :headers="$t('new-arrivals.headers')"
+            :items="newArrivals"
             :items-per-page="8"
             :search="search"
             :sort-by="['name', 'vintage']"
@@ -35,17 +35,10 @@
             <template v-slot:item.price="{ item }">
               <p :class="item.colorPrice" style="margin: 0">{{item.price}}</p>
             </template>
-            <template v-slot:item.discountPrice="{ item }">
-              <p :class="item.colorDiscountPrice" style="margin: 0">{{item.discountPrice}}</p>
-            </template>
           </v-data-table>
         </v-flex>
       </v-layout>
-      <v-card-text class="subtitle-1 ml-n3">
-        对我们的
-        <a href="/cn/new-arrivals">新酒到货</a>有兴趣吗?
-        还是看看我们的
-        <a href="/cn/winelist">酒单</a>.
+      <v-card-text class="subtitle-1 ml-n3" v-html="$t('new-arrivals.paragraph')">
       </v-card-text>
     </v-card>
   </v-container>
@@ -58,22 +51,12 @@ export default {
   components: {},
   data() {
     return {
-      search: "",
-      headers: [
-        { text: "酒名", value: "name" },
-        { text: "中文", value: "chineseName" },
-        { text: "产地", value: "origin" },
-        { text: "产区", value: "appellation" },
-        { text: "年份", value: "vintage" },
-        { text: "评级", value: "rating" },
-        { text: "价钱(港币)", value: "price" },
-        { text: "折后价", value: "discountPrice" }
-      ]
+      search: ""
     };
   },
   mounted() {},
   computed: {
-    ...mapState(["specialOffers"])
+    ...mapState(["newArrivals"])
   },
   async fetch({ store }) {
     await store.dispatch("loadWineList");
