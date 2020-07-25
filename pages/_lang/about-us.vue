@@ -5,20 +5,10 @@
         <v-col :cols="12" lg="6" xl='6'>
           <v-card class="mt-11 transparent" flat>
             <v-card-title class="ml-2 pt-5 display-1 white--text">
-              About Us
+              {{ $t('about-us.title') }}
             </v-card-title>
-            <v-card-text class="blockquote white--text text-justify title font-weight-light">
-              Like a fingerprint, 
-              every bottle of wine is unique. 
-              In our belief, 
-              every customer pursues a unique flavor in wines. 
-              Assisting customers in choosing the most suitable wines 
-              according to customers' distinctive characters is our mission. 
-              With wines from various countries and places, 
-              customers can select their wine from a wide range of choices with quality guaranteed. 
-              Through Touch &amp; 
-              Taste, every customer will gain satisfaction with their favorite bottle 
-              of wine after visiting <a href="http://www.cbtwines.co/contact-us" class="font-weight-bold lime--text">CBT WINES COMPANY LIMITED</a>.
+            <v-card-text class="blockquote white--text text-justify title font-weight-light" v-html="$t('about-us.paragraph')">
+              
             </v-card-text>
           </v-card>
         </v-col>

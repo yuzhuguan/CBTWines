@@ -20,10 +20,10 @@
               <v-row><v-icon>place</v-icon></v-row>
             </v-col>
             <v-col :cols="undefined" class="text-left font-weight-regular title">
-              <v-row>香港 九龍</v-row>
-              <v-row>長沙灣 長義街10號</v-row>
-              <v-row>昌隆工業大廈</v-row>
-              <v-row>6樓 B3室</v-row>
+              <v-row>{{ $t('contact-us.address_1') }}</v-row>
+              <v-row>{{ $t('contact-us.address_2') }}</v-row>
+              <v-row>{{ $t('contact-us.address_3') }}</v-row>
+              <v-row>{{ $t('contact-us.address_4') }}</v-row>
             </v-col>
           </v-row>
           <v-row class="mx-0 my-2">

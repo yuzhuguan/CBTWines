@@ -1,7 +1,7 @@
 <template>
     <v-container class="pa-0" fluid >
         <v-img src="/img/new/home.jpg" alt="garden" width="100%" class="text-center" contain>
-            <v-row class="mb-3 ml-12" v-for="(nav, index) in $t('about-us.navs')" :key="index">
+            <v-row class="mb-3 ml-12" v-for="(nav, index) in $t('home.navs')" :key="index">
                 <v-col :cols="1" ></v-col>
                 <v-col :cols="3" >
                     <v-hover v-slot:default="{ hover }">
