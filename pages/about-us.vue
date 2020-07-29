@@ -7,9 +7,11 @@
             <v-card-title class="ml-2 pt-5 display-1 white--text">
               {{ $t('about-us.title') }}
             </v-card-title>
-            <v-card-text class="blockquote white--text text-justify title font-weight-light" v-html="$t('about-us.paragraph')">
-              
-            </v-card-text>
+            <v-card-text 
+            :class="($i18n.locale ==='en') 
+              ? 'blockquote white--text text-justify title font-weight-light' 
+              : 'blockquote white--text text-justify subtitle-1 font-weight-light'" 
+            v-html="$t('about-us.paragraph')"/>
           </v-card>
         </v-col>
         <v-col :cols="12" lg="5" xl='5' class="d-none d-sm-none d-md-none d-lg-flex">
