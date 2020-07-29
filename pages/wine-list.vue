@@ -74,37 +74,7 @@ export default {
   components: {},
   data() {
     return {
-      search: "",
-      headers: [
-        { text: "Product", value: "name" },
-        { text: "Chinese Name", value: "chineseName" },
-        { text: "Region", value: "origin" },
-        { text: "Appellation", value: "appellation" },
-        { text: "Vintage", value: "vintage" },
-        { text: "Rating", value: "rating" },
-        { text: "Price(HKD)", value: "price" }
-      ],
-      origins: [
-        "All",
-        "Bordeaux",
-        "Margaux",
-        "Pauillac",
-        "Saint Emilion",
-        "Saint Estephe",
-        "Saint Julien",
-        "Pessac Leognan",
-        "Haut Medoc",
-        "Sauternes",
-        "Burgundy",
-        "Rhone",
-        "Champagne",
-        "Alsace",
-        "Australia",
-        "Whisky",
-        "Italy",
-        "U.S.A.",
-        "Accessory"
-      ]
+      search: ""
     };
   },
   methods: {

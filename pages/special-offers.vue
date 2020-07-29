@@ -58,17 +58,7 @@ export default {
   components: {},
   data() {
     return {
-      search: "",
-      headers: [
-        { text: "Product", value: "name" },
-        { text: "Chinese Name", value: "chineseName" },
-        { text: "Region", value: "origin" },
-        { text: "Appellation", value: "appellation" },
-        { text: "Vintage", value: "vintage" },
-        { text: "Rating", value: "rating" },
-        { text: "Price(HKD)", value: "price" },
-        { text: "Discounted Price", value: "discountPrice" }
-      ]
+      search: ""
     };
   },
   mounted() {},
