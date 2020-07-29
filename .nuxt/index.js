@@ -13,7 +13,9 @@ import { createStore } from './store.js'
 /* Plugins */
 
 import nuxt_plugin_plugin_973f24fa from 'nuxt_plugin_plugin_973f24fa' // Source: .\\vuetify\\plugin.js (mode: 'all')
-import nuxt_plugin_i18n_1fba523a from 'nuxt_plugin_i18n_1fba523a' // Source: ..\\plugins\\i18n.js (mode: 'all')
+import nuxt_plugin_pluginseo_be04dde4 from 'nuxt_plugin_pluginseo_be04dde4' // Source: .\\nuxt-i18n\\plugin.seo.js (mode: 'all')
+import nuxt_plugin_pluginrouting_dd3683f6 from 'nuxt_plugin_pluginrouting_dd3683f6' // Source: .\\nuxt-i18n\\plugin.routing.js (mode: 'all')
+import nuxt_plugin_pluginmain_3a43738a from 'nuxt_plugin_pluginmain_3a43738a' // Source: .\\nuxt-i18n\\plugin.main.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -170,8 +172,16 @@ async function createApp (ssrContext) {
     await nuxt_plugin_plugin_973f24fa(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_i18n_1fba523a === 'function') {
-    await nuxt_plugin_i18n_1fba523a(app.context, inject)
+  if (typeof nuxt_plugin_pluginseo_be04dde4 === 'function') {
+    await nuxt_plugin_pluginseo_be04dde4(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_pluginrouting_dd3683f6 === 'function') {
+    await nuxt_plugin_pluginrouting_dd3683f6(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_pluginmain_3a43738a === 'function') {
+    await nuxt_plugin_pluginmain_3a43738a(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first

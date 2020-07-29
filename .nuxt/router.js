@@ -3,27 +3,15 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _a441dadc = () => interopDefault(import('..\\pages\\about-us\\index.vue' /* webpackChunkName: "pages_about-us_index" */))
+const _2585f3f0 = () => interopDefault(import('..\\pages\\about-us.vue' /* webpackChunkName: "pages_about-us" */))
 const _92292ce6 = () => interopDefault(import('..\\pages\\backstage\\index.vue' /* webpackChunkName: "pages_backstage_index" */))
-const _7f505c65 = () => interopDefault(import('..\\pages\\contact-us\\index.vue' /* webpackChunkName: "pages_contact-us_index" */))
-const _16695b4a = () => interopDefault(import('..\\pages\\login\\index.vue' /* webpackChunkName: "pages_login_index" */))
-const _2591a8ae = () => interopDefault(import('..\\pages\\new-arrivals\\index.vue' /* webpackChunkName: "pages_new-arrivals_index" */))
-const _262a47a5 = () => interopDefault(import('..\\pages\\special-offers\\index.vue' /* webpackChunkName: "pages_special-offers_index" */))
-const _cf7582b8 = () => interopDefault(import('..\\pages\\test.vue' /* webpackChunkName: "pages_test" */))
-const _c6f718ae = () => interopDefault(import('..\\pages\\winelist\\index.vue' /* webpackChunkName: "pages_winelist_index" */))
-const _60208ef2 = () => interopDefault(import('..\\pages\\cn\\about-us\\index.vue' /* webpackChunkName: "pages_cn_about-us_index" */))
-const _5fcf591a = () => interopDefault(import('..\\pages\\cn\\contact-us\\index.vue' /* webpackChunkName: "pages_cn_contact-us_index" */))
-const _ac2c61c4 = () => interopDefault(import('..\\pages\\cn\\new-arrivals\\index.vue' /* webpackChunkName: "pages_cn_new-arrivals_index" */))
-const _fe7c3c4c = () => interopDefault(import('..\\pages\\cn\\special-offers\\index.vue' /* webpackChunkName: "pages_cn_special-offers_index" */))
-const _82d5ccc4 = () => interopDefault(import('..\\pages\\cn\\winelist\\index.vue' /* webpackChunkName: "pages_cn_winelist_index" */))
-const _a152f222 = () => interopDefault(import('..\\pages\\hk\\about-us\\index.vue' /* webpackChunkName: "pages_hk_about-us_index" */))
-const _00bc2d82 = () => interopDefault(import('..\\pages\\hk\\contact-us\\index.vue' /* webpackChunkName: "pages_hk_contact-us_index" */))
-const _7a19acf4 = () => interopDefault(import('..\\pages\\hk\\new-arrivals\\index.vue' /* webpackChunkName: "pages_hk_new-arrivals_index" */))
-const _7cde4242 = () => interopDefault(import('..\\pages\\hk\\special-offers\\index.vue' /* webpackChunkName: "pages_hk_special-offers_index" */))
-const _c4082ff4 = () => interopDefault(import('..\\pages\\hk\\winelist\\index.vue' /* webpackChunkName: "pages_hk_winelist_index" */))
 const _ed8f5da0 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
-const _cb5c9f12 = () => interopDefault(import('..\\pages\\_lang\\index.vue' /* webpackChunkName: "pages__lang_index" */))
-const _0c6f5a7d = () => interopDefault(import('..\\pages\\_lang\\test.vue' /* webpackChunkName: "pages__lang_test" */))
+const _42ac7d06 = () => interopDefault(import('..\\pages\\contact-us.vue' /* webpackChunkName: "pages_contact-us" */))
+const _16695b4a = () => interopDefault(import('..\\pages\\login\\index.vue' /* webpackChunkName: "pages_login_index" */))
+const _7e77d6b9 = () => interopDefault(import('..\\pages\\new-arrivals.vue' /* webpackChunkName: "pages_new-arrivals" */))
+const _bc940386 = () => interopDefault(import('..\\pages\\special-offers.vue' /* webpackChunkName: "pages_special-offers" */))
+const _cf7582b8 = () => interopDefault(import('..\\pages\\test.vue' /* webpackChunkName: "pages_test" */))
+const _61390d40 = () => interopDefault(import('..\\pages\\wine-list.vue' /* webpackChunkName: "pages_wine-list" */))
 
 // TODO: remove in Nuxt 3
 const emptyFn = () => {}
@@ -43,88 +31,112 @@ export const routerOptions = {
 
   routes: [{
     path: "/about-us",
-    component: _a441dadc,
-    name: "about-us"
+    component: _2585f3f0,
+    name: "about-us___en"
   }, {
     path: "/backstage",
     component: _92292ce6,
-    name: "backstage"
+    name: "backstage___en"
+  }, {
+    path: "/cn",
+    component: _ed8f5da0,
+    name: "index___cn"
   }, {
     path: "/contact-us",
-    component: _7f505c65,
-    name: "contact-us"
+    component: _42ac7d06,
+    name: "contact-us___en"
+  }, {
+    path: "/hk",
+    component: _ed8f5da0,
+    name: "index___hk"
   }, {
     path: "/login",
     component: _16695b4a,
-    name: "login"
+    name: "login___en"
   }, {
     path: "/new-arrivals",
-    component: _2591a8ae,
-    name: "new-arrivals"
+    component: _7e77d6b9,
+    name: "new-arrivals___en"
   }, {
     path: "/special-offers",
-    component: _262a47a5,
-    name: "special-offers"
+    component: _bc940386,
+    name: "special-offers___en"
   }, {
     path: "/test",
     component: _cf7582b8,
-    name: "test"
+    name: "test___en"
   }, {
-    path: "/winelist",
-    component: _c6f718ae,
-    name: "winelist"
+    path: "/wine-list",
+    component: _61390d40,
+    name: "wine-list___en"
   }, {
     path: "/cn/about-us",
-    component: _60208ef2,
-    name: "cn-about-us"
+    component: _2585f3f0,
+    name: "about-us___cn"
+  }, {
+    path: "/cn/backstage",
+    component: _92292ce6,
+    name: "backstage___cn"
   }, {
     path: "/cn/contact-us",
-    component: _5fcf591a,
-    name: "cn-contact-us"
+    component: _42ac7d06,
+    name: "contact-us___cn"
+  }, {
+    path: "/cn/login",
+    component: _16695b4a,
+    name: "login___cn"
   }, {
     path: "/cn/new-arrivals",
-    component: _ac2c61c4,
-    name: "cn-new-arrivals"
+    component: _7e77d6b9,
+    name: "new-arrivals___cn"
   }, {
     path: "/cn/special-offers",
-    component: _fe7c3c4c,
-    name: "cn-special-offers"
+    component: _bc940386,
+    name: "special-offers___cn"
   }, {
-    path: "/cn/winelist",
-    component: _82d5ccc4,
-    name: "cn-winelist"
+    path: "/cn/test",
+    component: _cf7582b8,
+    name: "test___cn"
+  }, {
+    path: "/cn/wine-list",
+    component: _61390d40,
+    name: "wine-list___cn"
   }, {
     path: "/hk/about-us",
-    component: _a152f222,
-    name: "hk-about-us"
+    component: _2585f3f0,
+    name: "about-us___hk"
+  }, {
+    path: "/hk/backstage",
+    component: _92292ce6,
+    name: "backstage___hk"
   }, {
     path: "/hk/contact-us",
-    component: _00bc2d82,
-    name: "hk-contact-us"
+    component: _42ac7d06,
+    name: "contact-us___hk"
+  }, {
+    path: "/hk/login",
+    component: _16695b4a,
+    name: "login___hk"
   }, {
     path: "/hk/new-arrivals",
-    component: _7a19acf4,
-    name: "hk-new-arrivals"
+    component: _7e77d6b9,
+    name: "new-arrivals___hk"
   }, {
     path: "/hk/special-offers",
-    component: _7cde4242,
-    name: "hk-special-offers"
+    component: _bc940386,
+    name: "special-offers___hk"
   }, {
-    path: "/hk/winelist",
-    component: _c4082ff4,
-    name: "hk-winelist"
+    path: "/hk/test",
+    component: _cf7582b8,
+    name: "test___hk"
+  }, {
+    path: "/hk/wine-list",
+    component: _61390d40,
+    name: "wine-list___hk"
   }, {
     path: "/",
     component: _ed8f5da0,
-    name: "index"
-  }, {
-    path: "/:lang",
-    component: _cb5c9f12,
-    name: "lang"
-  }, {
-    path: "/:lang/test",
-    component: _0c6f5a7d,
-    name: "lang-test"
+    name: "index___en"
   }],
 
   fallback: false

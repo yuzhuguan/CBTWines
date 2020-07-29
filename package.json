@@ -22,10 +22,10 @@
     "mongoose": "^5.8.7",
     "morgan": "^1.9.1",
     "nuxt": "^2.4.0",
+    "nuxt-i18n": "^6.13.1",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
-    "vue-i18n": "^8.18.2",
     "vue-videobg": "^2.0.0"
   },
   "devDependencies": {

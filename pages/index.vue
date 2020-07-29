@@ -1,4 +1,79 @@
+<template>
+    <v-container class="pa-0" fluid >
+        <v-img src="/img/new/home.jpg" alt="garden" width="100%" class="text-center" contain>
+            <v-row class="mb-3 ml-12" v-for="(nav, index) in $t('home.navs')" :key="index">
+                <v-col :cols="1" ></v-col>
+                <v-col :cols="3" >
+                    <v-hover v-slot:default="{ hover }">
+                        <v-card width="80%">
+                            <v-img :src="nav.img" height="70">
+                                <v-expand-transition>
+                                    <v-card
+                                        v-if="hover"
+                                        class="d-flex transition-fast-in-fast-out grey lighten-5 font-weight-light display-1 dark--text text-center v-card--reveal"
+                                        :style="{'opacity': 0.8}"
+                                        style="height: 100%;"
+                                        :to="nav.link"  
+                                    >
+                                        {{ nav.text }}
+                                    </v-card>
+                                </v-expand-transition>
+                            </v-img>
+                        </v-card>
+                    </v-hover>
+                </v-col>
+            </v-row>
+        </v-img>
+    </v-container>
+</template>
+
 <script>
-import Index from '~/pages/_lang/index'
-export default Index
+import { mapState } from 'vuex'
+
+export default {
+    layout: 'fullgrid',
+    components: {
+    },
+    data() {
+        return {
+        }
+    },
+    head() {
+        return {
+            title: 'CBT Wines Company Limited',
+            meta: [
+                {
+                    hid: 'description', 
+                    name: 'description', 
+                    content: 'CBT Wines Company Limited Hong Kong, we offer wines from countries worldwide, find us and buy your wines.'
+                },
+                {hid: 'keywords', name: 'keywords', content: 'cbt, wines, cbtwines, wine, cbt wines, hong kong wines, wine'},
+            ]
+        }
+    },
+    mounted() {
+    },
+    computed: {
+    },
+    async fetch({store}) {
+    }
+}
 </script>
+
+<style>
+a{
+  text-decoration: none;
+}
+.card {
+    height: 30px;
+}
+
+.v-card--reveal {
+  align-items: center;
+  bottom: 0;
+  justify-content: center;
+  opacity: .5;
+  position: absolute;
+  width: 100%;
+}
+</style>

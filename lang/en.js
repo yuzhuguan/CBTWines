@@ -1,6 +1,6 @@
-{
+export default {
     "test": {
-        "title": "en test"
+        "title": 'en test'
     },
     "home": {
         "navs": [

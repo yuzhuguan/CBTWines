@@ -1,4 +1,4 @@
-{
+export default{
     "test": {
         "title": "hk test"
     },
