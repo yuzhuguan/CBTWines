@@ -92,7 +92,7 @@ export default {
             font-size: 70px;
             font-weight: 300;
             margin-top: -43px;
-            text-shadow: -5px 5px 6px #aaaaaa;
+            text-shadow: -3px 0px 8px #bbbbbb;
           }
         }
         .content {
