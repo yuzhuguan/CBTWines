@@ -9,15 +9,15 @@
           </div>
           <div class="content">
             <p v-html="$t('about-us.paragraph1')"/>
-            <p v-html="$t('about-us.paragraph2')"/>
-            <nuxt-link to="/">
+            <p>{{$t('about-us.paragraph2')}}<nuxt-link to="/">
               {{ $t('about-us.link') }}
-            </nuxt-link>
+            </nuxt-link></p>
+            
           </div>
         </div>
       </div>
       <div class="right-block">
-        <img src="/media/about-us.jpeg" alt="image">
+        <img src="/media/about-us.png" alt="image">
       </div>
     </div>
   </div>
@@ -66,7 +66,7 @@ export default {
 <style lang="scss">
 .about-us {
   width: 100%;
-  height: 89vh;
+  height: 90vh;
   .main-container {
     height: 100%;
     width: 100%;
@@ -91,16 +91,19 @@ export default {
           h1 {
             font-size: 70px;
             font-weight: 300;
-            margin-top: -50px;
+            margin-top: -43px;
             text-shadow: -5px 5px 6px #aaaaaa;
           }
         }
         .content {
-          padding: 3% 100px 0px;
+          width: 385px;
+          margin-left: auto;
+          margin-right: auto;
+          padding-top: 1%;
           text-align: center;
           p{
             font-size: 19px;
-            line-height: 2.0rem;
+            line-height: 1.8rem;
             &:first-child {
               margin-bottom: 10px;
             }
@@ -108,7 +111,7 @@ export default {
           }
           a {
             color: #A44C4F;
-            line-height: 2.0rem;
+            line-height: 1.8rem;
             text-decoration: none;
           }
         }

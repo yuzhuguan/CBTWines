@@ -14,7 +14,7 @@ export default {
     "about-us": {
         "title" : "ABOUT US",
         "paragraph1": "Like a fingerprint, every bottle of wine is unique. In our belief, every customer pursues a unique flavor in wines. Assisting customers in choosing the most suitable wines according to customers' distinctive characters is our mission.",
-        "paragraph2": "With wines from various countries and places, customers can select their wine from a wide range of choices with quality guaranteed. Through Touch &amp; Taste, every customer will gain satisfaction with their favorite bottle of wine after visiting",
+        "paragraph2": "With wines from various countries and places, customers can select their wine from a wide range of choices with quality guaranteed. Through Touch & Taste, every customer will gain satisfaction with their favorite bottle of wine after visiting",
         "link": "CBT WINES COMPANY LIMITED."
     },
     "contact-us": {
