@@ -28,6 +28,7 @@ export default {
     width: 100%;
     height: 70px;
     background-color: white;
+    
     .header-container {
       width: 100%;
       height: 100%;
@@ -56,8 +57,15 @@ export default {
               display: block;
               color: #2b2b2b;
               text-align: center;
-              padding: 25px 26px;
+              padding: 25px 37px;
               text-decoration: none;
+              @media (max-width: 1180px) {
+                padding: 25px 18px;
+              }
+              @media (max-width: 960px) {
+                padding: 28px 16px;
+                font-size: 13px;
+              }
             }
           }
         }
