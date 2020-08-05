@@ -2,16 +2,30 @@
   <div class="header">
     <div class="header-container">
       <div class="logo-container">
-        <img src="/media/logo.png" alt="logo"/>
+        <nuxt-link to="/">
+          <img src="/media/logo.png" alt="logo"/>
+        </nuxt-link>
       </div>
       <div class="navlist">
         <ul>
-          <li><a href="#home">HOME</a></li>
-          <li><a href="#news">ABOUT US</a></li>
-          <li><a href="#contact">WINE LIST</a></li>
-          <li><a href="#about">NEW ARRIVAL</a></li>
-          <li><a href="#about">SPECIAL OFFER</a></li>
-          <li><a href="#about">CONTACT US</a></li>
+          <li :class="($route.path === '/' || $route.path === '/hk' ||$route.path === '/') ? 'current-page' : ''">
+            <nuxt-link to="/">HOME</nuxt-link>
+          </li>
+          <li :class="($route.path.match(/\babout-us\b/)) ? 'current-page' : ''">
+            <nuxt-link to="/about-us">ABOUT US</nuxt-link>
+          </li>
+          <li :class="($route.path.match(/\bwine-list\b/)) ? 'current-page' : ''">
+            <nuxt-link to="/wine-list">WINE LIST</nuxt-link>
+          </li>
+          <li :class="($route.path.match(/\bnew-arrivals\b/)) ? 'current-page' : ''">
+            <nuxt-link to="/new-arrivals">NEW ARRIVAL</nuxt-link>
+          </li>
+          <li :class="($route.path.match(/\bspecial-offers\b/)) ? 'current-page' : ''">
+            <nuxt-link to="/special-offers">SPECIAL OFFER</nuxt-link>
+          </li>
+          <li :class="($route.path.match(/\bcontact-us\b/)) ? 'current-page' : ''">
+            <nuxt-link to="/contact-us">CONTACT US</nuxt-link>
+          </li>
         </ul>
       </div>
     </div>
@@ -51,6 +65,11 @@ export default {
           padding: 0 10px 0 0;
           overflow: hidden;
           height: 100%;
+          .current-page {
+            a{
+               color: #909090 !important;
+            }
+          }
           li {
             float: left;
             a {

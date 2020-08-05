@@ -4,6 +4,7 @@
     <section id="wrapper">
       <nuxt-child />
     </section>
+    <Footer/>
   </main>
   
 </template>
@@ -11,9 +12,11 @@
 <script>
 import axios from 'axios';
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 export default {
   components: {
-    Header
+    Header,
+    Footer
   },
   data() {
     return {
