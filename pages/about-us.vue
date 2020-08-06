@@ -3,11 +3,11 @@
     <div class="main-container">
       <div class="left-block">
         <div class="top-block"/>
-        <div class="block">
-          <div class="title-block">
-            <h1>{{ $t('about-us.title') }}</h1>
+        <div class="block" data-aos="zoom-in" data-aos-duration="1000">
+          <div class="title-block" >
+            <h1 data-aos="zoom-out" data-aos-delay="1050" data-aos-duration="1000">{{ $t('about-us.title') }}</h1>
           </div>
-          <div class="content">
+          <div class="content" data-aos="fade-up" data-aos-delay="1250" data-aos-duration="1000">
             <p v-html="$t('about-us.paragraph1')"/>
             <p>{{$t('about-us.paragraph2')}}<nuxt-link to="/">
               {{ $t('about-us.link') }}
@@ -17,7 +17,7 @@
         <div class="bottom-block"/>
       </div>
       <div class="right-block">
-        <img src="/media/about-us.png" alt="image">
+        <img src="/media/about-us.png" alt="image" data-aos="fade-left" data-aos-delay="" data-aos-duration="2400">
       </div>
     </div>
   </div>
