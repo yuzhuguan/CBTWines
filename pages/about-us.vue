@@ -145,7 +145,8 @@ export default {
             width: 222px;
           }
           p{
-            font-size: 19px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 17px;
             line-height: 1.8rem;
             &:first-child {
               margin-bottom: 10px;
@@ -154,10 +155,10 @@ export default {
               line-height: 2.35rem;
             }
             @media (max-width: 700px) {
-              font-size: 17px;
+              font-size: 15px;
             }
             @media (max-width: 550px) {
-              font-size: 14px;
+              font-size: 12px;
               line-height: 1.8rem;
             }
             @media (max-width: 375px) {
@@ -168,11 +169,12 @@ export default {
             color: #A44C4F;
             line-height: 1.8rem;
             text-decoration: none;
+            font-size: 17px;
             @media (max-width: 1000px) {
               line-height: 2.35rem;
             }
             @media (max-width: 550px) {
-              font-size: 14px;
+              font-size: 12px;
               line-height: 1.8rem;
             }
             @media (max-width: 375px) {
