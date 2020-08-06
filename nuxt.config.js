@@ -39,13 +39,15 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '~/assets/style/app.styl'
+    '~/assets/style/app.styl',
+    'aos/dist/aos.css'
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    {src: '~/plugins/aos', ssr: false}
   ],
 
   /*
