@@ -1,79 +1,116 @@
 <template>
-    <v-container class="pa-0" fluid >
-        <v-img src="/img/new/home.jpg" alt="garden" width="100%" class="text-center" contain>
-            <v-row class="mb-3 ml-12" v-for="(nav, index) in $t('home.navs')" :key="index">
-                <v-col :cols="1" ></v-col>
-                <v-col :cols="3" >
-                    <v-hover v-slot:default="{ hover }">
-                        <v-card width="80%">
-                            <v-img :src="nav.img" height="70">
-                                <v-expand-transition>
-                                    <v-card
-                                        v-if="hover"
-                                        class="d-flex transition-fast-in-fast-out grey lighten-5 font-weight-light display-1 dark--text text-center v-card--reveal"
-                                        :style="{'opacity': 0.8}"
-                                        style="height: 100%;"
-                                        :to="nav.link"  
-                                    >
-                                        {{ nav.text }}
-                                    </v-card>
-                                </v-expand-transition>
-                            </v-img>
-                        </v-card>
-                    </v-hover>
-                </v-col>
-            </v-row>
-        </v-img>
-    </v-container>
+  <div class="home">
+    <div class="background" style="background: url(/media/home_BG.png) top left / cover;">
+      <div class="content">
+        <img src="/media/company_label.png" alt="Company Label">
+        <div class="quote">
+          <p class="quote-text">“Where there is no wine, <br>there is no love”</p>
+          <span class="quote-by">- Euripides</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 
 export default {
-    layout: 'fullgrid',
-    components: {
-    },
-    data() {
-        return {
-        }
-    },
-    head() {
-        return {
-            title: 'CBT Wines Company Limited',
-            meta: [
-                {
-                    hid: 'description', 
-                    name: 'description', 
-                    content: 'CBT Wines Company Limited Hong Kong, we offer wines from countries worldwide, find us and buy your wines.'
-                },
-                {hid: 'keywords', name: 'keywords', content: 'cbt, wines, cbtwines, wine, cbt wines, hong kong wines, wine'},
-            ]
-        }
-    },
-    mounted() {
-    },
-    computed: {
-    },
-    async fetch({store}) {
-    }
-}
+  layout: "revamp",
+  components: {},
+  data() {
+    return {};
+  },
+  head() {
+    return {
+      title: "CBT Wines Company Limited",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "CBT Wines Company Limited Hong Kong, we offer wines from countries worldwide, find us and buy your wines.",
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content:
+            "cbt, wines, cbtwines, wine, cbt wines, hong kong wines, wine",
+        },
+      ],
+    };
+  },
+  mounted() {},
+  computed: {},
+  async fetch({ store }) {},
+};
 </script>
 
-<style>
-a{
-  text-decoration: none;
-}
-.card {
-    height: 30px;
-}
-
-.v-card--reveal {
-  align-items: center;
-  bottom: 0;
-  justify-content: center;
-  opacity: .5;
-  position: absolute;
+<style lang="scss">
+.home {
   width: 100%;
+  height: 83.2vh;
+  position: relative;
+  .background{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+  }
+  .content {
+    margin: 70px 40px;
+    @media (max-width: 420px) {
+      margin: 0;
+      padding: 5%;
+    }
+    img {
+      width: 400px;
+      @media (max-width: 420px) {
+        width: 90%;
+        margin: 0 5% 0;
+      }
+    }
+    .quote {
+      justify-content: left;
+      &-text {
+        margin-top: 15px;
+        opacity: .7;
+        padding-left: 40px;
+        font: italic normal normal 31px/37px Athelas;
+        text-align: right;
+        color: #FFFFFF;
+        display: flex;
+        @media (max-width: 1090px) {
+          opacity: 1;
+          text-align: center;
+        }
+        @media (max-width: 420px) {
+          font: italic normal normal 22px/37px Athelas;
+          padding-left: 0;
+          br {
+            display: none;
+          }
+        }
+        @media (max-width: 375px) {
+          font: italic normal normal 20px/37px Athelas;
+        }
+        @media (max-width: 320px) {
+          font: italic normal normal 17px/37px Athelas;
+        }
+      }
+      &-by {
+        opacity: 0.7;
+        padding-left: 250px;
+        font: italic normal normal 21px/36px Athelas;
+        text-align: right;
+        color: #FFFFFF;
+        @media (max-width: 1090px) {
+          opacity: 1;
+          padding-left: 138px;
+        }
+      }
+    }
+  }
 }
 </style>
