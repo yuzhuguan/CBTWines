@@ -60,15 +60,15 @@ export default {
   }
   .content {
     margin: 70px 40px;
-    @media (max-width: 420px) {
+    @media (max-width: 490px) {
       margin: 0;
       padding: 5%;
     }
     img {
       width: 400px;
-      @media (max-width: 420px) {
-        width: 90%;
-        margin: 0 5% 0;
+      @media (max-width: 490px) {
+        width: 80%;
+        margin: 5% 10% 0;
       }
     }
     .quote {
@@ -85,9 +85,13 @@ export default {
           opacity: 1;
           text-align: center;
         }
-        @media (max-width: 420px) {
+        @media (max-width: 490px) {
           font: italic normal normal 22px/37px Athelas;
           padding-left: 0;
+          margin-left: auto;
+          margin-right: auto;
+          width: 371px;
+          max-width: 100%;
           br {
             display: none;
           }
