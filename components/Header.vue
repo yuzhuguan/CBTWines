@@ -7,24 +7,17 @@
         </nuxt-link>
       </div>
       <div class="navlist">
-        <ul>
-          <li :class="($route.path === '/' || $route.path === '/hk' ||$route.path === '/') ? 'current-page' : ''">
-            <nuxt-link to="/">HOME</nuxt-link>
-          </li>
-          <li :class="($route.path.match(/\babout-us\b/)) ? 'current-page' : ''">
-            <nuxt-link to="/about-us">ABOUT US</nuxt-link>
-          </li>
-          <li :class="($route.path.match(/\bwine-list\b/)) ? 'current-page' : ''">
-            <nuxt-link to="/wine-list">WINE LIST</nuxt-link>
-          </li>
-          <li :class="($route.path.match(/\bnew-arrivals\b/)) ? 'current-page' : ''">
-            <nuxt-link to="/new-arrivals">NEW ARRIVAL</nuxt-link>
-          </li>
-          <li :class="($route.path.match(/\bspecial-offers\b/)) ? 'current-page' : ''">
-            <nuxt-link to="/special-offers">SPECIAL OFFER</nuxt-link>
-          </li>
-          <li :class="($route.path.match(/\bcontact-us\b/)) ? 'current-page' : ''">
-            <nuxt-link to="/contact-us">CONTACT US</nuxt-link>
+        <ul class="nav-ul">
+          <li
+            class="nav-item" v-for="(navItem, index) in $t('header.nav')"
+            :key="index"
+            :class="(currPage === navItem.title) ? 'current-page' : ''"
+            @mouseover="navItem.showList = true"
+            @mouseout="navItem.showList = false"
+          >
+              <nuxt-link v-if="!navItem.haveList" to="/" class="current-page-tag">{{ navItem.title }}</nuxt-link>
+              <span v-else class="dummy-link current-page-tag">{{ navItem.title }}</span>
+              <NavHoverList :v-if="navItem.haveList" :items="navItem.listItems" :show-list="navItem.showList"/>
           </li>
         </ul>
       </div>
@@ -33,7 +26,28 @@
 </template>
 
 <script>
+import NavHoverList from "./Header/NavHoverList";
 export default {
+  components: {NavHoverList},
+  computed: {
+    currPage() {
+      const currSplit = this.$route.path.split('/')
+      const currSplitPage = currSplit[currSplit.length - 1]
+      console.log(currSplit)
+      if(currSplitPage === '' || currSplitPage === 'hk' || currSplitPage === 'cn') {
+        return this.$t('header.nav[0].title')
+      }
+      else if(currSplitPage === 'about-us' || currSplitPage === 'contact-us' || currSplitPage === 'find-us') {
+        return this.$t('header.nav[1].title')
+      }
+      else if(currSplitPage === 'wine-list' || currSplitPage === 'new-arrivals' || currSplitPage === 'special-offers') {
+        return this.$t('header.nav[2].title')
+      }
+      else {
+        return -1
+      }
+    }
+  }
 }
 </script>
 
@@ -42,7 +56,7 @@ export default {
     width: 100%;
     height: 70px;
     background-color: white;
-    
+
     .header-container {
       width: 100%;
       height: 100%;
@@ -59,20 +73,21 @@ export default {
       .navlist {
         float: right;
         height: 100%;
-        ul {
+        .nav-ul {
           list-style-type: none;
           margin: 0;
           padding: 0 10px 0 0;
-          overflow: hidden;
+          overflow: visible;
           height: 100%;
           .current-page {
-            a{
-               color: #909090 !important;
+            .current-page-tag {
+              color: #909090 !important;
             }
           }
-          li {
+          .nav-item {
             float: left;
-            a {
+            position: relative;
+            a, .dummy-link {
               display: block;
               color: #2b2b2b;
               text-align: center;
@@ -84,6 +99,36 @@ export default {
               @media (max-width: 960px) {
                 padding: 28px 16px;
                 font-size: 13px;
+              }
+            }
+            .hover-list {
+              text-align: center;
+              position: absolute;
+              z-index: 1;
+              width: 100%;
+              top: 68px;
+              padding: 0;
+              .line {
+                width: 44px;
+                height: 1px;
+                background: #ebc7d9;
+                min-height: 1px;
+                margin: 0 auto 0;
+                transition: 0.8s;
+              }
+              &-item {
+                min-height: 45px;
+                transition: 0.8s;
+                &:hover {
+                  cursor: pointer;
+                  background: #ebc7d9;
+                  & .v-list-item__title {
+                    color: white;
+                  }
+                  & + .line {
+                    width: 100%;
+                  }
+                }
               }
             }
           }

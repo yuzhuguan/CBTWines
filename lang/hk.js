@@ -2,6 +2,38 @@ export default{
     "test": {
         "title": "hk test"
     },
+    "header": {
+      "nav": [
+        {
+          "title": "HOME",
+          "haveList" : false,
+          "link": '/'
+        },
+        {
+          "title": "MORE ABOUT CBT",
+          "haveList" : true,
+          "listItems": [
+            { "title": "ABOUT US", "link": "/about-us" },
+            { "title": "CONTACT US", "link": "/contact-us" },
+            { "title": "FIND US", "link": "/find-us" },
+          ],
+          "showList": false,
+          "link": "/",
+          "matches": /\babout-us\b | \bcontact-us\b | \bfind-us\b/
+        },
+        {
+          "title": "WINES & OFFERS",
+          "haveList" : true,
+          "listItems": [
+            { "title": "WINE LIST", "link": "/wine-list" },
+            { "title": "NEW ARRIVAL", "link": "/new-arrivals" },
+            { "title": "SPECIAL OFFER", "link": "special-offers" },
+          ],
+          "showList": false,
+          "matches": /\bwine-list\b | \bnew-arrivals\b | \bspecial-offers\b/
+        }
+      ]
+    },
     "home": {
         "navs": [
             { "text": "關於我們", "link": "/about-us", "img": "/img/new/banner.png" },

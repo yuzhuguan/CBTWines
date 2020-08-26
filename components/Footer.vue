@@ -33,7 +33,6 @@ export default {
   destroyed() {
     window.removeEventListener('resize', this.onResize())
   },
-
   method: {
     onResize() {
       this.width = window.innerWidth
