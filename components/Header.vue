@@ -9,7 +9,7 @@
       <div class="navlist">
         <ul class="nav-ul">
           <li
-            class="nav-item" v-for="(navItem, index) in $t('header.nav')"
+            class="nav-item mobile-hide" v-for="(navItem, index) in $t('header.nav')"
             :key="index"
             :class="(currPage === navItem.title) ? 'current-page' : ''"
             @mouseover="navItem.showList = true"
@@ -18,6 +18,15 @@
               <nuxt-link v-if="!navItem.haveList" to="/" class="current-page-tag">{{ navItem.title }}</nuxt-link>
               <span v-else class="dummy-link current-page-tag">{{ navItem.title }}</span>
               <NavHoverList :v-if="navItem.haveList" :items="navItem.listItems" :show-list="navItem.showList"/>
+          </li>
+          <li class="mobile nav-item">
+            <span class="dummy-link menu-icon-container">
+              <div class="menu-icon">
+                <span class="lines line-1"/>
+                <span class="lines line-2"/>
+                <span class="lines line-3"/>
+              </div>
+            </span>
           </li>
         </ul>
       </div>
@@ -65,6 +74,9 @@ export default {
         height: 100%;
         width: auto;
         margin-left: 30px;
+        @media (max-width: 768px) {
+          margin-left: 5px;
+        }
         img {
           height: 100%;
           padding-bottom: 6px
@@ -79,6 +91,9 @@ export default {
           padding: 0 10px 0 0;
           overflow: visible;
           height: 100%;
+          @media (max-width: 768px) {
+            padding: 0;
+          }
           .current-page {
             .current-page-tag {
               color: #909090 !important;
@@ -131,7 +146,54 @@ export default {
                 }
               }
             }
+            .menu-icon-container {
+              height: 70px;
+              width: 70px;
+              padding: 10px 0;
+              .menu-icon {
+                height: 50px;
+                width: 50px;
+                margin: auto;
+                position: relative;
+                cursor: pointer;
+                .lines {
+                  height: 2px;
+                  background: #bd5558;
+                  position: absolute;
+                  border-radius: 9px;
+                  transform: translate(-50%, -50%);
+                }
+                .line-1 {
+                  width: 33px;
+                  right: -11px;
+                  top: 15px;
+                }
+                .line-2 {
+                  width: 22px;
+                  top: 25.5px;
+                  right: -5px;
+                }
+                .line-3 {
+                  width: 11px;
+                  top: 37px;
+                  right: 1px;
+                }
+              }
+            }
           }
+        }
+      }
+    }
+    .mobile {
+      @media (min-width: 769px){
+        display: none;
+      }
+      @media (max-width: 768px){
+        display: block;
+      }
+      &-hide{
+        @media (max-width: 768px){
+          display: none;
         }
       }
     }
