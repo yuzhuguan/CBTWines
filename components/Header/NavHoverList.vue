@@ -46,7 +46,9 @@ export default {
       background: #ebc7d9;
 
       & .v-list-item__title {
-        color: white;
+        a {
+          color: white!important;
+        }
       }
 
       & + .line {
