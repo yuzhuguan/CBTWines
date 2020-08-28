@@ -48,7 +48,6 @@ export default {
     currPage() {
       const currSplit = this.$route.path.split('/')
       const currSplitPage = currSplit[currSplit.length - 1]
-      console.log(currSplit)
       if(currSplitPage === '' || currSplitPage === 'hk' || currSplitPage === 'cn') {
         return this.$t('header.nav[0].title')
       }

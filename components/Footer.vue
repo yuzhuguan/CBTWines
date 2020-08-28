@@ -16,7 +16,7 @@ export default {
   },
   mounted () {
     this.width = window.innerWidth
-    window.addEventListener('resize', this.onResize())
+    window.addEventListener('resize', this.onResize)
   },
   computed: {
     onMobile() {
@@ -31,7 +31,7 @@ export default {
     }
   },
   destroyed() {
-    window.removeEventListener('resize', this.onResize())
+    window.removeEventListener('resize', this.onResize)
   },
   method: {
     onResize() {
