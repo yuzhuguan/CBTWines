@@ -13,11 +13,6 @@
 <script>
 export default {
   name: "NavHoverList",
-  data() {
-    return {
-      showList: false
-    }
-  },
   props: [
     "items", "showList"
   ]

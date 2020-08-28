@@ -1,12 +1,12 @@
 <template>
   <main :class="$i18n.locale">
-    <Header/>
-    <section id="wrapper">
+    <Header :show-mobile-menu="showMobileMenu" @passShowMobileMenu="showMobileMenu = $event"/>
+    <section id="wrapper" :class="(showMobileMenu) ? 'open' : ''">
       <nuxt-child />
     </section>
     <Footer/>
   </main>
-  
+
 </template>
 
 <script>
@@ -21,7 +21,8 @@ export default {
   data() {
     return {
       loggedIn: false,
-      fab: false
+      fab: false,
+      showMobileMenu: false
     }
   },
   methods: {
@@ -82,6 +83,12 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+#wrapper {
+  transition: 0.5s;
+}
+#wrapper.open {
+  transform: translate(-382px, 0px);
+  opacity: 0.0;
+}
 </style>

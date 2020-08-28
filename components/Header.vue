@@ -21,7 +21,7 @@
           </li>
           <li class="mobile nav-item">
             <span class="dummy-link menu-icon-container">
-              <div class="menu-icon">
+              <div class="menu-icon" @click="toggleMobileMenu" :class="(hasMenuShown) ? 'open' : '' ">
                 <span class="lines line-1"/>
                 <span class="lines line-2"/>
                 <span class="lines line-3"/>
@@ -38,6 +38,12 @@
 import NavHoverList from "./Header/NavHoverList";
 export default {
   components: {NavHoverList},
+  props: ["showMobileMenu"],
+  data () {
+    return {
+      hasMenuShown: this.showMobileMenu
+    }
+  },
   computed: {
     currPage() {
       const currSplit = this.$route.path.split('/')
@@ -55,6 +61,12 @@ export default {
       else {
         return -1
       }
+    }
+  },
+  methods: {
+    toggleMobileMenu() {
+      this.hasMenuShown = !this.hasMenuShown
+      this.$emit('passShowMobileMenu', this.hasMenuShown)
     }
   }
 }
@@ -167,16 +179,37 @@ export default {
                   width: 33px;
                   right: -11px;
                   top: 15px;
+                  transition: 0.4s ease-in-out;
                 }
                 .line-2 {
                   width: 22px;
                   top: 25.5px;
                   right: -5px;
+                  transition: 0.4s ease-in-out;
                 }
                 .line-3 {
                   width: 11px;
                   top: 37px;
                   right: 1px;
+                  transition: 0.4s ease-in-out;
+                }
+                &.open {
+                  .line-1 {
+                    width: 22px;
+                    right: 10px;
+                    top: 24px;
+                    transform: rotate(45deg);
+                  }
+                  .line-2 {
+                    right: -20px;
+                    opacity: 0;
+                  }
+                  .line-3 {
+                    width: 22px;
+                    top: 24px;
+                    right: 10px;
+                    transform: rotate(-45deg);
+                  }
                 }
               }
             }
