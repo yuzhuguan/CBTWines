@@ -1,12 +1,12 @@
 <template>
   <main :class="$i18n.locale">
-    <Header :show-mobile-menu="showMobileMenu" @passShowMobileMenu="showMobileMenu = $event"/>
+    <Header/>
     <section id="wrapper" :class="(showMobileMenu) ? 'open' : ''">
       <nuxt-child />
     </section>
     <div class="mobile-menu" :class="(showMobileMenu) ? 'open' : ''">
       <v-list>
-        <v-list-item v-for="(item, index) in $t('header.mobileMenu')" :key="index" @click="showMobileMenu = false" >
+        <v-list-item v-for="(item, index) in $t('header.mobileMenu')" :key="index" @click="toggleMobileMenu" >
           <nuxt-link :to="item.link">
             <v-list-item-title>
               {{ item.title }}
@@ -32,8 +32,7 @@ export default {
   data() {
     return {
       loggedIn: false,
-      fab: false,
-      showMobileMenu: false
+      fab: false
     }
   },
   methods: {
@@ -59,6 +58,9 @@ export default {
     },
     toTop () {
       this.$vuetify.goTo(0)
+    },
+    toggleMobileMenu() {
+      this.$store.commit('SET_SHOWMOBILEMENU', !this.showMobileMenu)
     }
   },
   mounted() {
@@ -70,6 +72,11 @@ export default {
                 this.loggedIn = true;
               }
           })
+    }
+  },
+  computed: {
+    showMobileMenu() {
+      return this.$store.getters.showMobileMenu
     }
   },
   watch: {
@@ -89,14 +96,45 @@ export default {
             }
           )
       }
+    },
+    showMobileMenu () {
+      const menu = document.querySelector(".mobile-menu")
+      const wrapper = document.querySelector("#wrapper")
+      if(this.showMobileMenu) {
+        menu.style.opacity = "0.0"
+        menu.style.display = "block"
+        menu.style.visibility = "hidden"
+        setTimeout(() => {menu.classList.add('open') }, 1)
+        setTimeout(() => {
+          menu.style.opacity = "1.0"
+        }, 301)
+        setTimeout(() => {
+          menu.style.visibility = "visible"
+        }, 301)
+      }
+      else {
+        menu.style.opacity = "0.0"
+        menu.classList.remove('open')
+        setTimeout(() => {
+          menu.style.display = "none"
+        }, 600);
+      }
     }
-  }
+   }
 }
 </script>
 
 <style lang="scss">
 #wrapper {
+  max-height: calc(100vh - 120px);
+  overflow-x: auto;
   transition: 0.6s;
+  @media (max-width: 375px) {
+    max-height: 82.2vh;
+  }
+  @media (max-width: 320px) {
+    max-height: 76.2vh;
+  }
 }
 #wrapper.open {
   transform: translate(-768px, 0px);
@@ -110,6 +148,7 @@ export default {
   transition: 0.6s;
   position: absolute;
   top: 70px;
+  display: none;
   .v-list {
     height: 80%;
     text-align: center;
@@ -119,6 +158,8 @@ export default {
         width: 100%;
         text-decoration: none;
         color: #000000;
+        height: 100%;
+        padding: 20px 0;
       }
       a.nuxt-link-exact-active{
         color: #bd5558;
@@ -129,5 +170,9 @@ export default {
 .mobile-menu.open {
   transform: translate(0px, 0px);
   opacity: 1.0;
+}
+html, body {
+  height: 100%;
+  width: 100%;
 }
 </style>

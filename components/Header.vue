@@ -21,7 +21,7 @@
           </li>
           <li class="mobile nav-item">
             <span class="dummy-link menu-icon-container">
-              <div class="menu-icon" @click="toggleMobileMenu" :class="(hasMenuShown) ? 'open' : '' ">
+              <div class="menu-icon" @click="toggleMobileMenu" :class="(showMobileMenu) ? 'open' : '' ">
                 <span class="lines line-1"/>
                 <span class="lines line-2"/>
                 <span class="lines line-3"/>
@@ -38,12 +38,6 @@
 import NavHoverList from "./Header/NavHoverList";
 export default {
   components: {NavHoverList},
-  props: ["showMobileMenu"],
-  data () {
-    return {
-      hasMenuShown: this.showMobileMenu
-    }
-  },
   computed: {
     currPage() {
       const currSplit = this.$route.path.split('/')
@@ -60,12 +54,14 @@ export default {
       else {
         return -1
       }
+    },
+    showMobileMenu() {
+      return this.$store.getters.showMobileMenu
     }
   },
   methods: {
     toggleMobileMenu() {
-      this.hasMenuShown = !this.hasMenuShown
-      this.$emit('passShowMobileMenu', this.hasMenuShown)
+      this.$store.commit('SET_SHOWMOBILEMENU', !this.showMobileMenu)
     }
   }
 }

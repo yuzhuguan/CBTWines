@@ -3,7 +3,8 @@ import axios from 'axios'
 export const state = () => ({
   wines: [],
   specialOffers: [],
-  newArrivals: []
+  newArrivals: [],
+  showMobileMenu: false
 })
 
 export const mutations = {
@@ -15,6 +16,9 @@ export const mutations = {
   },
   SET_NEWARRIVALS(state, wines) {
     state.newArrivals = wines
+  },
+  SET_SHOWMOBILEMENU(state, data) {
+    state.showMobileMenu = data
   }
 }
 
@@ -32,5 +36,11 @@ export const actions = {
         return el.newArrival == 'Y'
     })
     commit('SET_NEWARRIVALS', newArrivalList)
+  }
+}
+
+export const getters = {
+  showMobileMenu(state) {
+    return state.showMobileMenu
   }
 }

@@ -46,7 +46,7 @@ export default {
   width: 100%;
   height: 50px;
   background-color: #413C3C;
-  position: relative;
+  position: fixed;
   @media (max-width: 375px) {
     height: 70px;
   }
