@@ -3,11 +3,11 @@
     <div class="main-container">
       <div class="left-block">
         <div class="top-block"/>
-        <div class="block" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="block" data-aos="zoom-in" data-aos-duration="1000" data-aos-once="true" data-aos-anchor=".right-block">
           <div class="title-block" >
-            <h1 data-aos="zoom-out" data-aos-delay="1050" data-aos-duration="1000">{{ $t('about-us.title') }}</h1>
+            <h1 data-aos="zoom-out" data-aos-delay="1050" data-aos-duration="1000" data-aos-once="true" data-aos-anchor=".right-block">{{ $t('about-us.title') }}</h1>
           </div>
-          <div class="content" data-aos="fade-up" data-aos-delay="1250" data-aos-duration="1000">
+          <div class="content" data-aos="fade-up" data-aos-delay="1250" data-aos-duration="1000" data-aos-once="true" data-aos-anchor=".right-block">
             <p v-html="$t('about-us.paragraph1')"/>
             <p>{{$t('about-us.paragraph2')}}<nuxt-link to="/">
               {{ $t('about-us.link') }}
@@ -21,29 +21,6 @@
       </div>
     </div>
   </div>
-  <!-- <v-container class="pt-12" fluid>
-    <v-card class="transparent mt-11" flat id="goAboutUs">
-      <v-row>
-        <v-col :cols="12" lg="6" xl='6'>
-          <v-card class="mt-11 transparent" flat>
-            <v-card-title class="ml-2 pt-5 display-1 white--text">
-              {{ $t('about-us.title') }}
-            </v-card-title>
-            <v-card-text 
-            :class="($i18n.locale ==='en') 
-              ? 'blockquote white--text text-justify title font-weight-light' 
-              : 'blockquote white--text text-justify subtitle-1 font-weight-light'" 
-            v-html="$t('about-us.paragraph')"/>
-          </v-card>
-        </v-col>
-        <v-col :cols="12" lg="5" xl='5' class="d-none d-sm-none d-md-none d-lg-flex">
-          <v-card flat class="ma-11">
-            <v-img src="/img/photo1.jpeg" alt="banner" />
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-card>
-  </v-container> -->
 </template>
 
 <script>
@@ -66,7 +43,7 @@ export default {
 <style lang="scss">
 .about-us {
   width: 100%;
-  height: 83.2vh;
+  min-height: calc(100vh - 120px);
   @media (max-width: 1000px) {
     height: auto;
   }
@@ -139,7 +116,7 @@ export default {
             width: 350px;
           }
           @media (max-width: 550px) {
-            width: 285px;
+            width: 273px;
           }
           @media (max-width: 375px) {
             width: 222px;
@@ -164,6 +141,9 @@ export default {
             @media (max-width: 375px) {
               font-size: 10px;
             }
+            @media (max-width: 360px) {
+              line-height: 1.4rem;
+            }
           }
           a {
             color: #A44C4F;
@@ -179,6 +159,9 @@ export default {
             }
             @media (max-width: 375px) {
               font-size: 10px;
+            }
+            @media (max-width: 360px) {
+              line-height: 1.4rem;
             }
           }
         }
@@ -203,7 +186,7 @@ export default {
       flex-basis: 50%;
       @media (max-width: 1000px) {
         height: 520px;
-      }      
+      }
       @media (max-width: 700px) {
         height: 400px;
       }
@@ -218,8 +201,11 @@ export default {
         @media (max-width: 1000px) {
           object-position: 0% 22%;
         }
-        @media (max-width: 375px) {
-          object-position: 0% 26%;
+        @media (max-width: 550px) {
+          height: 27vh;
+        }
+        @media (max-width: 320px) {
+          height: 100%;
         }
       }
     }
