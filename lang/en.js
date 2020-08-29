@@ -32,7 +32,17 @@ export default {
           "showList": false,
           "matches": /\bwine-list\b | \bnew-arrivals\b | \bspecial-offers\b/
         }
-      ]
+      ],
+     "mobileMenu": [
+       { "title": "HOME", "link": "/" },
+       { "title": "ABOUT US", "link": "/about-us" },
+       { "title": "WINE LIST", "link": "/wine-list" },
+       { "title": "SPECIAL OFFERS", "link": "/special-offers" },
+       { "title": "NEW ARRIVALS", "link": "/new-arrivals" },
+       { "title": "FIND US", "link": "/find-us" },
+       { "title": "CONTACT US", "link": "/contact-us" },
+       { "title": "WINE RATING", "link": "/wine-rating" }
+     ]
    },
     "home": {
         "navs": [

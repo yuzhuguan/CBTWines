@@ -4,6 +4,17 @@
     <section id="wrapper" :class="(showMobileMenu) ? 'open' : ''">
       <nuxt-child />
     </section>
+    <div class="mobile-menu" :class="(showMobileMenu) ? 'open' : ''">
+      <v-list>
+        <v-list-item v-for="(item, index) in $t('header.mobileMenu')" :key="index" @click="showMobileMenu = false" >
+          <nuxt-link :to="item.link">
+            <v-list-item-title>
+              {{ item.title }}
+            </v-list-item-title>
+          </nuxt-link>
+        </v-list-item>
+      </v-list>
+    </div>
     <Footer/>
   </main>
 
@@ -85,10 +96,38 @@ export default {
 
 <style lang="scss">
 #wrapper {
-  transition: 0.5s;
+  transition: 0.6s;
 }
 #wrapper.open {
-  transform: translate(-382px, 0px);
+  transform: translate(-768px, 0px);
   opacity: 0.0;
+}
+.mobile-menu {
+  width: 100%;
+  height: 83.2vh;
+  transform: translate(768px, 0px);
+  opacity: 0.0;
+  transition: 0.6s;
+  position: absolute;
+  top: 70px;
+  .v-list {
+    height: 80%;
+    text-align: center;
+    &-item {
+      height: 12.5%;
+      a {
+        width: 100%;
+        text-decoration: none;
+        color: #000000;
+      }
+      a.nuxt-link-exact-active{
+        color: #bd5558;
+      }
+    }
+  }
+}
+.mobile-menu.open {
+  transform: translate(0px, 0px);
+  opacity: 1.0;
 }
 </style>
