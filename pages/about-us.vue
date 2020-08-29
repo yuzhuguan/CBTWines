@@ -3,11 +3,11 @@
     <div class="main-container">
       <div class="left-block">
         <div class="top-block"/>
-        <div class="block" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="block" data-aos="zoom-in" data-aos-duration="1000" data-aos-once="true" data-aos-anchor=".right-block">
           <div class="title-block" >
-            <h1 data-aos="zoom-out" data-aos-delay="1050" data-aos-duration="1000">{{ $t('about-us.title') }}</h1>
+            <h1 data-aos="zoom-out" data-aos-delay="1050" data-aos-duration="1000" data-aos-once="true" data-aos-anchor=".right-block">{{ $t('about-us.title') }}</h1>
           </div>
-          <div class="content" data-aos="fade-up" data-aos-delay="1250" data-aos-duration="1000">
+          <div class="content" data-aos="fade-up" data-aos-delay="1250" data-aos-duration="1000" data-aos-once="true" data-aos-anchor=".right-block">
             <p v-html="$t('about-us.paragraph1')"/>
             <p>{{$t('about-us.paragraph2')}}<nuxt-link to="/">
               {{ $t('about-us.link') }}
@@ -141,7 +141,7 @@ export default {
             @media (max-width: 375px) {
               font-size: 10px;
             }
-            @media (max-width: 320px) {
+            @media (max-width: 360px) {
               line-height: 1.4rem;
             }
           }
@@ -159,6 +159,9 @@ export default {
             }
             @media (max-width: 375px) {
               font-size: 10px;
+            }
+            @media (max-width: 360px) {
+              line-height: 1.4rem;
             }
           }
         }
@@ -198,7 +201,7 @@ export default {
         @media (max-width: 1000px) {
           object-position: 0% 22%;
         }
-        @media (max-width: 415px) {
+        @media (max-width: 550px) {
           height: 27vh;
         }
         @media (max-width: 320px) {
