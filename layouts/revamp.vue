@@ -113,11 +113,8 @@ export default {
         }, 301)
       }
       else {
-        menu.style.opacity = "0.0"
         menu.classList.remove('open')
-        setTimeout(() => {
-          menu.style.display = "none"
-        }, 600);
+        menu.style.display = "none"
       }
     }
    }

@@ -50,7 +50,7 @@ export default {
 <style lang="scss">
 .home {
   width: 100%;
-  height: 83.2vh;
+  height: calc(100vh - 120px);
   position: relative;
   .background{
     width: 100%;
