@@ -5,7 +5,7 @@
         <img src="/media/company_label.png" alt="Company Label">
         <div class="quote">
           <p class="quote-text">“Where there is no wine, <br>there is no love”</p>
-          <span class="quote-by">- Euripides</span>
+          <p class="quote-by">- Euripides</p>
         </div>
       </div>
     </div>
@@ -73,6 +73,9 @@ export default {
     }
     .quote {
       justify-content: left;
+      @media (min-width: 491px) {
+        max-width: 350px;
+      }
       &-text {
         margin-top: 15px;
         opacity: .7;
@@ -96,7 +99,7 @@ export default {
             display: none;
           }
         }
-        @media (max-width: 375px) {
+        @media (max-width: 376px) {
           font: italic normal normal 20px/37px Athelas;
         }
         @media (max-width: 320px) {
@@ -105,13 +108,14 @@ export default {
       }
       &-by {
         opacity: 0.7;
-        padding-left: 250px;
+        padding-right: 5px;
         font: italic normal normal 21px/36px Athelas;
         text-align: right;
         color: #FFFFFF;
         @media (max-width: 1090px) {
           opacity: 1;
-          padding-left: 138px;
+          text-align: center;
+          padding-right: 0px;
         }
       }
     }
