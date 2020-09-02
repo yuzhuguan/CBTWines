@@ -1,6 +1,8 @@
 const pkg = require('./package')
 const i18nConfig = require('./config/i18n')
 const gaConfig = require('./config/google-analytics')
+require('dotenv').config()
+
 module.exports = {
   mode: 'spa',
 
@@ -56,7 +58,8 @@ module.exports = {
   modules: [
     '@nuxtjs/vuetify',
     ['nuxt-i18n', i18nConfig],
-    ['@nuxtjs/google-analytics', gaConfig]
+    ['@nuxtjs/google-analytics', gaConfig],
+    '@nuxtjs/dotenv'
   ],
 
   /*
