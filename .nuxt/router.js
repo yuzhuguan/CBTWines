@@ -7,6 +7,7 @@ const _2585f3f0 = () => interopDefault(import('..\\pages\\about-us.vue' /* webpa
 const _92292ce6 = () => interopDefault(import('..\\pages\\backstage\\index.vue' /* webpackChunkName: "pages_backstage_index" */))
 const _ed8f5da0 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
 const _42ac7d06 = () => interopDefault(import('..\\pages\\contact-us.vue' /* webpackChunkName: "pages_contact-us" */))
+const _16fdcbe0 = () => interopDefault(import('..\\pages\\find-us.vue' /* webpackChunkName: "pages_find-us" */))
 const _16695b4a = () => interopDefault(import('..\\pages\\login\\index.vue' /* webpackChunkName: "pages_login_index" */))
 const _7e77d6b9 = () => interopDefault(import('..\\pages\\new-arrivals.vue' /* webpackChunkName: "pages_new-arrivals" */))
 const _bc940386 = () => interopDefault(import('..\\pages\\special-offers.vue' /* webpackChunkName: "pages_special-offers" */))
@@ -46,6 +47,10 @@ export const routerOptions = {
     component: _42ac7d06,
     name: "contact-us___en"
   }, {
+    path: "/find-us",
+    component: _16fdcbe0,
+    name: "find-us___en"
+  }, {
     path: "/hk",
     component: _ed8f5da0,
     name: "index___hk"
@@ -82,6 +87,10 @@ export const routerOptions = {
     component: _42ac7d06,
     name: "contact-us___cn"
   }, {
+    path: "/cn/find-us",
+    component: _16fdcbe0,
+    name: "find-us___cn"
+  }, {
     path: "/cn/login",
     component: _16695b4a,
     name: "login___cn"
@@ -113,6 +122,10 @@ export const routerOptions = {
     path: "/hk/contact-us",
     component: _42ac7d06,
     name: "contact-us___hk"
+  }, {
+    path: "/hk/find-us",
+    component: _16fdcbe0,
+    name: "find-us___hk"
   }, {
     path: "/hk/login",
     component: _16695b4a,
