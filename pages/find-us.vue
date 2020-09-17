@@ -103,6 +103,7 @@ export default {
       flex-direction: column;
       flex-direction: row;
       display: flex;
+      position: relative;
       .image-container {
         height: 100%;
         flex-basis: 49.5%;
@@ -122,7 +123,6 @@ export default {
       .content {
         flex-basis: 40.5%;
         padding-left: 7%;
-        position: relative;
         .logo-container {
           height: 100px;
           width: 100%;
@@ -133,20 +133,20 @@ export default {
         .content-detail {
           margin: 37px 0 0;
         }
-        .scroll-down {
-          position: absolute;
-          bottom: -35.5px;
-          left: 50%;
-          transform: translate(-50%, 0);
-          p {
-            color: #dadada;
-            font-size: 1.4rem;
-          }
-        }
       }
       .right-banner {
         flex-basis: 10%;
         background: #e6cfcf;
+      }
+      .scroll-down {
+        position: absolute;
+        bottom: -35.5px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        p {
+          color: #dadada;
+          font-size: 1.4rem;
+        }
       }
     }
     .map-container {
