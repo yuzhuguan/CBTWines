@@ -3,7 +3,36 @@
     <h1 :style="{backgroundImage: 'url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.theiwsr.com%2Fnews-and-comment-global-still-wine-trends-to-watch%2F&psig=AOvVaw3uxIXEnBKFy5MIrGwmupoP&ust=1600625694958000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOjl5MHp9esCFQAAAAAdAAAAABAE) 50% 50%'}">
       CONTACT US
     </h1>
+    <v-card class="form-card" color="white" flat>
+      <v-form>
+        <v-text-field
+          v-model="title"
+          label="Title"
+          required
+          background-color="white"
+        ></v-text-field>
+        <p class="email-body-title">Message Body</p>
+        <v-textarea
+          solo
+          label="Leave your message here..."
+          outlined
+          name="input-7-4"
+          :value="body"
+          v-model="body"
+          class="email-body"
+          rows="11"
+        ></v-textarea>
+        <v-row>
+          <v-btn class="submit-button" elevation="1" color="#ffffff">
+            <a :href="'mailto:cbtwines@gmail.com?subject=' + title + '&body=' + body">Submit</a>
+          </v-btn>
+        </v-row>
+
+      </v-form>
+
+    </v-card>
     <canvas class="background"></canvas>
+
   </div>
 </template>
 
@@ -11,6 +40,12 @@
 import Particles from 'particlesjs'
 export default {
   layout: 'revamp',
+  data() {
+    return {
+      title: '',
+      body: ''
+    }
+  },
   mounted() {
     window.onload = () => {
       Particles.init({
@@ -42,12 +77,12 @@ export default {
       color: #000000;
       width: 1000px;
       text-align: center;
-      font-size: 80px;
+      font-size: 56px;
       text-transform: uppercase;
       font-weight: 700;
       letter-spacing: 20px;
       position: absolute;
-      top: 15%;
+      top: 8%;
       left: 50%;
       transform: translate(-50%, -50%);
       margin: 0;
@@ -56,6 +91,32 @@ export default {
       -webkit-background-clip: text !important;
       z-index: 10;
       background: url('/media/contact-us.jpg') 100% 50%;
+    }
+    .form-card {
+      z-index: 10;
+      width: 700px;
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0 10px;
+      .email-body-title {
+        margin-bottom: 15px;
+        margin-top: 12px;
+        color: rgba(0, 0, 0, 0.6);
+      }
+      .row {
+        margin-top: -8px;
+        margin-bottom: 3px;
+      }
+      .submit-button {
+        margin-left: auto;
+        margin-right: auto;
+        a{
+          text-decoration: none;
+          color: rgba(0, 0, 0, 0.6);
+        }
+      }
     }
   }
 </style>
