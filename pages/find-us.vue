@@ -54,6 +54,16 @@
                   <v-row>8148 1617</v-row>
                 </v-col>
               </v-row>
+              <a href="https://www.facebook.com/CBT-Wines-Company-Limited-103999481285026" target="_blank" class="fb-link">
+                <v-row class="mx-0 my-1">
+                  <v-col :cols="2" >
+                    <v-row><v-icon>facebook</v-icon></v-row>
+                  </v-col>
+                  <v-col :cols="undefined" class="text-left font-weight-regular title">
+                    <v-row><span>CBT Wines Company Limited </span></v-row>
+                  </v-col>
+                </v-row>
+              </a>
             </v-col>
           </div>
         </div>
@@ -132,6 +142,14 @@ export default {
         }
         .content-detail {
           margin: 37px 0 0;
+          .fb-link {
+            text-decoration: none;
+            span {
+              color: #000000;
+              text-decoration: none;
+              padding-top: 2px;
+            }
+          }
         }
       }
       .right-banner {
