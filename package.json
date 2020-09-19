@@ -26,6 +26,7 @@
     "morgan": "^1.9.1",
     "nuxt": "^2.4.0",
     "nuxt-i18n": "^6.13.1",
+    "particlesjs": "^2.2.3",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",

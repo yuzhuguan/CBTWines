@@ -1,90 +1,61 @@
 <template>
-  <v-container class="pt-11" fluid>
-    <v-card class="transparent mt-11" flat> 
-      <v-row>
-        <v-col class="ml-5" :cols="7">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d922.6139242470448!2d114.148351!3d22.336416000000003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34040754eca8813f%3A0x4f9fe56467eaabd4!2z5piM6ZqG5bel5qWt5aSn5buI!5e0!3m2!1szh-TW!2shk!4v1585061879759!5m2!1szh-TW!2shk" 
-            width="100%" 
-            height="450" 
-            frameborder="0" 
-            style="border:0;" 
-            allowfullscreen="" 
-            aria-hidden="false" 
-            tabindex="0"
-          ></iframe>
-        </v-col>
-        <v-col :cols="undefined" class="pt-11">
-          <v-row class="mx-0 my-2">
-            <v-col :cols="2" >
-              <v-row><v-icon>place</v-icon></v-row>
-            </v-col>
-            <v-col :cols="undefined" class="text-left font-weight-regular title">
-              <v-row>{{ $t('contact-us.address_1') }}</v-row>
-              <v-row>{{ $t('contact-us.address_2') }}</v-row>
-              <v-row>{{ $t('contact-us.address_3') }}</v-row>
-              <v-row>{{ $t('contact-us.address_4') }}</v-row>
-            </v-col>
-          </v-row>
-          <v-row class="mx-0 my-2">
-            <v-col :cols="2" >
-              <v-row><v-icon>call</v-icon></v-row>
-            </v-col>
-            <v-col :cols="undefined" class="text-left font-weight-regular title">
-              <v-row>+852 3996 9178 </v-row>
-            </v-col>
-          </v-row>
-          <v-row class="mx-0 my-1">
-            <v-col :cols="2" >
-              <v-row><v-icon>print</v-icon></v-row>
-            </v-col>
-            <v-col :cols="undefined" class="text-left font-weight-regular title">
-              <v-row>+852 3996 9179 </v-row>
-            </v-col>
-          </v-row>
-          <v-row class="mx-0 my-1">
-            <v-col :cols="2" >
-              <v-row><v-icon>email</v-icon></v-row>
-            </v-col>
-            <v-col :cols="undefined" class="text-left font-weight-regular title">
-              <v-row>cbtwines@gmail.com</v-row>
-            </v-col>
-          </v-row>
-          <v-row class="mx-0 my-1">
-            <v-col :cols="2" >
-              <v-row>E - Fax</v-row>
-            </v-col>
-            <v-col :cols="undefined" class="text-left font-weight-regular title">
-              <v-row>8148 1617</v-row>
-            </v-col>
-          </v-row>
-        </v-col>
-      </v-row>
-    </v-card>
-
-    
-  </v-container>
+  <div class="contact-us">
+    <h1 :style="{backgroundImage: 'url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.theiwsr.com%2Fnews-and-comment-global-still-wine-trends-to-watch%2F&psig=AOvVaw3uxIXEnBKFy5MIrGwmupoP&ust=1600625694958000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOjl5MHp9esCFQAAAAAdAAAAABAE) 50% 50%'}">
+      CONTACT US
+    </h1>
+    <canvas class="background"></canvas>
+  </div>
 </template>
 
 <script>
-
+import Particles from 'particlesjs'
 export default {
-  layout: 'contact-us',
-  components: {
-  },
-  data() {
-    return {
-    }
-  },
+  layout: 'revamp',
   mounted() {
-  },
-  computed: {
+    window.onload = () => {
+      Particles.init({
+        selector: '.background',
+        maxParticles: 150,
+        sizeVariations: 3,
+        color: '#dadada',
+        connectParticles: true,
+      });
+    }
   }
 }
 </script>
 
-<style>
-a{
-  text-decoration: none;
-}
+<style lang="scss">
+  .contact-us {
+    height: calc(100vh - 120px);
+    min-height: calc(100vh - 120px);
+    position: relative;
+    font-family: "Monstserrat", snas-serif;
+    .background {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    h1 {
+      color: #000000;
+      width: 1000px;
+      text-align: center;
+      font-size: 80px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 20px;
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      background-size: cover;
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text !important;
+      z-index: 10;
+      background: url('/media/contact-us.jpg') 100% 50%;
+    }
+  }
 </style>
