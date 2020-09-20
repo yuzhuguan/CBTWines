@@ -47,15 +47,13 @@ export default {
     }
   },
   mounted() {
-    window.onload = () => {
-      Particles.init({
-        selector: '.background',
-        maxParticles: 150,
-        sizeVariations: 3,
-        color: '#dadada',
-        connectParticles: true,
-      });
-    }
+    Particles.init({
+      selector: '.background',
+      maxParticles: 150,
+      sizeVariations: 3,
+      color: '#dadada',
+      connectParticles: true,
+    });
   }
 }
 </script>
