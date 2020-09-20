@@ -44,6 +44,7 @@ export default {
 .about-us {
   width: 100%;
   min-height: calc(100vh - 120px);
+  overflow: hidden;
   @media (max-width: 1000px) {
     height: auto;
   }
