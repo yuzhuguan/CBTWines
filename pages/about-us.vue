@@ -186,6 +186,9 @@ export default {
       height: 100%;
       flex-basis: 50%;
       max-height: calc(100vh - 120px);
+      @media (min-width: 1001px) {
+        min-height: calc(100vh - 120px);
+      }
       @media (max-width: 1000px) {
         height: 520px;
       }
@@ -209,6 +212,9 @@ export default {
         }
         @media (max-width: 320px) {
           height: 100%;
+        }
+        @media (min-width: 1001px) {
+          min-height: calc(100vh - 120px);
         }
       }
     }
