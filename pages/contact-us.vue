@@ -3,13 +3,13 @@
     <h1 :style="{backgroundImage: 'url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.theiwsr.com%2Fnews-and-comment-global-still-wine-trends-to-watch%2F&psig=AOvVaw3uxIXEnBKFy5MIrGwmupoP&ust=1600625694958000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOjl5MHp9esCFQAAAAAdAAAAABAE) 50% 50%'}">
       CONTACT US
     </h1>
-    <v-card class="form-card" color="white" flat>
+    <v-card class="form-card" color="rgba(255, 255, 255, 0.4)" flat>
       <v-form>
         <v-text-field
           v-model="title"
           label="Title"
           required
-          background-color="white"
+          background-color="rgba(255, 255, 255, 0.0)"
         ></v-text-field>
         <p class="email-body-title">Message Body</p>
         <v-textarea
@@ -21,6 +21,7 @@
           v-model="body"
           class="email-body"
           rows="11"
+          background-color="rgba(255, 255, 255, 0.0)"
         ></v-textarea>
         <v-row>
           <v-btn class="submit-button" elevation="1" color="#ffffff">
@@ -49,7 +50,7 @@ export default {
   mounted() {
     Particles.init({
       selector: '.background',
-      maxParticles: 150,
+      maxParticles: 100,
       sizeVariations: 3,
       color: '#dadada',
       connectParticles: true,
