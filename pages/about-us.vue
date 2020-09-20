@@ -185,6 +185,7 @@ export default {
     .right-block{
       height: 100%;
       flex-basis: 50%;
+      max-height: calc(100vh - 120px);
       @media (max-width: 1000px) {
         height: 520px;
       }
@@ -199,6 +200,7 @@ export default {
         object-fit: cover;
         height: 100%;
         width: 100%;
+        max-height: calc(100vh - 120px);
         @media (max-width: 1000px) {
           object-position: 0% 22%;
         }
