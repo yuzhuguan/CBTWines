@@ -48,9 +48,6 @@ export default {
 </script>
 
 <style lang="scss">
-#wrapper {
-  overflow: hidden;
-}
 .home {
   width: 100%;
   height: 700px;

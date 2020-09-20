@@ -123,11 +123,11 @@ export default {
 
 <style lang="scss">
 html {
-  overflow: hidden;
+  overflow: hidden !important;
 }
 #wrapper {
   max-height: calc(100vh - 120px);
-  overflow-x: auto;
+  overflow: auto;
   transition: 0.6s;
   @media (max-width: 375px) {
     max-height: 82.2vh;

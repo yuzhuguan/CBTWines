@@ -46,7 +46,9 @@ export default {
   width: 100%;
   height: 50px;
   background-color: #413C3C;
-  position: fixed;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   @media (max-width: 375px) {
     height: 70px;
   }
