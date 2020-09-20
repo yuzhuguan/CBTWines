@@ -72,7 +72,7 @@ export default {
     width: 100%;
     height: 70px;
     background-color: white;
-
+    z-index: 50;
     .header-container {
       width: 100%;
       height: 100%;
@@ -126,7 +126,7 @@ export default {
             .hover-list {
               text-align: center;
               position: absolute;
-              z-index: 1;
+              z-index: 100;
               width: 100%;
               top: 68px;
               padding: 0;

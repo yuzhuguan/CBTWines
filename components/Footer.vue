@@ -50,6 +50,7 @@ export default {
   @media (max-width: 375px) {
     height: 70px;
   }
+  z-index: 50;
   .footer-content {
     color: #FFFFFF;
     margin: 0;
