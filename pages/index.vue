@@ -48,9 +48,12 @@ export default {
 </script>
 
 <style lang="scss">
+#wrapper {
+  overflow: hidden;
+}
 .home {
   width: 100%;
-  height: calc(100vh - 120px);
+  height: 700px;
   position: relative;
   @media (max-width: 375px) {
     max-height: calc(100vh - 140px);
