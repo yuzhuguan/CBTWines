@@ -20,7 +20,7 @@
           :value="body"
           v-model="body"
           class="email-body"
-          rows="11"
+          :rows="isMinRow ? 6 : 11"
           background-color="rgba(255, 255, 255, 0.0)"
         ></v-textarea>
         <v-row>
@@ -44,33 +44,64 @@ export default {
   data() {
     return {
       title: '',
-      body: ''
+      body: '',
+      isMinRow: false
     }
   },
   mounted() {
     Particles.init({
       selector: '.background',
-      maxParticles: 100,
+      maxParticles: 80,
       sizeVariations: 3,
       color: '#dadada',
       connectParticles: true,
+      responsive: [
+        {
+          breakpoint: 768,
+          options: {
+            maxParticles: 40,
+          }
+        },
+        {
+          breakpoint: 325,
+          options: {
+            maxParticles: 20,
+          }
+        }
+      ]
     });
+    window.addEventListener('resize', this.onResize)
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.onResize)
+  },
+  methods: {
+    onResize() {
+      this.isMinRow = window.innerWidth <= 375;
+    }
   }
 }
 </script>
 
 <style lang="scss">
   .contact-us {
+    overflow: hidden;
     height: calc(100vh - 120px);
     min-height: calc(100vh - 120px);
     position: relative;
     font-family: "Monstserrat", snas-serif;
+    @media (max-width: 375px) {
+      max-height: 420px;
+    }
     .background {
       position: absolute;
       display: block;
       top: 0;
       left: 0;
       z-index: 0;
+      @media (max-width: 375px) {
+        height: 95%!important;
+      }
     }
     h1 {
       color: #000000;
@@ -90,6 +121,17 @@ export default {
       -webkit-background-clip: text !important;
       z-index: 10;
       background: url('/media/contact-us.jpg') 100% 50%;
+      @media (max-width: 650px) {
+        font-size: 36px;
+      }
+      @media (max-width: 470px) {
+        letter-spacing: 10px;
+        top: 11%;
+      }
+      @media (max-width: 370px) {
+        font-size: 30px;
+
+      }
     }
     .form-card {
       z-index: 10;
@@ -99,6 +141,9 @@ export default {
       left: 50%;
       transform: translate(-50%, -50%);
       padding: 0 10px;
+      @media (max-width: 370px) {
+        top: 52%;
+      }
       .email-body-title {
         margin-bottom: 15px;
         margin-top: 12px;
@@ -107,6 +152,9 @@ export default {
       .row {
         margin-top: -8px;
         margin-bottom: 3px;
+        @media (max-width: 370px) {
+          height: 8px;
+        }
       }
       .submit-button {
         margin-left: auto;
