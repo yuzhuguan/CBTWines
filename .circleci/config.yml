@@ -1,5 +1,14 @@
 version: 2
 jobs:
+  build:
+    docker:
+      - image: circleci/node:10.19.0
+    working_directory: ~/revamp
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run build
+
   deploy:
     steps:
       - add_ssh_keys:
