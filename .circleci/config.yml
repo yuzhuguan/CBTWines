@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-             ssh laub@cbtwines.co "sh dev/reploy.sh"
+             sshpass -p Sennett199 ssh laub@cbtwines.co "sh dev/reploy.sh"
 workflows:
   version: 2
   workflow:
