@@ -18,5 +18,9 @@ jobs:
           name: Deploy Over SSH
           command: |
              ssh laub@cbtwines.co "sh dev/reploy.sh"
-        
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - deploy
         
