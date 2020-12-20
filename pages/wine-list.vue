@@ -1,22 +1,19 @@
 <template>
-  <v-container class="pt-11" fluid>
-    <v-row class="mt-8" no-gutters>
-      <v-col :cols="2" class="pr-2">
-        <v-card color="transparent" flat>
-          <v-row class="title mt-2 ml-3">{{ $t('wine-list.title') }}</v-row>
-          <v-layout column style="height: 80vh" class="scrollable-container">
-            <v-flex style="overflow-x: hidden" class="scrollable">
-              <p
-                v-for="(origin, i) in $t('wine-list.origins')"
-                :key="i"
-                class="subtitle-2 my-2 ml-3 region-tag"
-                @click="changeOrigin(origin.name)"
-              >{{ origin.displayname }}</p>
-            </v-flex>
-          </v-layout>
-        </v-card>
+  <div class="wine-list">
+    <h1 class="page-title">WINE LIST</h1>
+    <v-row class="content">
+      <v-col class="regions" :cols="2">
+        <ul>
+          <li class="title">Regions</li>
+          <li
+            v-for="(origin, i) in $t('wine-list.origins')"
+            :key="i"
+            @click="changeOrigin(origin.name)"
+            class="region-tag"
+          >{{ origin.displayname }}</li>
+        </ul>
       </v-col>
-      <v-col :cols="10">
+      <v-col>
         <v-card flat>
           <v-card-title>
             <v-text-field
@@ -27,12 +24,12 @@
               hide-details
             ></v-text-field>
           </v-card-title>
-          <v-layout column style="height: 75vh">
+          <v-layout column>
             <v-flex style="overflow: auto">
               <v-data-table
                 :headers="$t('wine-list.headers')"
-                :items="wines.data"
-                :items-per-page="8"
+                :items="wines"
+                :items-per-page="10"
                 :search="search"
                 :sort-by="['name', 'vintage']"
               >
@@ -63,15 +60,25 @@
         </v-card>
       </v-col>
     </v-row>
-  </v-container>
+    <div class="mobile-content">
+      <ul>
+        <li
+          v-for="(wine, index) in wines"
+          :key="index"
+          :class="index%2===0 ? 'product-name even-row' + ' product-' + index : 'product-name odd-row' + ' product-' + index"
+          @click="showProductDetail(wine , index)"
+        >
+          <span>{{ wine.name }}</span>
+          <i class="arrow down"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
-
 export default {
-  layout: "winelist",
-  components: {},
+  layout: 'revamp',
   data() {
     return {
       search: ""
@@ -81,40 +88,216 @@ export default {
     changeOrigin(target) {
       if (target != "All") this.search = target;
       else this.search = "";
+    },
+    showProductDetail(item, index) {
+      const target = document.querySelector('.product-'+index)
+      const detailChecker = document.querySelector('.product-detail-'+index)
+      if (detailChecker) {
+        if (detailChecker.classList.contains('hide')) {
+          detailChecker.classList.remove('hide')
+          target.querySelector('i').classList.add('up')
+          target.querySelector('i').classList.remove('down')
+        }
+        else {
+          detailChecker.classList.add('hide')
+          target.querySelector('i').classList.remove('up')
+          target.querySelector('i').classList.add('down')
+        }
+      }
+      else {
+        const productDetail = document.createElement('li')
+        const productTable = document.createElement('table')
+        const itemAttr = ['chineseName', 'origin', 'appellation', 'vintage', 'rating', 'price']
+        let i = -1
+        for (const hearder of this.$t('wine-list.headers')) {
+          if (i > -1) {
+            const td1 = document.createElement('td')
+            const td2 = document.createElement('td')
+            td1.innerText = hearder.text
+            td2.innerText = item[itemAttr[i]]
+
+            const tr = document.createElement('tr')
+            tr.appendChild(td1)
+            tr.appendChild(td2)
+            productTable.appendChild(tr)
+          }
+          i++
+        }
+        productDetail.appendChild(productTable)
+        productDetail.classList.add('product-detail')
+        productDetail.classList.add('product-detail-'+index)
+        target.after(productDetail)
+        target.querySelector('i').classList.add('up')
+        target.querySelector('i').classList.remove('down')
+      }
     }
   },
   mounted() {},
   computed: {
-    ...mapState(["wines"])
+    wines () {
+      return this.$store.getters['wines']
+    }
   },
-  async fetch({ store }) {
-    await store.dispatch("loadWineList");
+  async asyncData(context) {
+    await context.store.dispatch("loadWineList");
   }
-};
+}
 </script>
 
-<style>
-a {
-  text-decoration: none;
-}
-.scrollable::-webkit-scrollbar {
-  height: 10px;
-  width: 10px;
-  background-color: transparent;
-}
-.scrollable::-webkit-scrollbar-thumb {
-  background-color: rgb(146, 145, 145);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-}
-.scrollable::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
-.region-tag {
-  cursor: pointer;
+<style lang="scss">
+.wine-list {
+  background: url("/media/winelist.jpg");
+  display: flex;
+  flex-direction: column;
+  height: 87.2vh;
+  h1 {
+    padding-left: 44px;
+    font-size: 30px;
+    padding-top: 8px;
+    color: #A44c4f;
+  }
+  .content {
+    max-width: 100%;
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+  .v-input {
+    margin: 0;
+    padding: 0;
+  }
+  .col {
+    height: 100%;
+  }
+  .v-card {
+    height: 100%;
+  }
+  .layout.column {
+    max-height: 100%;
+    .text-start {
+      height: 60px;
+    }
+    .v-data-table td {
+      height: 60px;
+      text-align: center;
+    }
+  }
+  .regions {
+    padding: 32px;
+    height: 97.4%;
+    background: rgba(256,256,256,0.7);
+    border-radius: 8px;
+    margin-top: 9px;
+    margin-left: 26px;
+    ul {
+      list-style: none;
+      li {
+        margin: 10px 0;
+        font-size: 19px;
+      }
+    }
+    .title {
+      margin-bottom: 25px;
+      font-size: 30px;
+      color: #A44c4f;
+    }
+    .region-tag {
+      cursor: pointer;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+  .scrollable::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+    background-color: transparent;
+  }
+  .scrollable::-webkit-scrollbar-thumb {
+    background-color: rgb(146, 145, 145);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+  }
+  .scrollable::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  .mobile-content {
+    display: none;
+    overflow: hidden;
+    height: 100%;
+    @media (max-width: 800px) {
+      display: block;
+    }
+    ul {
+      width: 95%;
+      margin: auto;
+      list-style: none;
+      overflow-y: scroll;
+      background: rgba(255, 255, 255, 0.8);
+      height: 100%;
+      .product-name {
+        height: 53px;
+        padding: 12px;
+        font-size: 25px;
+        position: relative;
+        cursor: pointer;
+        @media (max-width: 400px) {
+          height: 39px;
+          padding: 12px;
+          font-size: 16px;
+        }
+        .arrow {
+          border: solid black;
+          border-width: 0 2px 2px 0;
+          display: inline-block;
+          padding: 3px;
+          position: absolute;
+          top: 22px;
+          right: 25px;
+          @media (max-width: 400px) {
+            top: 14px;
+          }
+        }
+        .up {
+          transform: rotate(-135deg);
+          -webkit-transform: rotate(-135deg);
+        }
+        .down {
+          transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+        }
+        &.even-row {
+          background: rgba(235, 150, 153, 0.4);
+        }
+      }
+      .product-detail {
+        background: rgba(217, 210, 210, 0.7);
+        transition: .2s;
+        height: 220px;
+        overflow: hidden;
+        @media (max-width: 400px) {
+          height: 188px;
+        }
+        &.hide {
+          height: 0px;
+        }
+        table {
+          width: 100%;
+          tr {
+            td {
+              font-size: 20px;
+              padding: 5px 10px;
+              @media (max-width: 400px) {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 </style>

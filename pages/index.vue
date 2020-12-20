@@ -50,7 +50,7 @@ export default {
 <style lang="scss">
 .home {
   width: 100%;
-  height: 700px;
+  height: 827px;
   position: relative;
   @media (max-width: 375px) {
     max-height: calc(100vh - 140px);

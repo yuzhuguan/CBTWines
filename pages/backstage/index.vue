@@ -3,7 +3,7 @@
     <v-card flat olor="transparent">
       <v-data-table
         :headers="headers"
-        :items="wines.data"
+        :items="wines"
         :items-per-page="10"
         :search="search"
         :sort-by="['name', 'vintage']"
@@ -426,7 +426,7 @@ export default {
       this.editedItem.colorVintage = ""
       this.editedItem.colorRating = ""
       this.editedItem.colorPrice = ""
-      this.editedItem.colorDiscountPrice = ""   
+      this.editedItem.colorDiscountPrice = ""
     }
   }
 };

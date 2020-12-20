@@ -25,7 +25,7 @@ export const mutations = {
 export const actions = {
   async loadWineList ({commit}) {
     let response = await axios.get('/api/wines');
-    commit('SET_WINELIST', response)
+    commit('SET_WINELIST', response.data)
 
     let specialOfferList = response.data.filter(el => {
         return el.specialOffer == 'Y'
@@ -42,5 +42,8 @@ export const actions = {
 export const getters = {
   showMobileMenu(state) {
     return state.showMobileMenu
+  },
+  wines (state) {
+    return state.wines
   }
 }
