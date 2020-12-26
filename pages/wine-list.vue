@@ -1,10 +1,10 @@
 <template>
   <div class="wine-list">
-    <h1 class="page-title">WINE LIST</h1>
+    <h1 class="page-title">{{ $t('wine-list.title') }}</h1>
     <v-row class="content">
       <v-col class="regions" :cols="2">
         <ul>
-          <li class="title">Regions</li>
+          <li class="title">{{ $t('wine-list.region') }}</li>
           <li
             v-for="(origin, i) in $t('wine-list.origins')"
             :key="i"
@@ -158,7 +158,7 @@ export default {
   }
   .content {
     max-width: 100%;
-    @media (max-width: 800px) {
+    @media (max-width: 1050px) {
       display: none;
     }
   }
@@ -228,14 +228,14 @@ export default {
     display: none;
     overflow: hidden;
     height: 100%;
-    @media (max-width: 800px) {
+    @media (max-width: 1050px) {
       display: block;
     }
     ul {
       width: 95%;
       margin: auto;
       list-style: none;
-      overflow-y: scroll;
+      overflow-y: auto;
       background: rgba(255, 255, 255, 0.8);
       height: 100%;
       .product-name {

@@ -1,6 +1,15 @@
 <template>
   <div class="container">
-    <v-card flat olor="transparent">
+    <div class="tabs">
+      <div class="tabs-list">
+        <div class="tab" v-for="(tab, index) in tabs" :key="index" :class="activeTab === index ? 'active' : ''"
+          @click="changeTabTo(index)"
+        >
+          {{ tab }}
+        </div>
+      </div>
+    </div>
+    <v-card flat olor="transparent" v-if="activeTab === 0">
       <v-data-table
         :headers="headers"
         :items="wines"
@@ -186,13 +195,9 @@
       </v-data-table>
     </v-card>
 
-    <v-card class="transparent my-7" flat width="100%">
-      <v-img src="/img/divider.png" alt="divider" :style="{'opacity': 0.3}" />
-    </v-card>
-
     <v-alert :type="alertType" :value="!msg==''" transition="scale-transition">{{ msg }}</v-alert>
 
-    <v-card class="container">
+    <v-card class="container" v-if="activeTab === 1">
       <v-title class="title mx-3">
         <v-icon color="blue lighten-3" class="mb-1 mr-3">account_box</v-icon>Create an Account
       </v-title>
@@ -233,6 +238,8 @@ export default {
   components: {},
   data() {
     return {
+      activeTab: 0,
+      tabs: ['Wines', 'Account'],
       search: "",
       dialog: false,
       headers: [
@@ -333,6 +340,9 @@ export default {
     await store.dispatch("loadWineList");
   },
   methods: {
+    changeTabTo (index) {
+      this.activeTab = index
+    },
     close() {
       this.dialog = false;
       this.editedItem = Object.assign({}, this.defaultItem);
@@ -437,5 +447,27 @@ export default {
   margin-top: 75px;
   width: 90%;
   max-width: 100%;
+}
+.tabs {
+  width: 100%;
+  height: 50px;
+  background: rgba(256, 256, 256, 0.4);
+  border-radius: 8px;
+  margin-bottom: 30px;
+  .tabs-list {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    .tab {
+      text-align: center;
+      height: 100%;
+      width: 100px;
+      padding: 14px 0px;
+      cursor: pointer;
+    }
+    .tab.active {
+      color: #A44c4f;
+    }
+  }
 }
 </style>

@@ -29,26 +29,26 @@
       <v-toolbar-item class="font-weight-light">
         <nuxt-link to="/" class="black--text" v-if="loggedIn"><v-btn text @click="logout"><v-icon>supervisor_account</v-icon > Logout</v-btn></nuxt-link>
       </v-toolbar-item>
-      
+
       <v-spacer></v-spacer>
 
       <v-toolbar-item>
         <v-toolbar-title><nuxt-link to="/"><img class="logo" src="/img/logo.png" alt="logo"/></nuxt-link></v-toolbar-title>
       </v-toolbar-item>
-        
+
       <v-spacer></v-spacer>
 
       <v-toolbar-item>
-          <v-btn text @click="changeLang('traditionalChinese')">繁</v-btn> | 
-          <v-btn text @click="changeLang('simplifiedChinese')">简</v-btn> | 
-          <v-btn text @click="changeLang('english')">ENG</v-btn> 
+          <v-btn text @click="changeLang('traditionalChinese')">繁</v-btn> |
+          <v-btn text @click="changeLang('simplifiedChinese')">简</v-btn> |
+          <v-btn text @click="changeLang('english')">ENG</v-btn>
       </v-toolbar-item>
     </v-app-bar>
 
     <nuxt />
-    
+
     <v-footer
-      class="font-weight-light"
+      class="font-weight-light v-footer"
     >
       <v-col
         class="text-center"
@@ -148,5 +148,10 @@ a{
 .backstageBtn {
   left: 130px;
   top: 10px;
+}
+.v-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 </style>

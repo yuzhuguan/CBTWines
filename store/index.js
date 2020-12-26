@@ -45,5 +45,11 @@ export const getters = {
   },
   wines (state) {
     return state.wines
+  },
+  specialOffers(state) {
+    return state.specialOffers
+  },
+  newArrivals(state) {
+    return state.newArrivals
   }
 }

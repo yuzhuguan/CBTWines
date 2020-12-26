@@ -56,7 +56,8 @@ export default{
         "address_4" : "6樓 B3室"
     },
     "wine-list": {
-        "title": "產地",
+      "title": "酒單",
+      "region": "產地",
         "origins": [
             { "name": "All", "displayname": "全部"},
             { "name": "Bordeaux", "displayname": "波爾多區"},

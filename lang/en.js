@@ -40,8 +40,8 @@ export default {
        { "title": "SPECIAL OFFERS", "link": "/special-offers" },
        { "title": "NEW ARRIVALS", "link": "/new-arrivals" },
        { "title": "FIND US", "link": "/find-us" },
-       { "title": "CONTACT US", "link": "/contact-us" },
-       { "title": "WINE RATING", "link": "/wine-rating" }
+       { "title": "CONTACT US", "link": "/contact-us" }
+       // { "title": "WINE RATING", "link": "/wine-rating" }
      ]
    },
     "home": {
@@ -66,7 +66,8 @@ export default {
         "address_4" : "Kowloon"
     },
     "wine-list": {
-        "title": "Region",
+        "title": "WINE LIST",
+        "region": "Region",
         "origins": [
             { "name": "All", "displayname": "All"},
             { "name": "Bordeaux", "displayname": "Bordeaux"},
