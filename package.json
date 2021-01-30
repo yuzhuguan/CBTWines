@@ -14,7 +14,7 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/google-analytics": "^2.4.0",
     "aos": "^2.3.4",
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
