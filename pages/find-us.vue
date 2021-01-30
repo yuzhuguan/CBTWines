@@ -114,12 +114,18 @@ export default {
       flex-direction: row;
       display: flex;
       position: relative;
+      @media (max-width: 768px) {
+        height: 512px;
+      }
       .image-container {
         height: 100%;
         flex-basis: 49.5%;
         background-position: center;
         background-size: cover;
         position: relative;
+        @media (max-width: 768px) {
+          display: none;
+        }
         h1 {
           position: absolute;
           bottom: 20px;
@@ -133,6 +139,9 @@ export default {
       .content {
         flex-basis: 40.5%;
         padding-left: 7%;
+        @media (max-width: 768px) {
+          flex-basis: 100%;
+        }
         .logo-container {
           height: 100px;
           width: 100%;
@@ -155,6 +164,9 @@ export default {
       .right-banner {
         flex-basis: 10%;
         background: #e6cfcf;
+        @media (max-width: 768px) {
+          display: none;
+        }
       }
       .scroll-down {
         position: absolute;
@@ -164,6 +176,9 @@ export default {
         p {
           color: #dadada;
           font-size: 1.4rem;
+          @media (max-width: 768px) {
+            font-size: 1rem
+          }
         }
       }
     }
@@ -184,6 +199,10 @@ export default {
         width: 100%;
         padding-left: 128px;
         padding-right: 38px;
+        @media (max-width: 768px) {
+          padding-left: 5px;
+          padding-right: 5px;
+        }
         iframe {
           width: 100%;
           height: 100%;
