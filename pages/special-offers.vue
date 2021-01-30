@@ -139,11 +139,20 @@ export default {
   display: flex;
   flex-direction: column;
   height: 87.2vh;
+  @media (max-width: 1050px) {
+    height: auto;
+    background: none;
+  }
   h1 {
     padding-left: 44px;
     font-size: 30px;
     padding-top: 8px;
     color: #A44c4f;
+    @media (max-width: 1050px) {
+      padding-left: 0;
+      text-align: center;
+      margin: 20px 0;
+    }
   }
   .row {
     margin: 0;
@@ -231,14 +240,15 @@ export default {
       overflow-y: auto;
       background: rgba(255, 255, 255, 0.8);
       height: 100%;
+      margin: 0 auto 20px;
       .product-name {
-        height: 53px;
+        height: auto;
         padding: 12px;
         font-size: 25px;
         position: relative;
         cursor: pointer;
         @media (max-width: 400px) {
-          height: 39px;
+          height: auto;
           padding: 12px;
           font-size: 16px;
         }
