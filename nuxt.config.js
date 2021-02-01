@@ -59,8 +59,20 @@ module.exports = {
     '@nuxtjs/vuetify',
     ['nuxt-i18n', i18nConfig],
     ['@nuxtjs/google-analytics', gaConfig],
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/cloudinary'
   ],
+
+  /*
+  ** cloudinary settings
+  */
+  cloudinary: {
+    cloudName: process.env.CLOUDINARY_NAME,
+    apiKey: process.env.CLOUDINARY_APIKEY,
+    apiSecret: process.env.CLOUDINARY_APISECRET,
+    secure: false,
+    useComponent: true
+  },
 
   /*
   ** Nuxt.js serverMiddleware

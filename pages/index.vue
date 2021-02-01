@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <div class="background" style="background: url(/media/home_BG.png) top left / cover;">
+    <div class="background" style="background: url(https://res.cloudinary.com/dinad7iot/image/upload/v1612189163/cbtwines/home_BG_r8eerr.png) top left / cover;">
       <div class="content">
-        <img src="/media/company_label.png" alt="Company Label">
+        <cld-image public-id="v1612189161/cbtwines/company_label_laipot.png" />
         <div class="quote">
           <p class="quote-text">“Where there is no wine, <br>there is no love”</p>
           <p class="quote-by">- Euripides</p>

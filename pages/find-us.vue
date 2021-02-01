@@ -2,12 +2,12 @@
   <div class="find-us">
     <div class="find-us-container">
       <div class="find-us-hero">
-        <div class="image-container" :style="{ backgroundImage: 'url(/media/find-us.png)'}">
+        <div class="image-container" :style="{ backgroundImage: 'url(https://res.cloudinary.com/dinad7iot/image/upload/v1612189163/cbtwines/find-us_cxsilt.png)'}">
             <h1>FIND US</h1>
         </div>
         <div class="content">
           <div class="logo-container">
-            <img src="/media/logo.png" alt="Logo"/>
+            <cld-image public-id="v1612189161/cbtwines/logo_jzvi2t.png" width="225" height="100" loading="lazy" />
           </div>
           <div class="content-detail">
             <v-col :cols="undefined" class="pt-11">

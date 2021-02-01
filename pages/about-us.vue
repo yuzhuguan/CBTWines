@@ -17,7 +17,7 @@
         <div class="bottom-block"/>
       </div>
       <div class="right-block">
-        <img src="/media/about-us.png" alt="image" data-aos="fade-left" data-aos-delay="" data-aos-duration="2400">
+        <cld-image public-id="v1612189163/cbtwines/about-us_nxfwvy.png" width="960" height="827" loading="lazy" quality="auto" data-aos="fade-left" data-aos-delay="" data-aos-duration="2400"/>
       </div>
     </div>
   </div>

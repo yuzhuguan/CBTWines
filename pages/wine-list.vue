@@ -146,7 +146,7 @@ export default {
 
 <style lang="scss">
 .wine-list {
-  background: url("/media/winelist.jpg");
+  background: url("https://res.cloudinary.com/dinad7iot/image/upload/v1612189163/cbtwines/winelist_yhrumg.jpg");
   display: flex;
   flex-direction: column;
   height: 87.2vh;

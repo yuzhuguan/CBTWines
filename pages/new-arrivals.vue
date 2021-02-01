@@ -138,7 +138,7 @@ export default {
   display: flex;
   flex-direction: column;
   height: 87.2vh;
-  background: url("/media/winelist.jpg");
+  background: url("https://res.cloudinary.com/dinad7iot/image/upload/v1612189163/cbtwines/winelist_yhrumg.jpg");
   @media (max-width: 1050px) {
     height: auto;
     background: none;
