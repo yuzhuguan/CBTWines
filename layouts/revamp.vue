@@ -122,9 +122,6 @@ export default {
 </script>
 
 <style lang="scss">
-html {
-  overflow: hidden !important;
-}
 #wrapper {
   max-height: calc(100vh - 120px);
   overflow: auto;
