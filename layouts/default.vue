@@ -150,8 +150,10 @@ a{
   top: 10px;
 }
 .v-footer {
-  position: absolute;
   bottom: 0;
   width: 100%;
+}
+#app > div > div {
+min-height: 85.5%;
 }
 </style>
