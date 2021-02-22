@@ -52,22 +52,16 @@ export default {
   width: 100%;
   height: 100%;
   position: relative;
-  @media (max-width: 375px) {
-    max-height: calc(100vh - 140px);
-  }
   .background{
     width: 100%;
     position: absolute;
-    @media (max-width: 375px) {
-      max-height: calc(100vh - 140px);
-    }
     height: 100%;
     top: 0;
   }
   .content {
     margin: 140px 40px;
     @media (max-width: 490px) {
-      margin: 0;
+      margin: 70px 0 0;
       padding: 5%;
     }
     img {
