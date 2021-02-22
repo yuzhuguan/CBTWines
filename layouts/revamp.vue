@@ -123,14 +123,12 @@ export default {
 
 <style lang="scss">
 #wrapper {
-  max-height: calc(100vh - 120px);
   overflow: auto;
   transition: 0.6s;
-  @media (max-width: 375px) {
-    max-height: 82.2vh;
-  }
-  @media (max-width: 320px) {
-    max-height: 76.2vh;
+  &::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 #wrapper.open {
@@ -171,5 +169,14 @@ export default {
 html, body {
   height: 100%;
   width: 100%;
+}
+#__nuxt, #__layout, main {
+  height: 100%;
+}
+#wrapper {
+  height: calc(100% - 50px);
+  @media (max-width: 375px) {
+    height: calc(100% - 70px);
+  }
 }
 </style>

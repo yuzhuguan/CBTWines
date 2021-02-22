@@ -46,9 +46,8 @@ export default {
   width: 100%;
   height: 50px;
   background-color: #413C3C;
-  position: absolute;
-  left: 0;
-  bottom: 0;
+  display: flex;
+  align-items: center;
   @media (max-width: 375px) {
     height: 70px;
   }
@@ -56,10 +55,6 @@ export default {
   .footer-content {
     color: #FFFFFF;
     margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
     text-align: center;
     width: 100%;
     padding: 0 4.5%;

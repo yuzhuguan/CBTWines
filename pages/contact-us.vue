@@ -1,8 +1,10 @@
 <template>
   <div class="contact-us">
-    <h1 :style="{backgroundImage: 'url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.theiwsr.com%2Fnews-and-comment-global-still-wine-trends-to-watch%2F&psig=AOvVaw3uxIXEnBKFy5MIrGwmupoP&ust=1600625694958000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOjl5MHp9esCFQAAAAAdAAAAABAE) 50% 50%'}">
-      CONTACT US
-    </h1>
+    <div class="title">
+      <h1 :style="{backgroundImage: 'url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.theiwsr.com%2Fnews-and-comment-global-still-wine-trends-to-watch%2F&psig=AOvVaw3uxIXEnBKFy5MIrGwmupoP&ust=1600625694958000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOjl5MHp9esCFQAAAAAdAAAAABAE) 50% 50%'}">
+        CONTACT US
+      </h1>
+    </div>
     <v-card class="form-card" color="rgba(255, 255, 255, 0.4)" flat>
       <v-form>
         <v-text-field
@@ -86,12 +88,12 @@ export default {
 <style lang="scss">
   .contact-us {
     overflow: hidden;
-    height: calc(100vh - 120px);
-    min-height: calc(100vh - 120px);
+    height: 100%;
     position: relative;
     font-family: "Monstserrat", snas-serif;
-    @media (max-width: 375px) {
-      max-height: 420px;
+    .title {
+      position: relative;
+      margin-top: 25%;
     }
     .background {
       position: absolute;
@@ -105,16 +107,11 @@ export default {
     }
     h1 {
       color: #000000;
-      width: 1000px;
       text-align: center;
       font-size: 56px;
       text-transform: uppercase;
       font-weight: 700;
       letter-spacing: 20px;
-      position: absolute;
-      top: 8%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       margin: 0;
       background-size: cover;
       -webkit-text-fill-color: transparent;
@@ -136,14 +133,8 @@ export default {
     .form-card {
       z-index: 10;
       width: 700px;
-      position: absolute;
-      top: 55%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      margin: 10% auto;
       padding: 0 10px;
-      @media (max-width: 370px) {
-        top: 52%;
-      }
       .email-body-title {
         margin-bottom: 15px;
         margin-top: 12px;

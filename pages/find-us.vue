@@ -103,8 +103,7 @@ export default {
 
 <style lang="scss">
 .find-us {
-  height: calc(100vh - 120px);
-  min-height: calc(100vh - 120px);
+  padding-top: 70px;
   .find-us-container {
     height: 100%;
     .find-us-hero {
@@ -118,7 +117,6 @@ export default {
         height: 512px;
       }
       .image-container {
-        height: 100%;
         flex-basis: 49.5%;
         background-position: center;
         background-size: cover;

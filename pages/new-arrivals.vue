@@ -137,7 +137,8 @@ export default {
 .new-arrivals {
   display: flex;
   flex-direction: column;
-  height: 87.2vh;
+  height: 100%;
+  padding-top: 70px;
   background: url("https://res.cloudinary.com/dinad7iot/image/upload/v1612189163/cbtwines/winelist_yhrumg.jpg");
   @media (max-width: 1050px) {
     height: auto;
@@ -243,7 +244,7 @@ export default {
       margin: 0 auto 20px;
       .product-name {
         height: auto;
-        padding: 12px;
+        padding: 12px 40px 12px 12px;
         font-size: 25px;
         position: relative;
         cursor: pointer;
@@ -279,11 +280,7 @@ export default {
       .product-detail {
         background: rgba(217, 210, 210, 0.7);
         transition: .2s;
-        height: 220px;
         overflow: hidden;
-        @media (max-width: 400px) {
-          height: 188px;
-        }
         &.hide {
           height: 0px;
         }

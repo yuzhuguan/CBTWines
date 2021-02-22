@@ -73,6 +73,7 @@ export default {
     height: 70px;
     background-color: white;
     z-index: 50;
+    position: absolute;
     .header-container {
       width: 100%;
       height: 100%;

@@ -149,7 +149,8 @@ export default {
   background: url("https://res.cloudinary.com/dinad7iot/image/upload/v1612189163/cbtwines/winelist_yhrumg.jpg");
   display: flex;
   flex-direction: column;
-  height: 87.2vh;
+  height: 100%;
+  padding-top: 70px;
   @media (max-width: 1050px) {
     height: auto;
     background: none;
@@ -244,18 +245,16 @@ export default {
       width: 95%;
       margin: 0 auto 20px;
       list-style: none;
-      overflow-y: auto;
       background: rgba(255, 255, 255, 0.8);
       height: 100%;
       .product-name {
         height: auto;
-        padding: 12px;
+        padding: 12px 40px 12px 12px;
         font-size: 25px;
         position: relative;
         cursor: pointer;
         @media (max-width: 400px) {
           height: auto;
-          padding: 12px;
           font-size: 16px;
         }
         .arrow {
@@ -285,11 +284,7 @@ export default {
       .product-detail {
         background: rgba(217, 210, 210, 0.7);
         transition: .2s;
-        height: 220px;
         overflow: hidden;
-        @media (max-width: 400px) {
-          height: 188px;
-        }
         &.hide {
           height: 0px;
         }

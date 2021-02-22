@@ -1,6 +1,9 @@
 <template>
   <div class="about-us">
     <div class="main-container">
+      <div class="right-block">
+        <cld-image public-id="v1612189163/cbtwines/about-us_nxfwvy.png" width="960" loading="lazy" quality="auto" data-aos="fade-left" data-aos-delay="" data-aos-duration="2400"/>
+      </div>
       <div class="left-block">
         <div class="top-block"/>
         <div class="block" data-aos="zoom-in" data-aos-duration="1000" data-aos-once="true" data-aos-anchor=".right-block">
@@ -15,9 +18,6 @@
           </div>
         </div>
         <div class="bottom-block"/>
-      </div>
-      <div class="right-block">
-        <cld-image public-id="v1612189163/cbtwines/about-us_nxfwvy.png" width="960" height="827" loading="lazy" quality="auto" data-aos="fade-left" data-aos-delay="" data-aos-duration="2400"/>
       </div>
     </div>
   </div>
@@ -43,56 +43,45 @@ export default {
 <style lang="scss">
 .about-us {
   width: 100%;
-  min-height: calc(100vh - 120px);
   overflow: hidden;
-  @media (max-width: 1000px) {
-    height: auto;
-  }
+  height: 100%;
+  background: #fafafa;
   .main-container {
     height: 100%;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     @media (max-width: 1000px) {
-      flex-direction: column-reverse;
+      flex-direction: column;
     }
     .left-block {
       height: 100%;
       flex-basis: 50%;
       background: #fafafa;
-      @media (max-width: 1000px) {
-        padding: 0px 70px;
-      }
-      @media (max-width: 550px) {
-        padding: 0px 50px;
-      }
-      @media (max-width: 375px) {
-        padding: 0px 25px;
+      display: flex;
+      flex-direction: column;
+      @media (max-width: 320px) {
+        margin-top: 70px;
       }
       .top-block {
         width: 100%;
-        height: 120px;
+        height: 25%;
         background: #fafafa;
         @media (max-width: 1000px) {
-          height: 101px;
-        }
-        @media (max-width: 550px) {
-          height: 45px;
-        }
-        @media (max-width: 375px) {
           height: 35px;
         }
       }
       .block {
         width: 100%;
-        height: 400px;
+        height: auto;
         background: #f4f0ef;
-        padding-top: 1px;
+        padding: 0 1px 30px;
         @media (max-width: 1000px) {
-          height: 505px;
+          margin: 0 auto 30px;
+          width: 80%;
         }
-        @media (max-width: 550px) {
-          height: 380px;
+        @media (max-width: 375px) {
+          width: 100%;
         }
         .title-block {
           text-align: center;
@@ -101,7 +90,7 @@ export default {
             font-weight: 300;
             margin-top: -43px;
             text-shadow: -3px 0px 8px #bbbbbb;
-            @media (max-width: 550px) {
+            @media (max-width: 1000px) {
               font-size: 40px;
               margin-top: -25px;
             }
@@ -113,14 +102,8 @@ export default {
           margin-right: auto;
           padding-top: 1%;
           text-align: center;
-          @media (max-width: 700px) {
-            width: 350px;
-          }
-          @media (max-width: 550px) {
-            width: 273px;
-          }
-          @media (max-width: 375px) {
-            width: 222px;
+          @media (max-width: 1000px) {
+            width: 75%;
           }
           p{
             font-family: 'Raleway', sans-serif;
@@ -132,10 +115,10 @@ export default {
             @media (max-width: 1000px) {
               line-height: 2.35rem;
             }
-            @media (max-width: 700px) {
+            @media (max-width: 900px) {
               font-size: 15px;
             }
-            @media (max-width: 550px) {
+            @media (max-width: 715px) {
               font-size: 12px;
               line-height: 1.8rem;
             }
@@ -169,52 +152,34 @@ export default {
       }
       .bottom-block {
         display: none;
-        @media (max-width: 1000px) {
-          background: #fafafa;
-          height: 75px;
-          display: block;
-        }
-        @media (max-width: 550px) {
-          height: 40px;
-        }
-        @media (max-width: 375px) {
-          height: 20px;
-        }
       }
     }
     .right-block{
       height: 100%;
       flex-basis: 50%;
-      max-height: calc(100vh - 120px);
-      @media (min-width: 1001px) {
-        min-height: calc(100vh - 120px);
-      }
       @media (max-width: 1000px) {
-        height: 520px;
+        height: 44%;
+        flex-basis: unset;
       }
-      @media (max-width: 700px) {
-        height: 400px;
+      @media (max-width: 425px) {
+        height: 30%;
       }
-      @media (max-width: 375px) {
-        height: 210px;
+      @media (max-width: 320px) {
+        display: none;
+      }
+      .cld-image {
+        height: 100%;
       }
       img {
-        object-position: 0% 0;
+        object-position: 62% 0;
         object-fit: cover;
         height: 100%;
         width: 100%;
-        max-height: calc(100vh - 120px);
         @media (max-width: 1000px) {
           object-position: 0% 22%;
         }
-        @media (max-width: 550px) {
-          height: 27vh;
-        }
         @media (max-width: 320px) {
           height: 100%;
-        }
-        @media (min-width: 1001px) {
-          min-height: calc(100vh - 120px);
         }
       }
     }
