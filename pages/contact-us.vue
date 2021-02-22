@@ -73,13 +73,14 @@ export default {
       ]
     });
     window.addEventListener('resize', this.onResize)
+    this.isMinRow = window.innerWidth <= 375
   },
   destroyed() {
     window.removeEventListener('resize', this.onResize)
   },
   methods: {
     onResize() {
-      this.isMinRow = window.innerWidth <= 375;
+      this.isMinRow = window.innerWidth <= 375
     }
   }
 }
