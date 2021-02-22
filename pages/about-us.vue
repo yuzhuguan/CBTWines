@@ -162,7 +162,7 @@ export default {
         flex-basis: unset;
       }
       @media (max-width: 425px) {
-        height: 30%;
+        height: 30vh;
       }
       @media (max-width: 320px) {
         display: none;
