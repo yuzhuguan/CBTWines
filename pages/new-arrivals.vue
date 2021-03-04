@@ -1,54 +1,52 @@
 <template>
   <div class="new-arrivals">
     <h1 class="page-title">{{ $t('new-arrivals.title') }}</h1>
-    <v-row class="content">
-      <v-col>
-        <v-card flat>
-          <v-card-title>
-            <v-text-field
-              v-model="search"
-              append-icon="search"
-              label="Search"
-              single-line
-              hide-details
-            ></v-text-field>
-          </v-card-title>
-          <v-layout column>
-            <v-flex style="overflow: auto">
-              <v-data-table
-                :headers="$t('new-arrivals.headers')"
-                :items="wines"
-                :items-per-page="10"
-                :search="search"
-                :sort-by="['name', 'vintage']"
-              >
-                <template v-slot:item.name="{ item }">
-                  <p :class="item.colorName" style="margin: 0">{{item.name}}</p>
-                </template>
-                <template v-slot:item.chineseName="{ item }">
-                  <p :class="item.colorChineseName" style="margin: 0">{{item.chineseName}}</p>
-                </template>
-                <template v-slot:item.origin="{ item }">
-                  <p :class="item.colorOrigin" style="margin: 0">{{item.origin}}</p>
-                </template>
-                <template v-slot:item.appellation="{ item }">
-                  <p :class="item.colorAppellation" style="margin: 0">{{item.appellation}}</p>
-                </template>
-                <template v-slot:item.vintage="{ item }">
-                  <p :class="item.colorVintage" style="margin: 0">{{item.vintage}}</p>
-                </template>
-                <template v-slot:item.rating="{ item }">
-                  <p :class="item.colorRating" style="margin: 0">{{item.rating}}</p>
-                </template>
-                <template v-slot:item.price="{ item }">
-                  <p :class="item.colorPrice" style="margin: 0">{{item.price}}</p>
-                </template>
-              </v-data-table>
-            </v-flex>
-          </v-layout>
-        </v-card>
-      </v-col>
-    </v-row>
+    <v-app>
+      <v-card>
+        <v-card-title>
+          <v-text-field
+            v-model="search"
+            append-icon="search"
+            label="Search"
+            single-line
+            hide-details
+          ></v-text-field>
+        </v-card-title>
+        <v-layout column>
+          <v-flex style="overflow: auto">
+            <v-data-table
+              :headers="$t('new-arrivals.headers')"
+              :items="wines"
+              :items-per-page="10"
+              :search="search"
+              :sort-by="['name', 'vintage']"
+            >
+              <template v-slot:item.name="{ item }">
+                <p :class="item.colorName" style="margin: 0">{{item.name}}</p>
+              </template>
+              <template v-slot:item.chineseName="{ item }">
+                <p :class="item.colorChineseName" style="margin: 0">{{item.chineseName}}</p>
+              </template>
+              <template v-slot:item.origin="{ item }">
+                <p :class="item.colorOrigin" style="margin: 0">{{item.origin}}</p>
+              </template>
+              <template v-slot:item.appellation="{ item }">
+                <p :class="item.colorAppellation" style="margin: 0">{{item.appellation}}</p>
+              </template>
+              <template v-slot:item.vintage="{ item }">
+                <p :class="item.colorVintage" style="margin: 0">{{item.vintage}}</p>
+              </template>
+              <template v-slot:item.rating="{ item }">
+                <p :class="item.colorRating" style="margin: 0">{{item.rating}}</p>
+              </template>
+              <template v-slot:item.price="{ item }">
+                <p :class="item.colorPrice" style="margin: 0">{{item.price}}</p>
+              </template>
+            </v-data-table>
+          </v-flex>
+        </v-layout>
+      </v-card>
+    </v-app>
     <div class="mobile-content">
       <ul>
         <li
@@ -139,7 +137,7 @@ export default {
   flex-direction: column;
   height: 100%;
   padding-top: 70px;
-  background: url("https://res.cloudinary.com/dinad7iot/image/upload/v1612189163/cbtwines/winelist_yhrumg.jpg");
+  background: url("https://res.cloudinary.com/dinad7iot/image/upload/c_crop,e_blur:231,o_63,q_auto/v1612189163/cbtwines/winelist_yhrumg.jpg");
   @media (max-width: 1050px) {
     height: auto;
     background: none;
@@ -155,76 +153,22 @@ export default {
       margin: 20px 0;
     }
   }
-  .row {
-    margin: 0;
-  }
-  .content {
-    max-width: 100%;
+  #app {
+    max-width: 97%;
+    width: 97%;
+    margin: auto;
     @media (max-width: 1050px) {
       display: none;
     }
-  }
-  .v-input {
-    margin: 0;
-    padding: 0;
-  }
-  .col {
-    height: 100%;
-  }
-  .v-card {
-    height: 100%;
-  }
-  .layout.column {
-    max-height: 100%;
-    .text-start {
-      height: 60px;
-    }
-    .v-data-table td {
-      height: 60px;
-      text-align: center;
-    }
-  }
-  .regions {
-    padding: 32px;
-    height: 97.4%;
-    background: rgba(256,256,256,0.7);
-    border-radius: 8px;
-    margin-top: 9px;
-    margin-left: 26px;
-    ul {
-      list-style: none;
-      li {
-        margin: 10px 0;
-        font-size: 19px;
+    .v-application--wrap {
+      min-height: 0;
+      .v-data-table__wrapper {
+        height: 528px;
+        max-height: 528px;
+        overflow-y: auto;
       }
     }
-    .title {
-      margin-bottom: 25px;
-      font-size: 30px;
-      color: #A44c4f;
-    }
-    .region-tag {
-      cursor: pointer;
-    }
-  }
-  a {
-    text-decoration: none;
-  }
-  .scrollable::-webkit-scrollbar {
-    height: 10px;
-    width: 10px;
-    background-color: transparent;
-  }
-  .scrollable::-webkit-scrollbar-thumb {
-    background-color: rgb(146, 145, 145);
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    border-radius: 5px;
-  }
-  .scrollable::-webkit-scrollbar-track {
-    background-color: transparent;
+
   }
   .mobile-content {
     display: none;
