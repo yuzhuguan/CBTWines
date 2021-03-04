@@ -168,6 +168,7 @@ export default {
       padding-left: 0;
       text-align: center;
       margin: 20px 0;
+      font-size: 2rem;
     }
   }
   #app {
