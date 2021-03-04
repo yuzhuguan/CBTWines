@@ -174,9 +174,6 @@ html, body {
   height: 100%;
 }
 #wrapper {
-  height: calc(100% - 50px);
-  @media (max-width: 375px) {
-    height: calc(100% - 70px);
-  }
+  height: calc(100%);
 }
 </style>
