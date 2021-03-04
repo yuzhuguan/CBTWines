@@ -87,7 +87,8 @@ export default {
             { "name": "Whisky", "displayname": "Whisky"},
             { "name": "Italy", "displayname": "Italy"},
             { "name": "U.S.A.", "displayname": "U.S.A."},
-            { "name": "Accessory", "displayname": "Accessory"}
+            { "name": "Accessory", "displayname": "Accessory"},
+            { "name": "Sake", "displayname": "Sake"}
         ],
         "headers": [
             { "text": "Product", "value": "name" },
