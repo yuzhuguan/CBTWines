@@ -137,7 +137,8 @@ export default {
   flex-direction: column;
   height: 100%;
   padding-top: 70px;
-  background: url("https://res.cloudinary.com/dinad7iot/image/upload/c_crop,e_blur:231,o_63,q_auto/v1612189163/cbtwines/winelist_yhrumg.jpg");
+  background: url("https://res.cloudinary.com/dinad7iot/image/upload/c_crop,e_blur:231,o_63,q_auto/v1612189163/cbtwines/winelist_yhrumg.jpg") no-repeat center;
+  background-size: cover;
   @media (max-width: 1050px) {
     height: auto;
     background: none;
@@ -147,6 +148,7 @@ export default {
     font-size: 30px;
     padding-top: 8px;
     color: #A44c4f;
+    margin-top: 34px;
     @media (max-width: 1050px) {
       padding-left: 0;
       text-align: center;
@@ -157,6 +159,7 @@ export default {
     max-width: 97%;
     width: 97%;
     margin: auto;
+    border-radius: 8px;
     @media (max-width: 1050px) {
       display: none;
     }
