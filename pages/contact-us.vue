@@ -94,7 +94,10 @@ export default {
     font-family: "Monstserrat", snas-serif;
     .title {
       position: relative;
-      margin-top: 25%;
+      margin-top: 20vh;
+      @media (max-width: 768px) {
+        margin-top: 25%;
+      }
     }
     .background {
       position: absolute;
@@ -134,8 +137,11 @@ export default {
     .form-card {
       z-index: 10;
       width: 700px;
-      margin: 10% auto;
+      margin: 10vh auto;
       padding: 0 10px;
+      @media (max-width: 768px) {
+        margin: 10% auto;
+      }
       .email-body-title {
         margin-bottom: 15px;
         margin-top: 12px;
