@@ -51,7 +51,14 @@ export default {
             { "text": "New Arrivals", "link": "/new-arrivals", "img": "/img/new/new-arrival.jpg" },
             { "text": "Special Offers", "link": "/special-offers", "img": "/img/new/special-offers.jpg" },
             { "text": "Contact Us", "link": "/contact-us", "img": "/img/new/3rd.jpg" }
-        ]
+        ],
+        "title": "FIND AND ENJOY THE IDEAL WINE FOR YOU",
+        "extend-one": {
+          "title": "Get Your Ideal Wine In CBT Wines",
+          "paragraph": "We offer an impressive diversity of wines with excellent quality from over 100 wine producers. With such stunning variety, there is sure to be a bottle that suits every person.",
+          "button_text": "View Wine List",
+          "button_url": "/wine-list"
+        }
     },
     "about-us": {
         "title" : "ABOUT US",
