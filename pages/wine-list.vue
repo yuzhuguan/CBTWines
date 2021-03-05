@@ -166,7 +166,6 @@ export default {
     font-size: 4rem;
     @media (max-width: 1050px) {
       padding-left: 0;
-      text-align: center;
       margin: 20px 0;
       font-size: 2rem;
     }
@@ -214,7 +213,6 @@ export default {
     }
     .v-data-table td {
       height: 60px;
-      text-align: center;
     }
   }
   .regions {

@@ -145,14 +145,15 @@ export default {
   }
   h1 {
     padding-left: 44px;
-    font-size: 30px;
     padding-top: 8px;
     color: #A44c4f;
-    margin-top: 34px;
+    margin: 3vh 0 0px;
+    font-size: 4rem;
+    text-align: center;
     @media (max-width: 1050px) {
       padding-left: 0;
-      text-align: center;
       margin: 20px 0;
+      font-size: 2rem;
     }
   }
   #app {
