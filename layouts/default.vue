@@ -1,68 +1,34 @@
 <template>
-  <v-app :style="{ 'background-image': 'url(/img/BG.png)'}" dark>
-    <v-btn
-      v-scroll="onScroll"
-      v-show="fab"
-      fab
-      dark
-      fixed
-      bottom
-      right
-      color="primary"
-      @click="toTop"
-    >
-      <v-icon>keyboard_arrow_up</v-icon>
-    </v-btn>
-    <v-app-bar app :elevation="0" color="white" :style="{'opacity': 0.8}">
-      <v-btn
-      color="blue"
-      dark
-      small
-      absolute
-      class="backstageBtn"
-      fab
-      to="/backstage"
-      v-if="loggedIn"
-    >
-      <v-icon>settings</v-icon>
-    </v-btn>
-      <v-toolbar-item class="font-weight-light">
-        <nuxt-link to="/" class="black--text" v-if="loggedIn"><v-btn text @click="logout"><v-icon>supervisor_account</v-icon > Logout</v-btn></nuxt-link>
-      </v-toolbar-item>
+  <main :class="$i18n.locale" class="index-layout">
+    <Header/>
+    <IndexHero />
+    <section id="wrapper" :class="(showMobileMenu) ? 'open' : ''">
+      <nuxt-child />
+    </section>
+    <div class="mobile-menu" :class="(showMobileMenu) ? 'open' : ''">
+      <v-list>
+        <v-list-item v-for="(item, index) in $t('header.mobileMenu')" :key="index" @click="toggleMobileMenu" >
+          <nuxt-link :to="item.link">
+            <v-list-item-title>
+              {{ item.title }}
+            </v-list-item-title>
+          </nuxt-link>
+        </v-list-item>
+      </v-list>
+    </div>
+    <Footer/>
+  </main>
 
-      <v-spacer></v-spacer>
-
-      <v-toolbar-item>
-        <v-toolbar-title><nuxt-link to="/"><img class="logo" src="/img/logo.png" alt="logo"/></nuxt-link></v-toolbar-title>
-      </v-toolbar-item>
-
-      <v-spacer></v-spacer>
-
-      <v-toolbar-item>
-          <v-btn text @click="changeLang('traditionalChinese')">繁</v-btn> |
-          <v-btn text @click="changeLang('simplifiedChinese')">简</v-btn> |
-          <v-btn text @click="changeLang('english')">ENG</v-btn>
-      </v-toolbar-item>
-    </v-app-bar>
-
-    <nuxt />
-
-    <v-footer
-      class="font-weight-light v-footer"
-    >
-      <v-col
-        class="text-center"
-        cols="12"
-      >
-        &copy; 2020 CBT WINES CO. LIMITED; Designed by&nbsp;<a href="https://github.com/laub1199" class="black--text">Sennett Lau</a>
-      </v-col>
-    </v-footer>
-  </v-app>
 </template>
 
 <script>
 import axios from 'axios';
 export default {
+  components: {
+    Header: () => import('../components/Header'),
+    Footer: () => import('../components/Footer'),
+    IndexHero: () => import('../components/IndexHero')
+  },
   data() {
     return {
       loggedIn: false,
@@ -92,17 +58,25 @@ export default {
     },
     toTop () {
       this.$vuetify.goTo(0)
+    },
+    toggleMobileMenu() {
+      this.$store.commit('SET_SHOWMOBILEMENU', !this.showMobileMenu)
     }
   },
   mounted() {
     if(localStorage.getItem('token')) {
       axios.get('/api/backstage/auth-with-jwt', {headers: {token: localStorage.getItem('token')}})
-          .then(res => {
-              console.log(res);
-              if(res.status === 200) {
-                this.loggedIn = true;
-              }
-          })
+        .then(res => {
+          console.log(res);
+          if(res.status === 200) {
+            this.loggedIn = true;
+          }
+        })
+    }
+  },
+  computed: {
+    showMobileMenu() {
+      return this.$store.getters.showMobileMenu
     }
   },
   watch: {
@@ -122,38 +96,84 @@ export default {
             }
           )
       }
+    },
+    showMobileMenu () {
+      const menu = document.querySelector(".mobile-menu")
+      const wrapper = document.querySelector("#wrapper")
+      if(this.showMobileMenu) {
+        menu.style.opacity = "0.0"
+        menu.style.display = "block"
+        menu.style.visibility = "hidden"
+        setTimeout(() => {menu.classList.add('open') }, 1)
+        setTimeout(() => {
+          menu.style.opacity = "1.0"
+        }, 301)
+        setTimeout(() => {
+          menu.style.visibility = "visible"
+        }, 301)
+      }
+      else {
+        menu.classList.remove('open')
+        menu.style.display = "none"
+      }
     }
   }
 }
 </script>
 
-<style scoped>
-#title {
-  text-decoration: none;
-  color: #555;
+<style lang="scss">
+#wrapper {
+  overflow: auto;
+  transition: 0.6s;
+  &::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
-
-a{
-  text-decoration: none;
+#wrapper.open {
+  transform: translate(-768px, 0px);
+  opacity: 0.0;
 }
-
-.logo {
+.mobile-menu {
+  width: 100%;
+  height: 83.2vh;
+  transform: translate(768px, 0px);
+  opacity: 0.0;
+  transition: 0.6s;
   position: absolute;
-  height: 55px;
-  margin-left: auto;
-  margin-right: auto;
-  top: 4px;
+  top: 70px;
+  display: none;
+  .v-list {
+    height: 80%;
+    text-align: center;
+    &-item {
+      height: 12.5%;
+      a {
+        width: 100%;
+        text-decoration: none;
+        color: #000000;
+        height: 100%;
+        padding: 20px 0;
+      }
+      a.nuxt-link-exact-active{
+        color: #bd5558;
+      }
+    }
+  }
 }
-
-.backstageBtn {
-  left: 130px;
-  top: 10px;
+.mobile-menu.open {
+  transform: translate(0px, 0px);
+  opacity: 1.0;
 }
-.v-footer {
-  bottom: 0;
+html, body {
+  height: 100%;
   width: 100%;
 }
-#app > div > div {
-min-height: 85.5%;
+#__nuxt, #__layout, main {
+  height: 100%;
+}
+.index-layout #wrapper {
+  height: auto;
 }
 </style>
