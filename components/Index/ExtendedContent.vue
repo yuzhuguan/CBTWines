@@ -1,6 +1,6 @@
 <template>
   <section class="extend-content">
-    <div class="container">
+    <div class="container" :class="{ reverse: reverse }">
       <div class="image-right">
         <cld-image :public-id="$t(`home.extend-${index}.image-right`)" loading="lazy" quality="auto" />
       </div>
@@ -31,6 +31,10 @@ export default {
     index: {
       type: Number,
       default: Number
+    },
+    reverse: {
+      type: Boolean,
+      default: Boolean
     }
   }
 }
@@ -50,7 +54,7 @@ export default {
       display: block;
       position: relative;
       img {
-        max-width: 50%;
+        max-width: 53%;
         height: 100%;
         object-fit: cover;
       }
@@ -96,6 +100,17 @@ export default {
         letter-spacing: 3px;
       }
     }
+  }
+  .reverse .image-right {
+    left: 20px;
+    right: 0;
+    margin-left: 5%;
+    img {
+      float: left;
+    }
+  }
+  .reverse .image-left img {
+    margin-left: 47%;
   }
 }
 </style>

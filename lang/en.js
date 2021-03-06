@@ -60,6 +60,14 @@ export default {
           "button_url": "/wine-list",
           "image-right": "v1614964460/cbtwines/session-one-horizontal_vbtkpk.png",
           "image-left": "v1614965116/cbtwines/session-one-vertical_iyjnvl.png"
+        },
+        "extend-2": {
+          "title": "Want Something New?",
+          "paragraph": "Check out our latest wine with special offers. We stock a vast variety of wines globally. Click the button below to check out the new arrivals!",
+          "button_text": "View New Arrivals",
+          "button_url": "/new-arrivals",
+          "image-right": "v1615054333/cbtwines/kv-pc_1_y0b1yx.png",
+          "image-left": "v1615054335/cbtwines/pexels-photo-3171770_1_yt9lnt.png"
         }
     },
     "about-us": {
