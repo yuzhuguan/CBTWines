@@ -53,11 +53,13 @@ export default {
             { "text": "Contact Us", "link": "/contact-us", "img": "/img/new/3rd.jpg" }
         ],
         "title": "FIND AND ENJOY THE IDEAL WINE FOR YOU",
-        "extend-one": {
+        "extend-1": {
           "title": "Get Your Ideal Wine In CBT Wines",
           "paragraph": "We offer an impressive diversity of wines with excellent quality from over 100 wine producers. With such stunning variety, there is sure to be a bottle that suits every person.",
           "button_text": "View Wine List",
-          "button_url": "/wine-list"
+          "button_url": "/wine-list",
+          "image-right": "v1614964460/cbtwines/session-one-horizontal_vbtkpk.png",
+          "image-left": "v1614965116/cbtwines/session-one-vertical_iyjnvl.png"
         }
     },
     "about-us": {

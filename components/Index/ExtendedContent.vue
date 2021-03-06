@@ -2,22 +2,22 @@
   <section class="extend-content">
     <div class="container">
       <div class="image-right">
-        <cld-image public-id="v1614964460/cbtwines/session-one-horizontal_vbtkpk.png" loading="lazy" quality="auto" />
+        <cld-image :public-id="$t(`home.extend-${index}.image-right`)" loading="lazy" quality="auto" />
       </div>
       <div class="image-left">
-        <cld-image public-id="v1614965116/cbtwines/session-one-vertical_iyjnvl.png" loading="lazy" quality="auto" />
+        <cld-image :public-id="$t(`home.extend-${index}.image-left`)" loading="lazy" quality="auto" />
       </div>
     </div>
     <div class="container">
       <div class="extend-content">
         <h3 class="extend-title">
-          {{ $t("home.extend-one.title") }}
+          {{ $t(`home.extend-${index}.title`) }}
         </h3>
         <p class="extend-description">
-          {{ $t("home.extend-one.paragraph") }}
+          {{ $t(`home.extend-${index}.paragraph`) }}
         </p>
-        <nuxt-link :to="$t('home.extend-one.button_text')" class="button">
-          {{ $t("home.extend-one.button_text") }}
+        <nuxt-link :to="$t(`home.extend-${index}.button_url`)" class="button">
+          {{ $t(`home.extend-${index}.button_text`) }}
         </nuxt-link>
       </div>
     </div>
@@ -26,7 +26,13 @@
 
 <script>
 export default {
-  name: "ExtendedContent"
+  name: "ExtendedContent",
+  props: {
+    index: {
+      type: Number,
+      default: Number
+    }
+  }
 }
 </script>
 
