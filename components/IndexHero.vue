@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="background" style="background: url(https://res.cloudinary.com/dinad7iot/image/upload/v1612189163/cbtwines/home_BG_r8eerr.png) top left / cover;">
+    <div class="background" style="background: url(https://res.cloudinary.com/dinad7iot/image/upload/q_auto:good/v1612189163/cbtwines/home_BG_r8eerr.png) top left / cover;">
       <div class="content">
         <cld-image public-id="v1612189161/cbtwines/company_label_laipot.png" />
         <div class="quote">
@@ -46,6 +46,7 @@ export default {
 .home {
   width: 100%;
   height: 100%;
+  min-height: 100%;
   position: relative;
   .background{
     width: 100%;
