@@ -64,6 +64,9 @@ export default {
     }
   },
   mounted() {
+    if (this.$store.state.showMobileMenu) {
+      this.$store.commit('SET_SHOWMOBILEMENU', !this.showMobileMenu)
+    }
     if(localStorage.getItem('token')) {
       axios.get('/api/backstage/auth-with-jwt', {headers: {token: localStorage.getItem('token')}})
           .then(res => {
