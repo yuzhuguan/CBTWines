@@ -14,7 +14,7 @@
           {{ $t(`home.extend-${index}.title`) }}
         </h3>
         <p class="extend-description">
-          {{ $t(`home.extend-${index}.paragraph`) }}
+          {{ getDescription($t(`home.extend-${index}.paragraph`)) }}
         </p>
         <nuxt-link :to="$t(`home.extend-${index}.button_url`)" class="button">
           {{ $t(`home.extend-${index}.button_text`) }}
@@ -35,6 +35,18 @@ export default {
     reverse: {
       type: Boolean,
       default: Boolean
+    }
+  },
+  methods: {
+    getDescription (str) {
+      const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ]
+      const month = (new Date()).getMonth()
+      if (str.includes('{month}')) {
+        return str.replace('{month}', monthNames[month])
+      }
+      return str
     }
   }
 }

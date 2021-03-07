@@ -63,7 +63,7 @@ export default {
         },
         "extend-2": {
           "title": "Want Something New?",
-          "paragraph": "Check out our latest wine with special offers. We stock a vast variety of wines globally. Click the button below to check out the new arrivals!",
+          "paragraph": "Check out our latest wines in {month}. We stock a vast variety of wines globally. Click the button below to seek for the new arrivals!",
           "button_text": "View New Arrivals",
           "button_url": "/new-arrivals",
           "image-right": "v1615054333/cbtwines/kv-pc_1_y0b1yx.png",
