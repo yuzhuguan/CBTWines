@@ -74,6 +74,9 @@ export default {
     background-color: white;
     z-index: 50;
     position: absolute;
+    @media (max-width: 768px) {
+      position: fixed;
+    }
     .header-container {
       width: 100%;
       height: 100%;

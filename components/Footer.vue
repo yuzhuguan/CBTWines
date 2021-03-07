@@ -52,7 +52,7 @@ export default {
   display: flex;
   align-items: center;
   transition: all 0.5s;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   overflow: hidden;
   @media (max-width: 375px) {

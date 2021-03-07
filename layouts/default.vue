@@ -135,36 +135,38 @@ export default {
   transform: translate(-768px, 0px);
   opacity: 0.0;
 }
-.mobile-menu {
-  width: 100%;
-  height: 83.2vh;
-  transform: translate(768px, 0px);
-  opacity: 0.0;
-  transition: 0.6s;
-  position: absolute;
-  top: 70px;
-  display: none;
-  .v-list {
-    height: 80%;
-    text-align: center;
-    &-item {
-      height: 12.5%;
-      a {
-        width: 100%;
-        text-decoration: none;
-        color: #000000;
-        height: 100%;
-        padding: 20px 0;
-      }
-      a.nuxt-link-exact-active{
-        color: #bd5558;
+.index-layout {
+  .mobile-menu {
+    width: 100%;
+    height: 83.2vh;
+    transform: translate(768px, 0px);
+    opacity: 0.0;
+    transition: 0.6s;
+    position: fixed;
+    top: 70px;
+    display: none;
+    .v-list {
+      height: 110%;
+      text-align: center;
+      &-item {
+        height: 12.5%;
+        a {
+          width: 100%;
+          text-decoration: none;
+          color: #000000;
+          height: 100%;
+          padding: 20px 0;
+        }
+        a.nuxt-link-exact-active{
+          color: #bd5558;
+        }
       }
     }
   }
-}
-.mobile-menu.open {
-  transform: translate(0px, 0px);
-  opacity: 1.0;
+  .mobile-menu.open {
+    transform: translate(0px, 0px);
+    opacity: 1.0;
+  }
 }
 html, body {
   height: 100%;
