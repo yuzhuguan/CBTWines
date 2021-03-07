@@ -1,6 +1,6 @@
 <template>
   <section class="extend-content">
-    <div class="container" :class="{ reverse: reverse }">
+    <div class="container image-container" :class="{ reverse: reverse }">
       <div class="image-right">
         <cld-image :public-id="$t(`home.extend-${index}.image-right`)" loading="lazy" quality="auto" />
       </div>
@@ -55,12 +55,21 @@ export default {
 <style lang="scss">
 .extend-content {
   .container {
+    &.image-container {
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
     max-width: 1160px;
     padding-left: 40px;
     padding-right: 40px;
     margin-right: auto;
     margin-left: auto;
     position: relative;
+    @media (max-width: 768px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
     .image-left {
       height: 652px;
       display: block;
@@ -91,10 +100,18 @@ export default {
       background-color: #fff;
       margin-left: 25%;
       width: 50%;
+      @media (max-width: 768px) {
+        margin: 0 auto 4rem;
+        padding: 1rem 1rem 2rem;
+        width: 90%;
+      }
       .extend-title {
         color: #A44C4F;
         font-size: 3rem;
         margin-bottom: 2rem;
+        @media (max-width: 768px) {
+          font-size: 2rem;
+        }
       }
       .extend-description {
         font-family: 'Raleway', sans-serif;
@@ -110,6 +127,9 @@ export default {
         border-radius: 8px;
         font-weight: bold;
         letter-spacing: 3px;
+        @media (max-width: 768px) {
+          letter-spacing: 2px;
+        }
       }
     }
   }

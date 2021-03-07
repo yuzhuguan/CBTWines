@@ -24,17 +24,27 @@ export default {
   box-shadow: inset -50vw 32em #FFF6F6;
   background: #E6CFCF;
   height: auto;
+  @media (max-width: 768px) {
+    box-shadow: inset -50vw 25em #FFF6F6;
+  }
   .title {
     font-size: 2.7rem;
     color: #A44C4F;
     text-align: center;
     max-width: 90%;
     margin: 0 auto 4rem;
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
   }
   .extend-bottom {
     margin-top: -500px;
     height: 500px;
     background: #FFF6F6;
+    @media (max-width: 768px) {
+      margin-top: -200px;
+      height: 200px;
+    }
   }
 }
 </style>
