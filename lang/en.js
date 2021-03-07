@@ -68,6 +68,14 @@ export default {
           "button_url": "/new-arrivals",
           "image-right": "v1615054333/cbtwines/kv-pc_1_y0b1yx.png",
           "image-left": "v1615054335/cbtwines/pexels-photo-3171770_1_yt9lnt.png"
+        },
+        "extend-3": {
+          "title": "No Idea What to Choose?",
+          "paragraph": "Sometimes is just hard to find something you want when you are ran out of idea. Let's us offer you something special!",
+          "button_text": "View Special Offers",
+          "button_url": "/special-offers",
+          "image-right": "v1615105825/cbtwines/purple-grapes-vineyard-napa-valley-napa-vineyard-45209_1_snhuzf.png",
+          "image-left": "v1615105825/cbtwines/pexels-photo-4946398_1_k6n28d.png"
         }
     },
     "about-us": {

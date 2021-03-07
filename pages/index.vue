@@ -1,7 +1,7 @@
 <template>
   <div class="index-content-extend">
     <h2 class="title">{{ $t("home.title") }}</h2>
-    <div v-for="i in 2" :key="i">
+    <div v-for="i in 3" :key="i">
       <ExtendedContent :index="i" :reverse="i%2 === 0" />
     </div>
   </div>
