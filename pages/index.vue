@@ -4,6 +4,7 @@
     <div v-for="i in 3" :key="i">
       <ExtendedContent :index="i" :reverse="i%2 === 0" />
     </div>
+    <div class="extend-bottom" />
   </div>
 </template>
 
@@ -29,6 +30,11 @@ export default {
     text-align: center;
     max-width: 90%;
     margin: 0 auto 4rem;
+  }
+  .extend-bottom {
+    margin-top: -500px;
+    height: 500px;
+    background: #FFF6F6;
   }
 }
 </style>
