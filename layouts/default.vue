@@ -17,6 +17,7 @@
       </v-list>
     </div>
     <Footer/>
+    <RealFooter />
   </main>
 
 </template>
@@ -27,7 +28,8 @@ export default {
   components: {
     Header: () => import('../components/Header'),
     Footer: () => import('../components/Footer'),
-    IndexHero: () => import('../components/IndexHero')
+    IndexHero: () => import('../components/IndexHero'),
+    RealFooter: () => import('../components/RealFooter')
   },
   data() {
     return {

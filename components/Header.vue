@@ -73,7 +73,7 @@ export default {
     height: 70px;
     background-color: white;
     z-index: 50;
-    position: absolute;
+    position: fixed;
     @media (max-width: 768px) {
       position: fixed;
     }

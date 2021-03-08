@@ -70,7 +70,7 @@ export default {
           "image-left": "v1615054335/cbtwines/pexels-photo-3171770_1_yt9lnt.png"
         },
         "extend-3": {
-          "title": "No Idea What to Choose?",
+          "title": "No Idea What To Choose?",
           "paragraph": "Sometimes is just hard to find something you want when you are ran out of idea. Let's us offer you something special!",
           "button_text": "View Special Offers",
           "button_url": "/special-offers",
@@ -151,5 +151,8 @@ export default {
             { "text": "Discounted Price", "value": "discountPrice" }
         ],
         "paragraph": "Do you want some <a href='/new-arrivals'>New Arrivals</a>? Or check out our wine list <a href='/wine-list'>here</a>."
+    },
+    "real-footer": {
+      "text": "&copy;2021 CBT Wines Company Limited. All rights reserved."
     }
 }
