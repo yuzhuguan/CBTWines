@@ -12,6 +12,7 @@
 import { mapState } from "vuex";
 
 export default {
+  layout: 'indexbase',
   components: {
     ExtendedContent: () => import('../components/Index/ExtendedContent')
   }
