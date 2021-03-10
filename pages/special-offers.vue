@@ -122,7 +122,7 @@ export default {
   mounted() {},
   computed: {
     wines () {
-      return this.$store.getters['newArrivals']
+      return this.$store.getters['specialOffers']
     }
   },
   async asyncData(context) {
