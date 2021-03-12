@@ -2,7 +2,7 @@
   <div class="header">
     <div class="header-container">
       <div class="logo-container">
-        <nuxt-link to="/">
+        <nuxt-link :to="$t('header.nav')[0].link">
           <img src="/media/logo.png" alt="logo"/>
         </nuxt-link>
       </div>
@@ -15,7 +15,7 @@
             @mouseover="navItem.showList = true"
             @mouseout="navItem.showList = false"
           >
-              <nuxt-link v-if="!navItem.haveList" to="/" class="current-page-tag">{{ navItem.title }}</nuxt-link>
+              <nuxt-link v-if="!navItem.haveList" :to="$t('header.nav')[0].link" class="current-page-tag">{{ navItem.title }}</nuxt-link>
               <span v-else class="dummy-link current-page-tag">{{ navItem.title }}</span>
               <NavHoverList :v-if="navItem.haveList" :items="navItem.listItems" :show-list="navItem.showList"/>
           </li>

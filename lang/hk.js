@@ -5,35 +5,45 @@ export default{
     "header": {
       "nav": [
         {
-          "title": "HOME",
+          "title": "主頁",
           "haveList" : false,
-          "link": '/'
+          "link": '/hk'
         },
         {
-          "title": "MORE ABOUT CBT",
+          "title": "有關我們",
           "haveList" : true,
           "listItems": [
-            { "title": "ABOUT US", "link": "/about-us" },
-            { "title": "CONTACT US", "link": "/contact-us" },
-            { "title": "FIND US", "link": "/find-us" },
+            { "title": "關於我們", "link": "/hk/about-us" },
+            { "title": "聯繫我們", "link": "/hk/contact-us" },
+            { "title": "尋找我們", "link": "/hk/find-us" },
           ],
           "showList": false,
           "link": "/",
           "matches": /\babout-us\b | \bcontact-us\b | \bfind-us\b/
         },
         {
-          "title": "WINES & OFFERS",
+          "title": "酒單與報價",
           "haveList" : true,
           "listItems": [
-            { "title": "WINE LIST", "link": "/wine-list" },
-            { "title": "NEW ARRIVAL", "link": "/new-arrivals" },
-            { "title": "SPECIAL OFFER", "link": "special-offers" },
+            { "title": "酒單", "link": "/hk/wine-list" },
+            { "title": "新酒到貨", "link": "/hk/new-arrivals" },
+            { "title": "特别推介", "link": "/hk/special-offers" },
           ],
           "showList": false,
           "matches": /\bwine-list\b | \bnew-arrivals\b | \bspecial-offers\b/
         }
       ]
     },
+    "mobileMenu": [
+      { "title": "主頁", "link": "/hk" },
+      { "title": "關於我們", "link": "/hk/about-us" },
+      { "title": "酒單", "link": "/hk/wine-list" },
+      { "title": "特别推介", "link": "/hk/special-offers" },
+      { "title": "新酒到貨", "link": "/hk/new-arrivals" },
+      { "title": "尋找我們", "link": "/hk/find-us" },
+      { "title": "聯繫我們", "link": "/hk/contact-us" }
+      // { "title": "WINE RATING", "link": "/wine-rating" }
+    ],
     "home": {
         "navs": [
             { "text": "關於我們", "link": "/about-us", "img": "/img/new/banner.png" },
@@ -41,7 +51,32 @@ export default{
             { "text": "新酒到貨", "link": "/new-arrivals", "img": "/img/new/new-arrival.jpg" },
             { "text": "特别推介", "link": "/special-offers", "img": "/img/new/special-offers.jpg" },
             { "text": "聯繫我們", "link": "/contact-us", "img": "/img/new/3rd.jpg" }
-        ]
+        ],
+        "title": "尋找與享受你理想中的葡萄酒",
+        "extend-1": {
+          "title": "在香貝田中獲取理想中的葡萄酒",
+          "paragraph": "我們提供來自100多家葡萄酒生產商的優質葡萄酒。有如此驚人數目的種類，總有一款適合你的葡萄酒。",
+          "button_text": "查看酒單",
+          "button_url": "/hk/wine-list",
+          "image-right": "v1614964460/cbtwines/session-one-horizontal_vbtkpk.png",
+          "image-left": "v1614965116/cbtwines/session-one-vertical_iyjnvl.png"
+        },
+        "extend-2": {
+          "title": "想找新的感覺嗎？",
+          "paragraph": "查看{month}我們在全球搜羅的最新貨品。點擊以下按鈕以尋找新的葡萄酒！",
+          "button_text": "查看新酒到貨",
+          "button_url": "/hk/new-arrivals",
+          "image-right": "v1615054333/cbtwines/kv-pc_1_y0b1yx.png",
+          "image-left": "v1615054335/cbtwines/pexels-photo-3171770_1_yt9lnt.png"
+        },
+        "extend-3": {
+          "title": "不知道該選擇什麼？",
+          "paragraph": "有時候，當您失去想法時，很難找到想要的東西。 讓我們為您提供一些特別的葡萄酒吧！",
+          "button_text": "查看特别推介",
+          "button_url": "/hk/special-offers",
+          "image-right": "v1615105825/cbtwines/purple-grapes-vineyard-napa-valley-napa-vineyard-45209_1_snhuzf.png",
+          "image-left": "v1615105825/cbtwines/pexels-photo-4946398_1_k6n28d.png"
+        }
     },
     "about-us": {
         "title" : "關於我們",
@@ -56,8 +91,8 @@ export default{
         "address_4" : "6樓 B3室"
     },
     "wine-list": {
-      "title": "酒單",
-      "region": "產地",
+        "title": "酒單",
+        "region": "產地",
         "origins": [
             { "name": "All", "displayname": "全部"},
             { "name": "Bordeaux", "displayname": "波爾多區"},
@@ -77,7 +112,8 @@ export default{
             { "name": "Whisky", "displayname": "威士忌"},
             { "name": "Italy", "displayname": "義大利"},
             { "name": "U.S.A.", "displayname": "美國"},
-            { "name": "Accessory", "displayname": "其他"}
+            { "name": "Accessory", "displayname": "其他"},
+            { "name": "Sake", "displayname": "清酒"}
         ],
         "headers": [
             { "text": "酒名", "value": "name" },
@@ -115,5 +151,8 @@ export default{
             { "text": "折後價", "value": "discountPrice" }
         ],
         "paragraph" : "對我們的<a href='/hk/new-arrivals'>新酒到貨</a>有興趣嗎? 還是看看我們的<a href='/hk/wine-list'>酒單</a>。"
-    }
+    },
+  "real-footer": {
+    "text": "&copy;2021 香貝田酒業有限公司版權所有"
+  }
 }

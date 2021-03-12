@@ -27,7 +27,7 @@ export default {
           "listItems": [
             { "title": "WINE LIST", "link": "/wine-list" },
             { "title": "NEW ARRIVAL", "link": "/new-arrivals" },
-            { "title": "SPECIAL OFFER", "link": "special-offers" },
+            { "title": "SPECIAL OFFER", "link": "/special-offers" },
           ],
           "showList": false,
           "matches": /\bwine-list\b | \bnew-arrivals\b | \bspecial-offers\b/
