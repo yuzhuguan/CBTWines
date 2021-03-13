@@ -45,13 +45,6 @@ export default{
     // { "title": "WINE RATING", "link": "/wine-rating" }
   ],
   "home": {
-    "navs": [
-      { "text": "關於我們", "link": "/about-us", "img": "/img/new/banner.png" },
-      { "text": "酒單", "link": "/wine-list", "img": "/img/new/2nd.jpg" },
-      { "text": "新酒到貨", "link": "/new-arrivals", "img": "/img/new/new-arrival.jpg" },
-      { "text": "特别推介", "link": "/special-offers", "img": "/img/new/special-offers.jpg" },
-      { "text": "聯繫我們", "link": "/contact-us", "img": "/img/new/3rd.jpg" }
-    ],
     "title": "寻找与享受你理想中的葡萄酒",
     "extend-1": {
       "title": "在香贝田中获取理想中的葡萄酒",

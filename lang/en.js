@@ -45,13 +45,6 @@ export default {
      ]
    },
     "home": {
-        "navs": [
-            { "text": "About Us", "link": "/about-us", "img": "/img/new/banner.png" },
-            { "text": "Wine List", "link": "/wine-list", "img": "/img/new/2nd.jpg" },
-            { "text": "New Arrivals", "link": "/new-arrivals", "img": "/img/new/new-arrival.jpg" },
-            { "text": "Special Offers", "link": "/special-offers", "img": "/img/new/special-offers.jpg" },
-            { "text": "Contact Us", "link": "/contact-us", "img": "/img/new/3rd.jpg" }
-        ],
         "title": "FIND AND ENJOY THE IDEAL WINE FOR YOU",
         "extend-1": {
           "title": "Get Your Ideal Wine In CBT Wines",
