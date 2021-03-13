@@ -4,35 +4,44 @@ export default {
     },
    "header": {
       "nav": [
-        {
-          "title": "HOME",
-          "haveList" : false,
-          "link": '/'
-        },
-        {
-          "title": "MORE ABOUT CBT",
-          "haveList" : true,
-          "listItems": [
-            { "title": "ABOUT US", "link": "/about-us" },
-            { "title": "CONTACT US", "link": "/contact-us" },
-            { "title": "FIND US", "link": "/find-us" },
-          ],
-          "showList": false,
-          "link": "/",
-          "matches": /\babout-us\b | \bcontact-us\b | \bfind-us\b/
-        },
-        {
-          "title": "WINES & OFFERS",
-          "haveList" : true,
-          "listItems": [
-            { "title": "WINE LIST", "link": "/wine-list" },
-            { "title": "NEW ARRIVAL", "link": "/new-arrivals" },
-            { "title": "SPECIAL OFFER", "link": "/special-offers" },
-          ],
-          "showList": false,
-          "matches": /\bwine-list\b | \bnew-arrivals\b | \bspecial-offers\b/
-        }
+          {
+            "title": "HOME",
+            "haveList" : false,
+            "link": '/'
+          },
+          {
+            "title": "MORE ABOUT CBT",
+            "haveList" : true,
+            "listItems": [
+              { "title": "ABOUT US", "link": "/about-us" },
+              { "title": "CONTACT US", "link": "/contact-us" },
+              { "title": "FIND US", "link": "/find-us" },
+            ],
+            "showList": false,
+            "link": "/",
+            "matches": /\babout-us\b | \bcontact-us\b | \bfind-us\b/
+          },
+          {
+            "title": "WINES & OFFERS",
+            "haveList" : true,
+            "listItems": [
+              { "title": "WINE LIST", "link": "/wine-list" },
+              { "title": "NEW ARRIVAL", "link": "/new-arrivals" },
+              { "title": "SPECIAL OFFER", "link": "/special-offers" },
+            ],
+            "showList": false,
+            "matches": /\bwine-list\b | \bnew-arrivals\b | \bspecial-offers\b/
+          }
       ],
+     "lang-switcher": {
+       "haveList" : true,
+        "title": "LANGUAGE",
+        "showList": false,
+        "lang": [
+          { "title": "Chinese_HK", "link": "/hk" },
+          { "title": "Chinese_CN", "link": "/cn" }
+        ]
+     },
      "mobileMenu": [
        { "title": "HOME", "link": "/" },
        { "title": "ABOUT US", "link": "/about-us" },

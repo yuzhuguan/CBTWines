@@ -32,7 +32,16 @@ export default{
         "showList": false,
         "matches": /\bwine-list\b | \bnew-arrivals\b | \bspecial-offers\b/
       }
-    ]
+    ],
+    "lang-switcher": {
+      "haveList" : true,
+      "title": "其他语言",
+      "showList": false,
+      "lang": [
+        { "title": "英文", "link": "/en" },
+        { "title": "繁体中文", "link": "/hk" }
+      ]
+    }
   },
   "mobileMenu": [
     { "title": "主页", "link": "/cn" },

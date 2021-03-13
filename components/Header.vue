@@ -19,6 +19,14 @@
               <span v-else class="dummy-link current-page-tag">{{ navItem.title }}</span>
               <NavHoverList :v-if="navItem.haveList" :items="navItem.listItems" :show-list="navItem.showList"/>
           </li>
+          <li
+            class="nav-item mobile-hide"
+            @mouseover="$t('header.lang-switcher').showList = true"
+            @mouseout="$t('header.lang-switcher').showList = false"
+          >
+            <span class="dummy-link current-page-tag">{{ $t('header.lang-switcher').title }}</span>
+            <NavHoverList :v-if="$t('header.lang-switcher').haveList" :items="$t('header.lang-switcher').lang" :show-list="$t('header.lang-switcher').showList" type="lang-switcher"/>
+          </li>
           <li class="mobile nav-item">
             <span class="dummy-link menu-icon-container">
               <div class="menu-icon" @click="toggleMobileMenu" :class="(showMobileMenu) ? 'open' : '' ">
