@@ -119,6 +119,7 @@ export default{
     ],
     "headers": [
       { "text": "酒名", "value": "name" },
+      { "text": "容量", "value": "volume" },
       { "text": "中文", "value": "chineseName" },
       { "text": "产地", "value": "origin" },
       { "text": "产区", "value": "appellation" },
@@ -131,6 +132,7 @@ export default{
     "title": "新酒到货",
     "headers": [
       { "text": "酒名", "value": "name" },
+      { "text": "容量", "value": "volume" },
       { "text": "中文", "value": "chineseName" },
       { "text": "产地", "value": "origin" },
       { "text": "产区", "value": "appellation" },
@@ -144,6 +146,7 @@ export default{
     "title": "特别推介",
     "headers": [
       { "text": "酒名", "value": "name" },
+      { "text": "容量", "value": "volume" },
       { "text": "中文", "value": "chineseName" },
       { "text": "产地", "value": "origin" },
       { "text": "产区", "value": "appellation" },

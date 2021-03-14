@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const wineSchema = mongoose.Schema({
     name: String,
+    volume: String,
     appellation: String,
     chineseName: String,
     origin: String,
@@ -12,6 +13,7 @@ const wineSchema = mongoose.Schema({
     newArrival: String,
     specialOffer: String,
     colorName: String,
+    colorVolume: String,
     colorAppellation: String,
     colorChineseName: String,
     colorOrigin: String,

@@ -30,7 +30,7 @@ app.post('/backstage/sign-up', (req, res, next) => {
         username: req.body.username,
         password: req.body.password,
     });
-    
+
     User.createUser(newUser, (err, user) => {
         if (err) {
             return res.status(400).json({
@@ -101,6 +101,7 @@ app.post('/backstage/update-wine', passport.authenticate('jwt', { session: false
         const filter = { name: wine.name }
         const update = {
             name: req.body.newDetail.name,
+            volume: req.body.newDetail.volume,
             origin: req.body.newDetail.origin,
             appellation: req.body.newDetail.appellation,
             chineseName: req.body.newDetail.chineseName,
@@ -111,6 +112,7 @@ app.post('/backstage/update-wine', passport.authenticate('jwt', { session: false
             newArrival: req.body.newDetail.newArrival,
             specialOffer: req.body.newDetail.specialOffer,
             colorName: req.body.newDetail.colorName,
+            colorVolume: req.body.newDetail.colorVolume,
             colorOrigin: req.body.newDetail.colorOrigin,
             colorAppellation: req.body.newDetail.colorAppellation,
             colorChineseName: req.body.newDetail.colorChineseName,
@@ -126,9 +128,9 @@ app.post('/backstage/update-wine', passport.authenticate('jwt', { session: false
                 title: "Done.",
                 message: wine.name + "'s detail has beem updated"
             })
-        })  
+        })
     })
-}) 
+})
 
 // @route         POST /api/backstage/add-wine
 // @description   update wine
@@ -137,6 +139,7 @@ app.post('/backstage/update-wine', passport.authenticate('jwt', { session: false
 app.post('/backstage/add-wine', passport.authenticate('jwt', { session: false }), (req, res, next) => {
     var newWine = new Wines({
         name: req.body.newDetail.name,
+        volume: req.body.newDetail.volume,
         origin: req.body.newDetail.origin,
         appellation: req.body.newDetail.appellation,
         chineseName: req.body.newDetail.chineseName,
@@ -147,6 +150,7 @@ app.post('/backstage/add-wine', passport.authenticate('jwt', { session: false })
         newArrival: req.body.newDetail.newArrival,
         specialOffer: req.body.newDetail.specialOffer,
         colorName: req.body.newDetail.colorName,
+        colorVolume: req.body.newDetail.colorVolume,
         colorOrigin: req.body.newDetail.colorOrigin,
         colorAppellation: req.body.newDetail.colorAppellation,
         colorChineseName: req.body.newDetail.colorChineseName,
@@ -155,7 +159,7 @@ app.post('/backstage/add-wine', passport.authenticate('jwt', { session: false })
         colorPrice: req.body.newDetail.colorPrice,
         colorDiscountPrice: req.body.newDetail.colorDiscountPrice,
     });
-    
+
     newWine.save()
         .then(
             result => {console.log(result)

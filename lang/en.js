@@ -119,6 +119,7 @@ export default {
         ],
         "headers": [
             { "text": "Product", "value": "name" },
+            { "text": "Volume", "value": "volume" },
             { "text": "Chinese Name", "value": "chineseName" },
             { "text": "Region", "value": "origin" },
             { "text": "Appellation", "value": "appellation" },
@@ -131,6 +132,7 @@ export default {
         "title": "New Arrivals",
         "headers": [
             { "text": "Product", "value": "name" },
+            { "text": "Volume", "value": "volume" },
             { "text": "Chinese Name", "value": "chineseName" },
             { "text": "Region", "value": "origin" },
             { "text": "Appellation", "value": "appellation" },
@@ -144,6 +146,7 @@ export default {
         "title": "Special Offers",
         "headers": [
             { "text": "Product", "value": "name" },
+            { "text": "Volume", "value": "volume" },
             { "text": "Chinese Name", "value": "chineseName" },
             { "text": "Region", "value": "origin" },
             { "text": "Appellation", "value": "appellation" },

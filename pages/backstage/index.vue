@@ -20,6 +20,9 @@
         <template v-slot:item.name="{ item }">
           <p :class="item.colorName" style="margin: 0">{{item.name}}</p>
         </template>
+        <template v-slot:item.name="{ item }">
+          <p :class="item.colorVolume" style="margin: 0">{{item.volume}}</p>
+        </template>
         <template v-slot:item.chineseName="{ item }">
           <p :class="item.colorChineseName" style="margin: 0">{{item.chineseName}}</p>
         </template>
@@ -69,6 +72,9 @@
                       <v-text-field v-model="editedItem.name" label="Product"></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
+                      <v-text-field v-model="editedItem.volume" label="Volume"></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="6" md="4">
                       <v-text-field v-model="editedItem.origin" label="Region"></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
@@ -109,6 +115,15 @@
                         item-text="color"
                         item-value="class"
                         v-model="editedItem.colorName"
+                        label="Color Name"
+                      ></v-select>
+                    </v-col>
+                    <v-col cols="12" sm="6" md="4">
+                      <v-select
+                        :items="colors"
+                        item-text="color"
+                        item-value="class"
+                        v-model="editedItem.colorVolume"
                         label="Color Name"
                       ></v-select>
                     </v-col>
@@ -244,6 +259,7 @@ export default {
       dialog: false,
       headers: [
         { text: "Product", value: "name" },
+        { text: "Volume", value: "volume" },
         { text: "Chinese Name", value: "chineseName" },
         { text: "Region", value: "origin" },
         { text: "Appellation", value: "appellation" },
@@ -259,6 +275,7 @@ export default {
       editedItem: {
         _id: null,
         name: "",
+        volume: "",
         origin: "",
         appellation: "",
         chineseName: "",
@@ -269,6 +286,7 @@ export default {
         newArrival: "N",
         specialOffer: "N",
         colorName: "",
+        colorVolume: "",
         colorOrigin: "",
         colorAppellation: "",
         colorChineseName: "",
@@ -280,6 +298,7 @@ export default {
       defaultItem: {
         _id: null,
         name: "",
+        volume: "",
         origin: "",
         appellation: "",
         chineseName: "",
@@ -290,6 +309,7 @@ export default {
         newArrival: "N",
         specialOffer: "N",
         colorName: "",
+        colorVolume: "",
         colorOrigin: "",
         colorAppellation: "",
         colorChineseName: "",
