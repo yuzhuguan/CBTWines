@@ -1,39 +1,40 @@
 <template>
-  <v-container>
+  <div>
     <v-alert type="error" :value="!errMsg==''" transition="scale-transition">
-            {{ errMsg }}
-        </v-alert>
+      {{ errMsg }}
+    </v-alert>
+    <v-container>
+      <v-card class="container login-form">
+        <v-title class="title mx-3"> <v-icon color="blue lighten-3" class="mb-1 mr-3">account_box</v-icon>Sign In Your Account</v-title>
+        <v-form
+          ref="form"
+          v-model="valid"
+        >
+          <v-text-field
+            v-model="username"
+            :rules="usernameRules"
+            label="Username"
+            required
+            class="mx-3 my-8"
+          ></v-text-field>
 
-        <v-card class="container">
-            <v-title class="title mx-3"> <v-icon color="blue lighten-3" class="mb-1 mr-3">account_box</v-icon>Sign In Your Account</v-title>
-            <v-form
-                ref="form"
-                v-model="valid"
-            >
-                <v-text-field
-                    v-model="username"
-                    :rules="usernameRules"
-                    label="Username"
-                    required
-                    class="mx-3 my-8"
-                ></v-text-field>
+          <v-text-field
+            v-model="password"
+            :rules="passwordRules"
+            label="Password"
+            type="password"
+            required
+            class="mx-3 my-8"
+          ></v-text-field>
 
-                <v-text-field
-                    v-model="password"
-                    :rules="passwordRules"
-                    label="Password"
-                    type="password"
-                    required
-                    class="mx-3 my-8"
-                ></v-text-field>
-
-                <div class="text-right mt-8 mb-4 mr-3">
-                    <v-btn color="error" @click="reset" class="mr-5">Reset</v-btn>
-                    <v-btn color="success" @click="login" :disabled="!valid">Sign In</v-btn>
-                </div>
-            </v-form>
-        </v-card>
-  </v-container>
+          <div class="text-right mt-8 mb-4 mr-3">
+            <v-btn color="error" @click="reset" class="mr-5">Reset</v-btn>
+            <v-btn color="success" @click="login" :disabled="!valid">Sign In</v-btn>
+          </div>
+        </v-form>
+      </v-card>
+    </v-container>
+  </div>
 </template>
 
 <script>
@@ -87,4 +88,7 @@ export default {
 </script>
 
 <style scoped>
+.login-form {
+  margin-top: 20%;
+}
 </style>
