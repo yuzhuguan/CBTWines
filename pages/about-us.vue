@@ -2,7 +2,7 @@
   <div class="about-us">
     <div class="main-container">
       <div class="right-block">
-        <cld-image public-id="v1612189163/cbtwines/about-us_nxfwvy.png" width="960" loading="lazy" quality="auto" data-aos="fade-left" data-aos-delay="" data-aos-duration="2400"/>
+        <cld-image public-id="v1612189163/cbtwines/about-us_nxfwvy.png" width="960" loading="lazy" quality="auto" data-aos="fade-left" data-aos-delay="" data-aos-duration="2400" fetchFormat="auto" />
       </div>
       <div class="left-block">
         <div class="top-block"/>

@@ -7,7 +7,7 @@
         </div>
         <div class="content">
           <div class="logo-container">
-            <cld-image public-id="v1612189161/cbtwines/logo_jzvi2t.png" width="225" height="100" loading="lazy" />
+            <cld-image public-id="v1612189161/cbtwines/logo_jzvi2t.png" width="225" height="100" loading="lazy" fetchFormat="auto" />
           </div>
           <div class="content-detail">
             <v-col :cols="undefined" class="pt-11">

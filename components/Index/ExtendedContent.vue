@@ -2,10 +2,10 @@
   <section class="extend-content">
     <div class="container image-container" :class="{ reverse: reverse }">
       <div class="image-right">
-        <cld-image :public-id="$t(`home.extend-${index}.image-right`)" loading="lazy" quality="auto" />
+        <cld-image :public-id="$t(`home.extend-${index}.image-right`)" loading="lazy" quality="auto" fetchFormat="auto" />
       </div>
       <div class="image-left">
-        <cld-image :public-id="$t(`home.extend-${index}.image-left`)" loading="lazy" quality="auto" />
+        <cld-image :public-id="$t(`home.extend-${index}.image-left`)" loading="lazy" quality="auto" fetchFormat="auto" />
       </div>
     </div>
     <div class="container">
