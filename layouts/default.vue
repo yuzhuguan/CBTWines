@@ -1,5 +1,5 @@
 <template>
-  <v-app :style="{ 'background-image': 'url(/img/BG.png)'}" dark>
+  <v-app :style="{ 'background-image': 'url(/img/BG.png)'}" dark class="backstage-container">
     <v-btn
       v-scroll="onScroll"
       v-show="fab"
@@ -149,9 +149,12 @@ a{
   left: 130px;
   top: 10px;
 }
+
+#app > div > div {
+  min-height: 85.6vh;
+}
+
 .v-footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
 }
 </style>
