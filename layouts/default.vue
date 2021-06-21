@@ -1,8 +1,8 @@
 <template>
   <v-app :style="{ 'background-image': 'url(/img/BG.png)'}" dark class="backstage-container">
     <v-btn
-      v-scroll="onScroll"
       v-show="fab"
+      v-scroll="onScroll"
       fab
       dark
       fixed
@@ -15,6 +15,7 @@
     </v-btn>
     <v-app-bar app :elevation="0" color="white" :style="{'opacity': 0.8}">
       <v-btn
+        v-if="loggedIn"
         color="blue"
         dark
         small
@@ -22,26 +23,39 @@
         class="backstageBtn"
         fab
         to="/backstage"
-        v-if="loggedIn"
       >
         <v-icon>settings</v-icon>
       </v-btn>
       <v-toolbar-item class="font-weight-light">
-        <nuxt-link to="/" class="black--text" v-if="loggedIn"><v-btn text @click="logout"><v-icon>supervisor_account</v-icon > Logout</v-btn></nuxt-link>
+        <nuxt-link v-if="loggedIn" to="/" class="black--text">
+          <v-btn text @click="logout">
+            <v-icon>supervisor_account</v-icon> Logout
+          </v-btn>
+        </nuxt-link>
       </v-toolbar-item>
 
-      <v-spacer></v-spacer>
+      <v-spacer />
 
       <v-toolbar-item>
-        <v-toolbar-title><nuxt-link to="/"><img class="logo" src="/img/logo.png" alt="logo"/></nuxt-link></v-toolbar-title>
+        <v-toolbar-title>
+          <nuxt-link to="/">
+            <img class="logo" src="/img/logo.png" alt="logo">
+          </nuxt-link>
+        </v-toolbar-title>
       </v-toolbar-item>
 
-      <v-spacer></v-spacer>
+      <v-spacer />
 
       <v-toolbar-item>
-        <v-btn text @click="changeLang('traditionalChinese')">繁</v-btn> |
-        <v-btn text @click="changeLang('simplifiedChinese')">简</v-btn> |
-        <v-btn text @click="changeLang('english')">ENG</v-btn>
+        <v-btn text @click="changeLang('traditionalChinese')">
+          繁
+        </v-btn> |
+        <v-btn text @click="changeLang('simplifiedChinese')">
+          简
+        </v-btn> |
+        <v-btn text @click="changeLang('english')">
+          ENG
+        </v-btn>
       </v-toolbar-item>
     </v-app-bar>
 
@@ -61,67 +75,73 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from 'axios'
 export default {
-  data() {
+  data () {
     return {
       loggedIn: false,
       fab: false
     }
   },
+  watch: {
+    $route () {
+      this.loggedIn = false
+      if (localStorage.getItem('token')) {
+        axios.get('/api/auth-with-jwt', { headers: { token: localStorage.getItem('token') } })
+          .then(
+            (res) => {
+              console.log(res)
+              if (res.status === 200) {
+                this.loggedIn = true
+              }
+              return res.status
+            },
+            (err) => {
+              console.log(err)
+            }
+          )
+          .catch((e) => {
+            console.log(e)
+          })
+      }
+    }
+  },
+  mounted () {
+    if (localStorage.getItem('token')) {
+      axios.get('/api/backstage/auth-with-jwt', { headers: { token: localStorage.getItem('token') } })
+        .then((res) => {
+          console.log(res)
+          if (res.status === 200) {
+            this.loggedIn = true
+          }
+          return res.status
+        })
+        .catch((e) => {
+          console.log(e)
+        })
+    }
+  },
   methods: {
-    changeLang(lang) {
+    changeLang (lang) {
       if (lang === 'traditionalChinese') {
         this.$router.push('/hk')
-      }
-      else if (lang === 'simplifiedChinese') {
+      } else if (lang === 'simplifiedChinese') {
         this.$router.push('/cn')
-      }
-      else {
+      } else {
         this.$router.push('/')
       }
     },
-    logout() {
-      localStorage.clear();
-      this.loggedIn = false;
+    logout () {
+      localStorage.clear()
+      this.loggedIn = false
     },
     onScroll (e) {
       if (typeof window === 'undefined') return
-      const top = window.pageYOffset ||   e.target.scrollTop || 0
+      const top = window.pageYOffset || e.target.scrollTop || 0
       this.fab = top > 20
     },
     toTop () {
       this.$vuetify.goTo(0)
-    }
-  },
-  mounted() {
-    if(localStorage.getItem('token')) {
-      axios.get('/api/backstage/auth-with-jwt', {headers: {token: localStorage.getItem('token')}})
-        .then(res => {
-          console.log(res);
-          if(res.status === 200) {
-            this.loggedIn = true;
-          }
-        })
-    }
-  },
-  watch: {
-    $route () {
-      this.loggedIn = false;
-      if (localStorage.getItem('token')) {
-        axios.get('/api/auth-with-jwt', {headers: {token: localStorage.getItem('token')}})
-          .then(
-            res => {
-              console.log(res);
-              if(res.status === 200) {
-                this.loggedIn = true;
-              }
-            },
-            err => {
-              console.log(err);
-            }
-          )
-      }
     }
   }
 }

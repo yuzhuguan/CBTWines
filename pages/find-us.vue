@@ -3,16 +3,16 @@
     <div class="find-us-container">
       <div class="find-us-hero">
         <div class="image-container" :style="{ backgroundImage: 'url(https://res.cloudinary.com/dinad7iot/image/upload/v1612189163/cbtwines/find-us_cxsilt.png)'}">
-            <h1>{{ $t('find-us.title') }}</h1>
+          <h1>{{ $t('find-us.title') }}</h1>
         </div>
         <div class="content">
           <div class="logo-container">
-            <cld-image public-id="v1612189161/cbtwines/logo_jzvi2t.png" width="225" height="100" loading="lazy" fetchFormat="auto" />
+            <cld-image public-id="v1612189161/cbtwines/logo_jzvi2t.png" width="225" height="100" loading="lazy" fetch-format="auto" />
           </div>
           <div class="content-detail">
             <v-col :cols="undefined" class="pt-11">
               <v-row class="mx-0 my-2">
-                <v-col :cols="2" >
+                <v-col :cols="2">
                   <v-row><v-icon>place</v-icon></v-row>
                 </v-col>
                 <v-col :cols="undefined" class="text-left font-weight-regular title">
@@ -23,7 +23,7 @@
                 </v-col>
               </v-row>
               <v-row class="mx-0 my-2">
-                <v-col :cols="2" >
+                <v-col :cols="2">
                   <v-row><v-icon>call</v-icon></v-row>
                 </v-col>
                 <v-col :cols="undefined" class="text-left font-weight-regular title">
@@ -31,7 +31,7 @@
                 </v-col>
               </v-row>
               <v-row class="mx-0 my-1">
-                <v-col :cols="2" >
+                <v-col :cols="2">
                   <v-row><v-icon>print</v-icon></v-row>
                 </v-col>
                 <v-col :cols="undefined" class="text-left font-weight-regular title">
@@ -39,7 +39,7 @@
                 </v-col>
               </v-row>
               <v-row class="mx-0 my-1">
-                <v-col :cols="2" >
+                <v-col :cols="2">
                   <v-row><v-icon>email</v-icon></v-row>
                 </v-col>
                 <v-col :cols="undefined" class="text-left font-weight-regular title">
@@ -47,7 +47,7 @@
                 </v-col>
               </v-row>
               <v-row class="mx-0 my-1">
-                <v-col :cols="2" >
+                <v-col :cols="2">
                   <v-row>E - Fax</v-row>
                 </v-col>
                 <v-col :cols="undefined" class="text-left font-weight-regular title">
@@ -56,7 +56,7 @@
               </v-row>
               <a href="https://www.facebook.com/CBT-Wines-Company-Limited-103999481285026" target="_blank" class="fb-link">
                 <v-row class="mx-0 my-1">
-                  <v-col :cols="2" >
+                  <v-col :cols="2">
                     <v-row><v-icon>facebook</v-icon></v-row>
                   </v-col>
                   <v-col :cols="undefined" class="text-left font-weight-regular title">
@@ -67,16 +67,13 @@
             </v-col>
           </div>
         </div>
-        <div class="right-banner">
-        </div>
+        <div class="right-banner" />
         <div class="scroll-down">
           <p>{{ $t('find-us.scroll-down') }}</p>
         </div>
       </div>
       <div class="map-container">
-        <div class="left-banner">
-
-        </div>
+        <div class="left-banner" />
         <div class="map-holder">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d922.6139242470448!2d114.148351!3d22.336416000000003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34040754eca8813f%3A0x4f9fe56467eaabd4!2z5piM6ZqG5bel5qWt5aSn5buI!5e0!3m2!1szh-TW!2shk!4v1585061879759!5m2!1szh-TW!2shk"
@@ -87,9 +84,8 @@
             allowfullscreen=""
             aria-hidden="false"
             tabindex="0"
-          ></iframe>
+          />
         </div>
-
       </div>
     </div>
   </div>

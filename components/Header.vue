@@ -3,21 +3,23 @@
     <div class="header-container">
       <div class="logo-container">
         <nuxt-link :to="$t('header.nav')[0].link">
-          <img src="/media/logo.png" alt="logo"/>
+          <img src="/media/logo.png" alt="logo">
         </nuxt-link>
       </div>
       <div class="navlist">
         <ul class="nav-ul">
           <li
-            class="nav-item mobile-hide" v-for="(navItem, index) in $t('header.nav')"
-            :key="index"
+            v-for="(navItem, index) in $t('header.nav')" :key="index"
+            class="nav-item mobile-hide"
             :class="(currPage === navItem.title) ? 'current-page' : ''"
             @mouseover="navItem.showList = true"
             @mouseout="navItem.showList = false"
           >
-              <nuxt-link v-if="!navItem.haveList" :to="$t('header.nav')[0].link" class="current-page-tag">{{ navItem.title }}</nuxt-link>
-              <span v-else class="dummy-link current-page-tag">{{ navItem.title }}</span>
-              <NavHoverList :v-if="navItem.haveList" :items="navItem.listItems" :show-list="navItem.showList"/>
+            <nuxt-link v-if="!navItem.haveList" :to="$t('header.nav')[0].link" class="current-page-tag">
+              {{ navItem.title }}
+            </nuxt-link>
+            <span v-else class="dummy-link current-page-tag">{{ navItem.title }}</span>
+            <NavHoverList :v-if="navItem.haveList" :items="navItem.listItems" :show-list="navItem.showList" />
           </li>
           <li
             class="nav-item mobile-hide"
@@ -25,14 +27,14 @@
             @mouseout="$t('header.lang-switcher').showList = false"
           >
             <span class="dummy-link current-page-tag">{{ $t('header.lang-switcher').title }}</span>
-            <NavHoverList :v-if="$t('header.lang-switcher').haveList" :items="$t('header.lang-switcher').lang" :show-list="$t('header.lang-switcher').showList" type="lang-switcher"/>
+            <NavHoverList :v-if="$t('header.lang-switcher').haveList" :items="$t('header.lang-switcher').lang" :show-list="$t('header.lang-switcher').showList" type="lang-switcher" />
           </li>
           <li class="mobile nav-item">
             <span class="dummy-link menu-icon-container">
-              <div class="menu-icon" @click="toggleMobileMenu" :class="(showMobileMenu) ? 'open' : '' ">
-                <span class="lines line-1"/>
-                <span class="lines line-2"/>
-                <span class="lines line-3"/>
+              <div class="menu-icon" :class="(showMobileMenu) ? 'open' : '' " @click="toggleMobileMenu">
+                <span class="lines line-1" />
+                <span class="lines line-2" />
+                <span class="lines line-3" />
               </div>
             </span>
           </li>
@@ -43,32 +45,29 @@
 </template>
 
 <script>
-import NavHoverList from "./Header/NavHoverList";
+import NavHoverList from './Header/NavHoverList'
 export default {
-  components: {NavHoverList},
+  components: { NavHoverList },
   computed: {
-    currPage() {
+    currPage () {
       const currSplit = this.$route.path.split('/')
       const currSplitPage = currSplit[currSplit.length - 1]
-      if(currSplitPage === '' || currSplitPage === 'hk' || currSplitPage === 'cn') {
+      if (currSplitPage === '' || currSplitPage === 'hk' || currSplitPage === 'cn') {
         return this.$t('header.nav[0].title')
-      }
-      else if(currSplitPage === 'about-us' || currSplitPage === 'contact-us' || currSplitPage === 'find-us') {
+      } else if (currSplitPage === 'about-us' || currSplitPage === 'contact-us' || currSplitPage === 'find-us') {
         return this.$t('header.nav[1].title')
-      }
-      else if(currSplitPage === 'wine-list' || currSplitPage === 'new-arrivals' || currSplitPage === 'special-offers') {
+      } else if (currSplitPage === 'wine-list' || currSplitPage === 'new-arrivals' || currSplitPage === 'special-offers') {
         return this.$t('header.nav[2].title')
-      }
-      else {
+      } else {
         return -1
       }
     },
-    showMobileMenu() {
+    showMobileMenu () {
       return this.$store.getters.showMobileMenu
     }
   },
   methods: {
-    toggleMobileMenu() {
+    toggleMobileMenu () {
       this.$store.commit('SET_SHOWMOBILEMENU', !this.showMobileMenu)
     }
   }

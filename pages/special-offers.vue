@@ -1,6 +1,8 @@
 <template>
   <div class="special-offers">
-    <h1 class="page-title">{{ $t('special-offers.title') }}</h1>
+    <h1 class="page-title">
+      {{ $t('special-offers.title') }}
+    </h1>
     <v-app>
       <v-card>
         <v-card-title>
@@ -10,7 +12,7 @@
             label="Search"
             single-line
             hide-details
-          ></v-text-field>
+          />
         </v-card-title>
         <v-layout column>
           <v-flex style="overflow: auto">
@@ -21,26 +23,40 @@
               :search="search"
               :sort-by="['name', 'vintage']"
             >
-              <template v-slot:item.name="{ item }">
-                <p :class="item.colorName" style="margin: 0">{{item.name}}</p>
+              <template #item.name="{ item }">
+                <p :class="item.colorName" style="margin: 0">
+                  {{ item.name }}
+                </p>
               </template>
-              <template v-slot:item.chineseName="{ item }">
-                <p :class="item.colorChineseName" style="margin: 0">{{item.chineseName}}</p>
+              <template #item.chineseName="{ item }">
+                <p :class="item.colorChineseName" style="margin: 0">
+                  {{ item.chineseName }}
+                </p>
               </template>
-              <template v-slot:item.origin="{ item }">
-                <p :class="item.colorOrigin" style="margin: 0">{{item.origin}}</p>
+              <template #item.origin="{ item }">
+                <p :class="item.colorOrigin" style="margin: 0">
+                  {{ item.origin }}
+                </p>
               </template>
-              <template v-slot:item.appellation="{ item }">
-                <p :class="item.colorAppellation" style="margin: 0">{{item.appellation}}</p>
+              <template #item.appellation="{ item }">
+                <p :class="item.colorAppellation" style="margin: 0">
+                  {{ item.appellation }}
+                </p>
               </template>
-              <template v-slot:item.vintage="{ item }">
-                <p :class="item.colorVintage" style="margin: 0">{{item.vintage}}</p>
+              <template #item.vintage="{ item }">
+                <p :class="item.colorVintage" style="margin: 0">
+                  {{ item.vintage }}
+                </p>
               </template>
-              <template v-slot:item.rating="{ item }">
-                <p :class="item.colorRating" style="margin: 0">{{item.rating}}</p>
+              <template #item.rating="{ item }">
+                <p :class="item.colorRating" style="margin: 0">
+                  {{ item.rating }}
+                </p>
               </template>
-              <template v-slot:item.price="{ item }">
-                <p :class="item.colorPrice" style="margin: 0">{{item.price}}</p>
+              <template #item.price="{ item }">
+                <p :class="item.colorPrice" style="margin: 0">
+                  {{ item.price }}
+                </p>
               </template>
             </v-data-table>
           </v-flex>
@@ -56,7 +72,7 @@
           @click="showProductDetail(wine , index)"
         >
           <span>{{ wine.name }}</span>
-          <i class="arrow down"></i>
+          <i class="arrow down" />
         </li>
       </ul>
     </div>
@@ -66,32 +82,39 @@
 <script>
 export default {
   layout: 'revamp',
-  data() {
-    return {
-      search: ""
-    };
+  async asyncData (context) {
+    await context.store.dispatch('loadWineList')
   },
+  data () {
+    return {
+      search: ''
+    }
+  },
+  computed: {
+    wines () {
+      return this.$store.getters.specialOffers
+    }
+  },
+  mounted () {},
   methods: {
-    changeOrigin(target) {
-      if (target != "All") this.search = target;
-      else this.search = "";
+    changeOrigin (target) {
+      if (target !== 'All') this.search = target
+      else this.search = ''
     },
-    showProductDetail(item, index) {
-      const target = document.querySelector('.product-'+index)
-      const detailChecker = document.querySelector('.product-detail-'+index)
+    showProductDetail (item, index) {
+      const target = document.querySelector('.product-' + index)
+      const detailChecker = document.querySelector('.product-detail-' + index)
       if (detailChecker) {
         if (detailChecker.classList.contains('hide')) {
           detailChecker.classList.remove('hide')
           target.querySelector('i').classList.add('up')
           target.querySelector('i').classList.remove('down')
-        }
-        else {
+        } else {
           detailChecker.classList.add('hide')
           target.querySelector('i').classList.remove('up')
           target.querySelector('i').classList.add('down')
         }
-      }
-      else {
+      } else {
         const productDetail = document.createElement('li')
         const productTable = document.createElement('table')
         const itemAttr = ['chineseName', 'origin', 'appellation', 'vintage', 'rating', 'price']
@@ -112,21 +135,12 @@ export default {
         }
         productDetail.appendChild(productTable)
         productDetail.classList.add('product-detail')
-        productDetail.classList.add('product-detail-'+index)
+        productDetail.classList.add('product-detail-' + index)
         target.after(productDetail)
         target.querySelector('i').classList.add('up')
         target.querySelector('i').classList.remove('down')
       }
     }
-  },
-  mounted() {},
-  computed: {
-    wines () {
-      return this.$store.getters['specialOffers']
-    }
-  },
-  async asyncData(context) {
-    await context.store.dispatch("loadWineList");
   }
 }
 </script>

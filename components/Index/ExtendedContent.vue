@@ -2,10 +2,10 @@
   <section class="extend-content">
     <div class="container image-container" :class="{ reverse: reverse }">
       <div class="image-right">
-        <cld-image :public-id="$t(`home.extend-${index}.image-right`)" loading="lazy" quality="auto" fetchFormat="auto" />
+        <cld-image :public-id="$t(`home.extend-${index}.image-right`)" loading="lazy" quality="auto" fetch-format="auto" />
       </div>
       <div class="image-left">
-        <cld-image :public-id="$t(`home.extend-${index}.image-left`)" loading="lazy" quality="auto" fetchFormat="auto" />
+        <cld-image :public-id="$t(`home.extend-${index}.image-left`)" loading="lazy" quality="auto" fetch-format="auto" />
       </div>
     </div>
     <div class="container">
@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: "ExtendedContent",
+  name: 'ExtendedContent',
   props: {
     index: {
       type: Number,
@@ -39,11 +39,11 @@ export default {
   },
   methods: {
     getDescription (str) {
-      const monthNames = ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
+      const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'
       ]
-      const monthNamesZh = ["一月", "二月", "三月", "四月", "五月", "六月",
-        "七月", "八月", "九月", "十月", "十一月", "十二月"
+      const monthNamesZh = ['一月', '二月', '三月', '四月', '五月', '六月',
+        '七月', '八月', '九月', '十月', '十一月', '十二月'
       ]
       const month = (new Date()).getMonth()
       if (str.includes('{month}')) {

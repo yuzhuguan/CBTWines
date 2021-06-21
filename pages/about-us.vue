@@ -2,22 +2,26 @@
   <div class="about-us">
     <div class="main-container">
       <div class="right-block">
-        <cld-image public-id="v1612189163/cbtwines/about-us_nxfwvy.png" width="960" loading="lazy" quality="auto" data-aos="fade-left" data-aos-delay="" data-aos-duration="2400" fetchFormat="auto" />
+        <cld-image public-id="v1612189163/cbtwines/about-us_nxfwvy.png" width="960" loading="lazy" quality="auto" data-aos="fade-left" data-aos-delay="" data-aos-duration="2400" fetch-format="auto" />
       </div>
       <div class="left-block">
-        <div class="top-block"/>
+        <div class="top-block" />
         <div class="block" data-aos="zoom-in" data-aos-duration="1000" data-aos-once="true" data-aos-anchor=".right-block">
-          <div class="title-block" >
-            <h1 data-aos="zoom-out" data-aos-delay="1050" data-aos-duration="1000" data-aos-once="true" data-aos-anchor=".right-block">{{ $t('about-us.title') }}</h1>
+          <div class="title-block">
+            <h1 data-aos="zoom-out" data-aos-delay="1050" data-aos-duration="1000" data-aos-once="true" data-aos-anchor=".right-block">
+              {{ $t('about-us.title') }}
+            </h1>
           </div>
           <div class="content" data-aos="fade-up" data-aos-delay="1250" data-aos-duration="1000" data-aos-once="true" data-aos-anchor=".right-block">
-            <p v-html="$t('about-us.paragraph1')"/>
-            <p>{{$t('about-us.paragraph2')}}<nuxt-link to="/">
-              {{ $t('about-us.link') }}
-            </nuxt-link></p>
+            <p v-html="$t('about-us.paragraph1')" />
+            <p>
+              {{ $t('about-us.paragraph2') }}<nuxt-link to="/">
+                {{ $t('about-us.link') }}
+              </nuxt-link>
+            </p>
           </div>
         </div>
-        <div class="bottom-block"/>
+        <div class="bottom-block" />
       </div>
     </div>
   </div>
@@ -26,16 +30,16 @@
 <script>
 
 export default {
-  layout: 'revamp',
   components: {
   },
-  data() {
+  layout: 'revamp',
+  data () {
     return {
     }
   },
-  mounted() {
-  },
   computed: {
+  },
+  mounted () {
   }
 }
 </script>

@@ -2,14 +2,17 @@
   <div class="home">
     <div class="background" style="background: url(https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1612189163/cbtwines/home_BG_r8eerr.png) top left / cover fixed;">
       <div class="content">
-        <cld-image public-id="v1612189161/cbtwines/company_label_laipot.png" fetchFormat="auto"  />
+        <cld-image public-id="v1612189161/cbtwines/company_label_laipot.png" fetch-format="auto" />
         <div class="quote">
-          <p class="quote-text">“Where there is no wine, <br>there is no love”</p>
-          <p class="quote-by">- Euripides</p>
+          <p class="quote-text">
+            “Where there is no wine, <br>there is no love”
+          </p>
+          <p class="quote-by">
+            - Euripides
+          </p>
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -17,29 +20,29 @@
 
 export default {
   components: {},
-  data() {
-    return {};
+  data () {
+    return {}
   },
-  head() {
+  head () {
     return {
-      title: "CBT Wines Company Limited",
+      title: 'CBT Wines Company Limited',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content:
-            "CBT Wines Company Limited Hong Kong, we offer wines from countries worldwide, find us and buy your wines.",
+            'CBT Wines Company Limited Hong Kong, we offer wines from countries worldwide, find us and buy your wines.'
         },
         {
-          hid: "keywords",
-          name: "keywords",
+          hid: 'keywords',
+          name: 'keywords',
           content:
-            "cbt, wines, cbtwines, wine, cbt wines, hong kong wines, wine",
-        },
-      ],
-    };
+            'cbt, wines, cbtwines, wine, cbt wines, hong kong wines, wine'
+        }
+      ]
+    }
   }
-};
+}
 </script>
 
 <style lang="scss">

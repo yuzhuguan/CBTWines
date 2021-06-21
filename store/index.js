@@ -8,48 +8,48 @@ export const state = () => ({
 })
 
 export const mutations = {
-  SET_WINELIST(state, wines) {
+  SET_WINELIST (state, wines) {
     state.wines = wines
   },
-  SET_SPECIALOFFERS(state, wines) {
+  SET_SPECIALOFFERS (state, wines) {
     state.specialOffers = wines
   },
-  SET_NEWARRIVALS(state, wines) {
+  SET_NEWARRIVALS (state, wines) {
     state.newArrivals = wines
   },
-  SET_SHOWMOBILEMENU(state, data) {
+  SET_SHOWMOBILEMENU (state, data) {
     state.showMobileMenu = data
   }
 }
 
 export const actions = {
-  async loadWineList ({commit}) {
-    let response = await axios.get('/api/wines');
+  async loadWineList ({ commit }) {
+    const response = await axios.get('/api/wines')
     commit('SET_WINELIST', response.data)
 
-    let specialOfferList = response.data.filter(el => {
-        return el.specialOffer == 'Y'
+    const specialOfferList = response.data.filter((el) => {
+      return el.specialOffer === 'Y'
     })
     commit('SET_SPECIALOFFERS', specialOfferList)
 
-    let newArrivalList = response.data.filter(el => {
-        return el.newArrival == 'Y'
+    const newArrivalList = response.data.filter((el) => {
+      return el.newArrival === 'Y'
     })
     commit('SET_NEWARRIVALS', newArrivalList)
   }
 }
 
 export const getters = {
-  showMobileMenu(state) {
+  showMobileMenu (state) {
     return state.showMobileMenu
   },
   wines (state) {
     return state.wines
   },
-  specialOffers(state) {
+  specialOffers (state) {
     return state.specialOffers
   },
-  newArrivals(state) {
+  newArrivals (state) {
     return state.newArrivals
   }
 }

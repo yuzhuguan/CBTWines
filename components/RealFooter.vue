@@ -1,12 +1,12 @@
 <template>
   <div class="real-footer">
-    <p v-html="$t('real-footer.text')"></p>
+    <p v-html="$t('real-footer.text')" />
   </div>
 </template>
 
 <script>
 export default {
-name: "RealFooter"
+  name: 'RealFooter'
 }
 </script>
 

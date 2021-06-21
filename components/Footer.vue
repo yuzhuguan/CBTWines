@@ -1,5 +1,5 @@
 <template>
-  <div class="footer" ref="footer">
+  <div ref="footer" class="footer">
     <p class="footer-content">
       <span v-if="!onMobile || $i18n.locale === 'en'">Under the law of Hong Kong, intoxicating liquor must not be sold or supplied to a minor (under 18) in the course of business.</span>
       <span v-if="!onMobile || !($i18n.locale === 'en')">根據香港法律,不得在業務過程中,向未成年人(18歲以下人士)售賣或供應令人醺醉的酒類。 </span>
@@ -14,6 +14,16 @@ export default {
       width: -1
     }
   },
+  computed: {
+    onMobile () {
+      if (process.client) {
+        if (this.width <= 460) {
+          return true
+        }
+      }
+      return false
+    }
+  },
   mounted () {
     this.width = window.innerWidth
     window.addEventListener('resize', this.onResize)
@@ -21,27 +31,15 @@ export default {
       this.$refs.footer.style.height = '0px'
     }, 5000)
   },
-  computed: {
-    onMobile() {
-      if (process.client) {
-        if (this.width <= 460) {
-          return true
-        }
-        else {
-          return false
-        }
-      }
-    }
-  },
-  destroyed() {
+  destroyed () {
     window.removeEventListener('resize', this.onResize)
   },
   methods: {
-    onResize() {
+    onResize () {
       this.width = window.innerWidth
     }
   }
-};
+}
 </script>
 
 <style lang="scss">

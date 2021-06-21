@@ -1,6 +1,6 @@
 <template>
-  <v-list class="hover-list" v-show="showList" @mouseover="showList = true" @mouseout="showList = false">
-    <v-list-item class="line"/>
+  <v-list v-show="showList" class="hover-list" @mouseover="showList = true" @mouseout="showList = false">
+    <v-list-item class="line" />
     <span v-for="(item, index) in items" :key="index">
       <v-list-item class="hover-list-item">
         <v-list-item-title>
@@ -8,14 +8,14 @@
           <nuxt-link v-else :to="item.link">{{ item.title }}</nuxt-link>
         </v-list-item-title>
       </v-list-item>
-      <v-list-item class="line"/>
+      <v-list-item class="line" />
     </span>
   </v-list>
 </template>
 
 <script>
 export default {
-  name: "NavHoverList",
+  name: 'NavHoverList',
   props: {
     items: {
       default: Array,

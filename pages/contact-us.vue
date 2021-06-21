@@ -12,30 +12,29 @@
           :label="$t('contact-us.msg-title')"
           required
           background-color="rgba(255, 255, 255, 0.0)"
-        ></v-text-field>
-        <p class="email-body-title">{{ $t('contact-us.msg-body') }}</p>
+        />
+        <p class="email-body-title">
+          {{ $t('contact-us.msg-body') }}
+        </p>
         <v-textarea
+          v-model="body"
           solo
           :label="$t('contact-us.msg-body-placeholder')"
           outlined
           name="input-7-4"
           :value="body"
-          v-model="body"
           class="email-body"
           :rows="isMinRow ? 6 : 11"
           background-color="rgba(255, 255, 255, 0.0)"
-        ></v-textarea>
+        />
         <v-row>
           <v-btn class="submit-button" elevation="1" color="#ffffff">
             <a :href="'mailto:cbtwines@gmail.com?subject=' + title + '&body=' + body">{{ $t('contact-us.submit') }}</a>
           </v-btn>
         </v-row>
-
       </v-form>
-
     </v-card>
-    <canvas class="background"></canvas>
-
+    <canvas class="background" />
   </div>
 </template>
 
@@ -43,14 +42,14 @@
 import Particles from 'particlesjs'
 export default {
   layout: 'revamp',
-  data() {
+  data () {
     return {
       title: '',
       body: '',
       isMinRow: false
     }
   },
-  mounted() {
+  mounted () {
     Particles.init({
       selector: '.background',
       maxParticles: 80,
@@ -61,25 +60,25 @@ export default {
         {
           breakpoint: 768,
           options: {
-            maxParticles: 40,
+            maxParticles: 40
           }
         },
         {
           breakpoint: 325,
           options: {
-            maxParticles: 20,
+            maxParticles: 20
           }
         }
       ]
-    });
+    })
     window.addEventListener('resize', this.onResize)
     this.isMinRow = window.innerWidth <= 375
   },
-  destroyed() {
+  destroyed () {
     window.removeEventListener('resize', this.onResize)
   },
   methods: {
-    onResize() {
+    onResize () {
       this.isMinRow = window.innerWidth <= 375
     }
   }
