@@ -86,11 +86,20 @@ export default{
         "paragraph2": "本公司提供了多個地區，各具不同香氣、口感、風味的葡萄酒，以供客人任意挑選，繼而滿載而歸。我們深信每一瓶葡萄酒有其獨特的靈魂及生命，其風味就像訴說它一生的故事，幫助每位客人找到所青睞的葡萄酒，是我們至高無上的榮幸。那就是一",
         "link": "香貝田酒業有限公司。"
     },
+    "find-us": {
+        "title": "尋找我們",
+        "address_1": "香港 九龍",
+        "address_2": "長沙灣 長義街10號",
+        "address_3": "昌隆工業大廈",
+        "address_4": "6樓 B3室",
+        "scroll-down": "往下..."
+    },
     "contact-us": {
-        "address_1" : "香港 九龍",
-        "address_2" : "長沙灣 長義街10號",
-        "address_3" : "昌隆工業大廈",
-        "address_4" : "6樓 B3室"
+      "title": "聯繫我們",
+      "msg-title": "主旨",
+      "msg-body": "内容",
+      "msg-body-placeholder": "留下你的信息...",
+      "submit": "提交"
     },
     "wine-list": {
         "title": "酒單",

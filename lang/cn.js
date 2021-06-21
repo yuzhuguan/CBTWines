@@ -86,11 +86,20 @@ export default{
     "paragraph2": "本公司提供了多个地区，各具不同香气、口感、风味的葡萄酒，以供客人任意挑选，继而满载而归。我们深信每一瓶葡萄酒有其独特的灵魂及生命，其风味就像诉说它一生的故事，帮助每位客人找到所青睐的葡萄酒，是我们至高无上的荣幸。那就是一",
     "link": "香貝田酒業有限公司。"
   },
+  "find-us": {
+    "title": "寻找我们",
+    "address_1": "香港 九龙",
+    "address_2": "长沙湾 长义街10号",
+    "address_3": "昌隆工业大厦",
+    "address_4": "6楼 B3室",
+    "scroll-down": "往下..."
+  },
   "contact-us": {
-    "address_1" : "香港 九龙",
-    "address_2" : "长沙湾 长义街10号",
-    "address_3" : "昌隆工业大厦",
-    "address_4" : "6楼 B3室"
+    "title": "联系我们",
+    "msg-title": "主旨",
+    "msg-body": "内容",
+    "msg-body-placeholder": "留下你的信息...",
+    "submit": "提交"
   },
   "wine-list": {
     "title": "酒单",

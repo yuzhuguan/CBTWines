@@ -86,11 +86,20 @@ export default {
         "paragraph2": "With wines from various countries and places, customers can select their wine from a wide range of choices with quality guaranteed. Through Touch & Taste, every customer will gain satisfaction with their favorite bottle of wine after visiting",
         "link": "CBT WINES COMPANY LIMITED."
     },
+    "find-us": {
+        "title": "FIND US",
+        "address_1": "Unit B3,",
+        "address_2": "6F Cheung Lung Industrial Building,",
+        "address_3": "10 Cheung Yee Street,",
+        "address_4": "Kowloon",
+        "scroll-down": "SCOLL DOWN..."
+    },
     "contact-us": {
-        "address_1" : "Unit B3,",
-        "address_2" : "6F Cheung Lung Industrial Building,",
-        "address_3" : "10 Cheung Yee Street,",
-        "address_4" : "Kowloon"
+        "title": "CONTACT US",
+        "msg-title": "Title",
+        "msg-body": "Message Body",
+        "msg-body-placeholder": "Leave your message here...",
+        "submit": "SUBMIT"
     },
     "wine-list": {
         "title": "WINE LIST",

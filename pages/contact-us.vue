@@ -2,21 +2,21 @@
   <div class="contact-us">
     <div class="title">
       <h1 :style="{backgroundImage: 'url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.theiwsr.com%2Fnews-and-comment-global-still-wine-trends-to-watch%2F&psig=AOvVaw3uxIXEnBKFy5MIrGwmupoP&ust=1600625694958000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOjl5MHp9esCFQAAAAAdAAAAABAE) 50% 50%'}">
-        CONTACT US
+        {{ $t('contact-us.title') }}
       </h1>
     </div>
     <v-card class="form-card" color="rgba(255, 255, 255, 0.4)" flat>
       <v-form>
         <v-text-field
           v-model="title"
-          label="Title"
+          :label="$t('contact-us.msg-title')"
           required
           background-color="rgba(255, 255, 255, 0.0)"
         ></v-text-field>
-        <p class="email-body-title">Message Body</p>
+        <p class="email-body-title">{{ $t('contact-us.msg-body') }}</p>
         <v-textarea
           solo
-          label="Leave your message here..."
+          :label="$t('contact-us.msg-body-placeholder')"
           outlined
           name="input-7-4"
           :value="body"
@@ -27,7 +27,7 @@
         ></v-textarea>
         <v-row>
           <v-btn class="submit-button" elevation="1" color="#ffffff">
-            <a :href="'mailto:cbtwines@gmail.com?subject=' + title + '&body=' + body">Submit</a>
+            <a :href="'mailto:cbtwines@gmail.com?subject=' + title + '&body=' + body">{{ $t('contact-us.submit') }}</a>
           </v-btn>
         </v-row>
 

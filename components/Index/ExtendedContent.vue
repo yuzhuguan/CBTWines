@@ -47,7 +47,7 @@ export default {
       ]
       const month = (new Date()).getMonth()
       if (str.includes('{month}')) {
-        return this.$i18n.locale === 'en-US' ? str.replace('{month}', monthNames[month]) : str.replace('{month}', monthNamesZh[month])
+        return this.$i18n.locale === 'en' ? str.replace('{month}', monthNames[month]) : str.replace('{month}', monthNamesZh[month])
       }
       return str
     }

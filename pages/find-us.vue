@@ -3,7 +3,7 @@
     <div class="find-us-container">
       <div class="find-us-hero">
         <div class="image-container" :style="{ backgroundImage: 'url(https://res.cloudinary.com/dinad7iot/image/upload/v1612189163/cbtwines/find-us_cxsilt.png)'}">
-            <h1>FIND US</h1>
+            <h1>{{ $t('find-us.title') }}</h1>
         </div>
         <div class="content">
           <div class="logo-container">
@@ -16,10 +16,10 @@
                   <v-row><v-icon>place</v-icon></v-row>
                 </v-col>
                 <v-col :cols="undefined" class="text-left font-weight-regular title">
-                  <v-row>{{ $t('contact-us.address_1') }}</v-row>
-                  <v-row>{{ $t('contact-us.address_2') }}</v-row>
-                  <v-row>{{ $t('contact-us.address_3') }}</v-row>
-                  <v-row>{{ $t('contact-us.address_4') }}</v-row>
+                  <v-row>{{ $t('find-us.address_1') }}</v-row>
+                  <v-row>{{ $t('find-us.address_2') }}</v-row>
+                  <v-row>{{ $t('find-us.address_3') }}</v-row>
+                  <v-row>{{ $t('find-us.address_4') }}</v-row>
                 </v-col>
               </v-row>
               <v-row class="mx-0 my-2">
@@ -70,7 +70,7 @@
         <div class="right-banner">
         </div>
         <div class="scroll-down">
-          <p>SCOLL DOWN...</p>
+          <p>{{ $t('find-us.scroll-down') }}</p>
         </div>
       </div>
       <div class="map-container">
