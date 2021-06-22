@@ -45,8 +45,9 @@
 </template>
 
 <script>
-import NavHoverList from './Header/NavHoverList'
+import NavHoverList from './NavHoverList'
 export default {
+  name: 'LayoutHeader',
   components: { NavHoverList },
   computed: {
     currPage () {

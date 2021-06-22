@@ -30,17 +30,8 @@
 <script>
 
 export default {
-  components: {
-  },
-  layout: 'revamp',
-  data () {
-    return {
-    }
-  },
-  computed: {
-  },
-  mounted () {
-  }
+  name: 'AboutUsPage',
+  layout: 'revamp'
 }
 </script>
 

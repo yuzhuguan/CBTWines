@@ -100,6 +100,7 @@
 
 <script>
 export default {
+  name: 'WineListPage',
   layout: 'revamp',
   async asyncData (context) {
     await context.store.dispatch('loadWineList')

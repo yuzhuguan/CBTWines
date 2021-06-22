@@ -81,6 +81,7 @@
 
 <script>
 export default {
+  name: 'SpecialOffersPage',
   layout: 'revamp',
   async asyncData (context) {
     await context.store.dispatch('loadWineList')

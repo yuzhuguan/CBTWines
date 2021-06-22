@@ -13,10 +13,11 @@
 <script>
 
 export default {
+  name: 'IndexPage',
   components: {
     ExtendedContent: () => import('../components/Index/ExtendedContent')
   },
-  layout: 'indexbase'
+  layout: 'revamp'
 }
 </script>
 

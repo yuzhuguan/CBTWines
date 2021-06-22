@@ -166,6 +166,9 @@ export default {
     ],
     paragraph: "Do you want some <a href='/new-arrivals'>New Arrivals</a>? Or check out our wine list <a href='/wine-list'>here</a>."
   },
+  footer: {
+    text: 'Under the law of Hong Kong, intoxicating liquor must not be sold or supplied to a minor (under 18) in the course of business.'
+  },
   'real-footer': {
     text: '&copy;2021 CBT Wines Company Limited. All rights reserved.'
   }

@@ -93,6 +93,7 @@
 
 <script>
 export default {
+  name: 'FindUsPage',
   layout: 'revamp'
 }
 </script>

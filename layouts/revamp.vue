@@ -1,6 +1,7 @@
 <template>
-  <main :class="$i18n.locale">
-    <Header />
+  <main :class="[$i18n.locale, {'index-layout': isIndex, 'mobile-menu-open': showMobileMenu}]">
+    <LayoutHeader />
+    <IndexHero v-if="isIndex" />
     <section id="wrapper" :class="(showMobileMenu) ? 'open' : ''">
       <nuxt-child />
     </section>
@@ -16,17 +17,18 @@
       </v-list>
     </div>
     <Footer />
+    <RealFooter v-if="isIndex" />
   </main>
 </template>
 
 <script>
 import axios from 'axios'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 export default {
   components: {
-    Header,
-    Footer
+    LayoutHeader: () => import('../components/Header/LayoutHeader'),
+    Footer: () => import('../components/Footer'),
+    IndexHero: () => import('../components/IndexHero'),
+    RealFooter: () => import('../components/RealFooter')
   },
   data () {
     return {
@@ -37,6 +39,9 @@ export default {
   computed: {
     showMobileMenu () {
       return this.$store.getters.showMobileMenu
+    },
+    isIndex () {
+      return this.$route.path === '/'
     }
   },
   watch: {
@@ -172,6 +177,40 @@ export default {
   transform: translate(0px, 0px);
   opacity: 1.0;
 }
+
+.index-layout {
+  .mobile-menu {
+    width: 100%;
+    height: 83.2vh;
+    transform: translate(768px, 0px);
+    opacity: 0.0;
+    transition: 0.6s;
+    position: fixed;
+    top: 70px;
+    display: none;
+    .v-list {
+      height: 110%;
+      text-align: center;
+      &-item {
+        height: 12.5%;
+        a {
+          width: 100%;
+          text-decoration: none;
+          color: #000000;
+          height: 100%;
+          padding: 20px 0;
+        }
+        a.nuxt-link-exact-active{
+          color: #bd5558;
+        }
+      }
+    }
+  }
+  .mobile-menu.open {
+    transform: translate(0px, 0px);
+    opacity: 1.0;
+  }
+}
 html, body {
   height: 100%;
   width: 100%;
@@ -181,5 +220,11 @@ html, body {
 }
 #wrapper {
   height: calc(100%);
+}
+.index-layout #wrapper {
+  height: auto;
+}
+main.mobile-menu-open {
+  overflow: hidden;
 }
 </style>

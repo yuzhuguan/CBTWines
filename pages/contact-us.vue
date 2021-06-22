@@ -41,6 +41,7 @@
 <script>
 import Particles from 'particlesjs'
 export default {
+  name: 'ContactUsPage',
   layout: 'revamp',
   data () {
     return {

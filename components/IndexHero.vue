@@ -19,10 +19,7 @@
 <script>
 
 export default {
-  components: {},
-  data () {
-    return {}
-  },
+  name: 'IndexHero',
   head () {
     return {
       title: 'CBT Wines Company Limited',

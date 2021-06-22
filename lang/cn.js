@@ -166,6 +166,9 @@ export default {
     ],
     paragraph: "对我们的<a href='/cn/new-arrivals'>新酒到货</a>有兴趣吗? 还是看看我们的<a href='/cn/wine-list'>酒单</a>。"
   },
+  footer: {
+    text: '根据香港法律,不得在业务过程中,向未成年人(18岁以下人士)售卖或供应令人醺醉的酒类。'
+  },
   'real-footer': {
     text: '&copy;2021 香贝田酒业有限公司版权所有'
   }
