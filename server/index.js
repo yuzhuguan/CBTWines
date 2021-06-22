@@ -8,22 +8,22 @@ const morgan = require('morgan')
 const mongoose = require('mongoose')
 
 // Import and Set Nuxt.js options
-let config = require('../nuxt.config.js')
+const config = require('../nuxt.config.js')
 config.dev = !(process.env.NODE_ENV === 'production')
 
-app.use(cors());
-app.use(bodyParser.json({limit: '50mb', extended: true}));
-app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
-app.use(morgan('dev'));
+app.use(cors())
+app.use(bodyParser.json({ limit: '50mb', extended: true }))
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }))
+app.use(morgan('dev'))
 
-mongoose.connect('mongodb://127.0.0.1:27017/cbtwinesdb', { useNewUrlParser: true });
-const connection = mongoose.connection;
+mongoose.connect('mongodb://127.0.0.1:27017/cbtwinesdb', { useNewUrlParser: true })
+const connection = mongoose.connection
 
-connection.once('open', function() {
-	console.log('MongoDB database connected successfully');
-});
+connection.once('open', function () {
+  console.log('MongoDB database connected successfully')
+})
 
-async function start() {
+async function start () {
   // Init Nuxt.js
   const nuxt = new Nuxt(config)
 
