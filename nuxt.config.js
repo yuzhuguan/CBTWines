@@ -4,7 +4,7 @@ const gaConfig = require('./config/google-analytics')
 require('dotenv').config()
 
 module.exports = {
-  mode: 'spa',
+  ssr: true,
 
   /*
   ** Headers of the page
