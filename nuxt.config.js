@@ -5,7 +5,7 @@ require('dotenv').config()
 
 module.exports = {
   ssr: true,
-
+  telemetry: false,
   /*
   ** Headers of the page
   */
@@ -48,7 +48,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    {src: '~/plugins/aos', ssr: false}
+    { src: '~/plugins/aos', ssr: false }
   ],
 
   /*
@@ -80,7 +80,6 @@ module.exports = {
     '~/api/index.js'
   ],
 
-
   /*
   ** Build configuration
   */
@@ -88,7 +87,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
+    extend (config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
