@@ -7,7 +7,7 @@
         </div>
         <div class="content">
           <div class="logo-container">
-            <cld-image public-id="v1612189161/cbtwines/logo_jzvi2t.png" width="225" height="100" loading="lazy" fetch-format="auto" />
+            <img :src="$cloudinary.image.url('v1612189161/cbtwines/logo_jzvi2t.png', { fetch_format: 'auto', quality: 'auto', width: 225 })" alt="Images">
           </div>
           <div class="content-detail">
             <v-col :cols="undefined" class="pt-11">
