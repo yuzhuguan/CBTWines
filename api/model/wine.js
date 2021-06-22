@@ -1,26 +1,26 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const wineSchema = mongoose.Schema({
-    name: String,
-    volume: String,
-    appellation: String,
-    chineseName: String,
-    origin: String,
-    vintage: String,
-    rating: String,
-    price: Number,
-    discountPrice: Number,
-    newArrival: String,
-    specialOffer: String,
-    colorName: String,
-    colorVolume: String,
-    colorAppellation: String,
-    colorChineseName: String,
-    colorOrigin: String,
-    colorVintage: String,
-    colorRating: String,
-    colorPrice: String,
-    colorDiscountPrice: String,
-});
+  name: String,
+  volume: String,
+  appellation: String,
+  chineseName: String,
+  origin: String,
+  vintage: String,
+  rating: String,
+  price: Number,
+  discountPrice: Number,
+  newArrival: String,
+  specialOffer: String,
+  colorName: String,
+  colorVolume: String,
+  colorAppellation: String,
+  colorChineseName: String,
+  colorOrigin: String,
+  colorVintage: String,
+  colorRating: String,
+  colorPrice: String,
+  colorDiscountPrice: String
+})
 
-module.exports = mongoose.model('Wines', wineSchema);
+module.exports = mongoose.model('Wines', wineSchema)
