@@ -171,5 +171,17 @@ export default {
   },
   'real-footer': {
     text: '&copy;2021 香貝田酒業有限公司版權所有'
+  },
+  meta: {
+    base: {
+      url: 'www.cbtwines.co/hk',
+      image: 'http://cbtwines.co/media/logo.png'
+    },
+    home: {
+      title: 'CBT Wines Company Limited',
+      description: 'CBT Wines Company Limited Hong Kong, we offer wines from countries worldwide, find us and buy your wines.',
+      keywords: 'cbt, wines, cbtwines, wine, cbt wines, hong kong wines, wine',
+      slug: ''
+    }
   }
 }

@@ -40,8 +40,12 @@
 
 <script>
 import Particles from 'particlesjs'
+import { metaTag } from '~/mixin/meta_head'
 export default {
   name: 'ContactUsPage',
+  mixins: [
+    metaTag
+  ],
   layout: 'revamp',
   data () {
     return {

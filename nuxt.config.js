@@ -10,15 +10,16 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'CBT Wines Company Limited',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description },
-      { hid: 'author', name: 'author', content: pkg.author }
+      { hid: 'author', name: 'author', content: pkg.author },
+      { hid: 'theme-color', name: 'theme-color', content: '#ffffff' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { hid: 'og:type', name: 'og:type', content: this.post && this.post.type === 'blog' ? 'blog-post' : 'blog' },
       {
         rel: 'stylesheet',
         href:

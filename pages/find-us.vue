@@ -92,8 +92,12 @@
 </template>
 
 <script>
+import { metaTag } from '~/mixin/meta_head'
 export default {
   name: 'FindUsPage',
+  mixins: [
+    metaTag
+  ],
   layout: 'revamp'
 }
 </script>

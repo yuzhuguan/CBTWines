@@ -19,26 +19,7 @@
 <script>
 
 export default {
-  name: 'IndexHero',
-  head () {
-    return {
-      title: 'CBT Wines Company Limited',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content:
-            'CBT Wines Company Limited Hong Kong, we offer wines from countries worldwide, find us and buy your wines.'
-        },
-        {
-          hid: 'keywords',
-          name: 'keywords',
-          content:
-            'cbt, wines, cbtwines, wine, cbt wines, hong kong wines, wine'
-        }
-      ]
-    }
-  }
+  name: 'IndexHero'
 }
 </script>
 

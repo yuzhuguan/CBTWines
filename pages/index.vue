@@ -11,13 +11,22 @@
 </template>
 
 <script>
+import { metaTag } from '~/mixin/meta_head'
 
 export default {
   name: 'IndexPage',
   components: {
     ExtendedContent: () => import('../components/Index/ExtendedContent')
   },
-  layout: 'revamp'
+  mixins: [
+    metaTag
+  ],
+  layout: 'revamp',
+  data () {
+    return {
+      identifier: 'home'
+    }
+  }
 }
 </script>
 

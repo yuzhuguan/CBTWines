@@ -28,9 +28,13 @@
 </template>
 
 <script>
+import { metaTag } from '~/mixin/meta_head'
 
 export default {
   name: 'AboutUsPage',
+  mixins: [
+    metaTag
+  ],
   layout: 'revamp'
 }
 </script>

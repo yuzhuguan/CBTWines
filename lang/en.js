@@ -171,5 +171,17 @@ export default {
   },
   'real-footer': {
     text: '&copy;2021 CBT Wines Company Limited. All rights reserved.'
+  },
+  meta: {
+    base: {
+      url: 'www.cbtwines.co',
+      image: 'http://cbtwines.co/media/logo.png'
+    },
+    home: {
+      title: 'CBT Wines Company Limited',
+      description: 'CBT Wines Company Limited Hong Kong, we offer wines from countries worldwide, find us and buy your wines.',
+      keywords: 'cbt, wines, cbtwines, wine, cbt wines, hong kong wines, wine',
+      slug: ''
+    }
   }
 }

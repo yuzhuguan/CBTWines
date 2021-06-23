@@ -99,8 +99,12 @@
 </template>
 
 <script>
+import { metaTag } from '~/mixin/meta_head'
 export default {
   name: 'WineListPage',
+  mixins: [
+    metaTag
+  ],
   layout: 'revamp',
   async asyncData (context) {
     await context.store.dispatch('loadWineList')
