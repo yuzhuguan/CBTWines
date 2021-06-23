@@ -179,9 +179,45 @@ export default {
     },
     home: {
       title: 'CBT Wines Company Limited',
-      description: 'CBT Wines Company Limited Hong Kong, we offer wines from countries worldwide, find us and buy your wines.',
+      description: 'CBT Wines Company Limited Hong Kong, we offer wines from countries worldwide, find us and buy your wines. Get free shipping offer by purchasing above $3000!',
       keywords: 'cbt, wines, cbtwines, wine, cbt wines, hong kong wines, wine',
       slug: ''
+    },
+    'about-us': {
+      title: 'About Us | CBT Wines Company Limited',
+      description: 'CBT Wines Company Limited Hong Kong, offers wines from countries since 2011. Find out more about CBT Wines',
+      keywords: 'CBT Wines, cbtwines, wine, cbt wines, hong kong wines, wine',
+      slug: 'about-us'
+    },
+    'find-us': {
+      title: 'Find Us | CBT Wines Company Limited',
+      description: 'CBT Wines is located in Lai Chi Kok, check us out by calling us or sending us email! More information on how to contact CBT Wines',
+      keywords: 'CBT Wines, find us, find CBT',
+      slug: 'find-us'
+    },
+    'contact-us': {
+      title: 'Contact Us | CBT Wines Company Limited',
+      description: 'Want contact CBT Wines? Leave your message down and contact us through email in just a second!',
+      keywords: 'CBT Wines, contact us, contact CBT',
+      slug: 'contact-us'
+    },
+    'wine-list': {
+      title: 'Wine List | CBT Wines Company Limited',
+      description: 'CBT Wines provides you list of wines from countries worldwide, check out the wine list and find your offers.',
+      keywords: 'CBT Wines, wine list, wine offer, CBT products',
+      slug: 'wine-list'
+    },
+    'new-arrivals': {
+      title: 'New Arrivals | CBT Wines Company Limited',
+      description: 'Looking for something new? CBT Wines offers new wines, new products, all just in the new arrival list.',
+      keywords: 'CBT Wines, New Arrivals, new wines, CBT products',
+      slug: 'new-arrivals'
+    },
+    'special-offers': {
+      title: 'Special Offer | CBT Wines Company Limited',
+      description: 'Lost on decision? Don\'t what to buy? Let CBT Wines offers you something special, something right in this season, or even something on sale!',
+      keywords: 'CBT Wines, Special offers, CBT Special, CBT products',
+      slug: 'special-offers'
     }
   }
 }

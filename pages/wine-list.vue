@@ -111,7 +111,8 @@ export default {
   },
   data () {
     return {
-      search: ''
+      search: '',
+      identifier: 'wine-list'
     }
   },
   computed: {

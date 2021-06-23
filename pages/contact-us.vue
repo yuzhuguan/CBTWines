@@ -51,7 +51,8 @@ export default {
     return {
       title: '',
       body: '',
-      isMinRow: false
+      isMinRow: false,
+      identifier: 'contact-us'
     }
   },
   mounted () {

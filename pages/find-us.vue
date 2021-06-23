@@ -98,7 +98,12 @@ export default {
   mixins: [
     metaTag
   ],
-  layout: 'revamp'
+  layout: 'revamp',
+  data () {
+    return {
+      identifier: 'find-us'
+    }
+  }
 }
 </script>
 

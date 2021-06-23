@@ -35,7 +35,12 @@ export default {
   mixins: [
     metaTag
   ],
-  layout: 'revamp'
+  layout: 'revamp',
+  data () {
+    return {
+      identifier: 'about-us'
+    }
+  }
 }
 </script>
 

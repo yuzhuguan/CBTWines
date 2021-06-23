@@ -92,7 +92,8 @@ export default {
   },
   data () {
     return {
-      search: ''
+      search: '',
+      identifier: 'new-arrivals'
     }
   },
   computed: {
