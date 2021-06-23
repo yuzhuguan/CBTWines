@@ -178,10 +178,46 @@ export default {
       image: 'http://cbtwines.co/media/logo.png'
     },
     home: {
-      title: 'CBT Wines Company Limited',
-      description: 'CBT Wines Company Limited Hong Kong, we offer wines from countries worldwide, find us and buy your wines.',
-      keywords: 'cbt, wines, cbtwines, wine, cbt wines, hong kong wines, wine',
+      title: '尋找與享受你理想中的葡萄酒 | 香貝田酒業有限公司',
+      description: '香貝田酒業有限公司為你提供來自全球的各種酒類，買滿$3000更可享有免運費優惠！',
+      keywords: '香貝田酒業, 香貝田, 香港酒業',
       slug: ''
+    },
+    'about-us': {
+      title: '關於我們 | 香貝田酒業有限公司',
+      description: '由2011年起，香貝田酒業有限公司為香港提供來自全球的各種酒類，了解更多關於香貝田酒業的資訊。',
+      keywords: '香貝田酒業, 香貝田, 香港酒業, 關於香貝田酒業, 了解香貝田酒業',
+      slug: 'about-us'
+    },
+    'find-us': {
+      title: '尋找我們 | 香貝田酒業有限公司',
+      description: '香貝田酒業有限公司位於荔枝角，歡迎致電或以電郵尋找我們。更多關於香貝田酒業的聯絡方法。',
+      keywords: '尋找香貝田, 聯繫香貝田, 香貝田酒業',
+      slug: 'find-us'
+    },
+    'contact-us': {
+      title: '聯繫我們 | 香貝田酒業有限公司',
+      description: '想要跟我們取得聯繫？留下你的信息，便可方便快捷地以電郵聯繫我們。',
+      keywords: '聯繫香貝田酒業, 酒業聯繫',
+      slug: 'contact-us'
+    },
+    'wine-list': {
+      title: '酒單 | 香貝田酒業有限公司',
+      description: '查看香貝田酒業的酒單，以便了解我們為香港從全球搜羅的美酒。',
+      keywords: '香貝田酒業酒單, 酒單, 香貝田酒單, CBT酒單',
+      slug: 'wine-list'
+    },
+    'new-arrivals': {
+      title: '新酒到貨 | 香貝田酒業有限公司',
+      description: '香貝田酒業提供的全新酒品及貨品，為你的餐桌帶來新的體驗。',
+      keywords: '全新酒品, 香貝田酒品, 新酒',
+      slug: 'new-arrivals'
+    },
+    'special-offers': {
+      title: '特别推介 | 香貝田酒業有限公司',
+      description: '香貝田酒業為你帶來的特别推介，輕鬆物色當季美酒。更有不定期折扣優惠！',
+      keywords: '香貝田優惠, 折扣酒品, 酒類優惠, 當季酒類',
+      slug: 'special-offers'
     }
   }
 }
