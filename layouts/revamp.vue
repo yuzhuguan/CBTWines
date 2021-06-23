@@ -41,7 +41,12 @@ export default {
       return this.$store.getters.showMobileMenu
     },
     isIndex () {
-      return this.$route.path === '/'
+      const isIndex = {
+        '/': true,
+        '/hk': true,
+        '/cn': true
+      }
+      return isIndex[this.$route.path]
     }
   },
   watch: {
