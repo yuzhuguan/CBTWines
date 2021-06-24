@@ -1,7 +1,5 @@
 export const metaTag = {
   head () {
-    const hreflang = this.getHrefLink()
-    const og = this.getOg()
     const htmlAttrs = {
       en: 'en-hk',
       hk: 'zh-hk',
@@ -17,11 +15,11 @@ export const metaTag = {
         { 'http-equiv': 'Content-Language', content: htmlAttrs[this.$i18n.locale] },
         { hid: 'description', name: 'description', content: this.getMeta('description') },
         { hid: 'keywords', name: 'keywords', content: this.getMeta('keywords') },
-        ...og
+        ...this.getOg()
       ],
       link: [
         { hid: 'canonical', rel: 'canonical', content: `http://${this.$t('meta.base.url')}/${this.getMeta('slug')}` },
-        ...hreflang
+        ...this.getHrefLink()
       ]
     }
   },
