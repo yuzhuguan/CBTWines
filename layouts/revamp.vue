@@ -8,7 +8,7 @@
     <div class="mobile-menu" :class="(showMobileMenu) ? 'open' : ''">
       <v-list>
         <v-list-item v-for="(item, index) in $t('header.mobileMenu')" :key="index" @click="toggleMobileMenu">
-          <nuxt-link :to="item.link">
+          <nuxt-link :to="item.link" style="display: flex">
             <v-list-item-title>
               {{ item.title }}
             </v-list-item-title>

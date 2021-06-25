@@ -41,18 +41,18 @@ export default {
         { title: '英文', link: '/en' },
         { title: '簡體中文', link: '/cn' }
       ]
-    }
+    },
+    mobileMenu: [
+      { title: '主頁', link: '/hk' },
+      { title: '關於我們', link: '/hk/about-us' },
+      { title: '酒單', link: '/hk/wine-list' },
+      { title: '特别推介', link: '/hk/special-offers' },
+      { title: '新酒到貨', link: '/hk/new-arrivals' },
+      { title: '尋找我們', link: '/hk/find-us' },
+      { title: '聯繫我們', link: '/hk/contact-us' }
+      // { "title": "WINE RATING", "link": "/wine-rating" }
+    ]
   },
-  mobileMenu: [
-    { title: '主頁', link: '/hk' },
-    { title: '關於我們', link: '/hk/about-us' },
-    { title: '酒單', link: '/hk/wine-list' },
-    { title: '特别推介', link: '/hk/special-offers' },
-    { title: '新酒到貨', link: '/hk/new-arrivals' },
-    { title: '尋找我們', link: '/hk/find-us' },
-    { title: '聯繫我們', link: '/hk/contact-us' }
-    // { "title": "WINE RATING", "link": "/wine-rating" }
-  ],
   home: {
     title: '尋找與享受你理想中的葡萄酒',
     'extend-1': {
