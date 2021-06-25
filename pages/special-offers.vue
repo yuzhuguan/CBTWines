@@ -124,7 +124,7 @@ export default {
         const productDetail = document.createElement('li')
         const productTable = document.createElement('table')
         const itemAttr = ['chineseName', 'origin', 'appellation', 'vintage', 'rating', 'price']
-        let i = -1
+        let i = -2
         for (const hearder of this.$t('special-offers.headers')) {
           if (i > -1) {
             const td1 = document.createElement('td')
