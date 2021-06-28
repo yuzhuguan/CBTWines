@@ -27,5 +27,5 @@ module.exports = {
     syncMessages: false,
     syncRouteParams: true
   },
-  seo: true
+  seo: false
 }
