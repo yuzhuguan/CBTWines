@@ -60,8 +60,7 @@ module.exports = {
     ['nuxt-i18n', i18nConfig],
     ['@nuxtjs/google-analytics', gaConfig],
     '@nuxtjs/dotenv',
-    '@nuxtjs/cloudinary',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/cloudinary'
   ],
 
   /*
@@ -73,14 +72,6 @@ module.exports = {
     apiSecret: process.env.CLOUDINARY_APISECRET,
     secure: false,
     useComponent: true
-  },
-
-  sitemap: {
-    hostname: 'https://cbtwines.co',
-    exclude: [
-      '/login',
-      '/backstage'
-    ]
   },
 
   /*
