@@ -2,7 +2,7 @@ module.exports = {
   locales: [{
     name: 'Traditional Chinese',
     code: 'hk',
-    iso: 'zh-cn',
+    iso: 'zh-hk',
     file: 'hk.js'
   },
   {
