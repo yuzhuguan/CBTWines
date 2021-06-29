@@ -28,5 +28,5 @@ module.exports = {
     syncRouteParams: true
   },
   seo: true,
-  baseUrl: 'https://www.cbtwines.co'
+  baseUrl: 'https://cbtwines.co'
 }
