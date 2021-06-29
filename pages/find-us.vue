@@ -7,7 +7,7 @@
         </div>
         <div class="content">
           <div class="logo-container">
-            <img :src="$cloudinary.image.url('v1612189161/cbtwines/logo_jzvi2t.png', { fetch_format: 'auto', quality: 'auto', width: 225 })" alt="Images">
+            <img :src="($cloudinary.image.url('v1612189161/cbtwines/logo_jzvi2t.png', { fetch_format: 'auto', quality: 'auto', width: 225 })).replace('http', 'https')" alt="Images">
           </div>
           <div class="content-detail">
             <v-col :cols="undefined" class="pt-11">

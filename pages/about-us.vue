@@ -2,7 +2,7 @@
   <div class="about-us">
     <div class="main-container">
       <div class="right-block">
-        <img :src="$cloudinary.image.url('v1612189163/cbtwines/about-us_nxfwvy.png', { fetch_format: 'auto', quality: 'auto', width: 960 })" alt="Images">
+        <img :src="($cloudinary.image.url('v1612189163/cbtwines/about-us_nxfwvy.png', { fetch_format: 'auto', quality: 'auto', width: 960 })).replace('http', 'https')" alt="Images">
       </div>
       <div class="left-block">
         <div class="top-block" />

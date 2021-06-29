@@ -2,7 +2,7 @@
   <div class="home">
     <div class="background" style="background: url(https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1612189163/cbtwines/home_BG_r8eerr.png) top left / cover fixed;">
       <div class="content">
-        <img :src="$cloudinary.image.url('v1612189161/cbtwines/company_label_laipot.png', { fetch_format: 'auto', quality: 'auto', width: 400 })" alt="Images">
+        <img :src="($cloudinary.image.url('v1612189161/cbtwines/company_label_laipot.png', { fetch_format: 'auto', quality: 'auto', width: 400 })).replace('http', 'https')" alt="Images">
         <div class="quote">
           <p class="quote-text">
             “Where there is no wine, <br>there is no love”

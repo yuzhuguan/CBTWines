@@ -2,10 +2,10 @@
   <section class="extend-content">
     <div class="container image-container" :class="{ reverse: reverse }">
       <div class="image-right">
-        <img :src="$cloudinary.image.url($t(`home.extend-${index}.image-right`), { fetch_format: 'auto', quality: 'auto', width: 572 })" alt="Images">
+        <img :src="($cloudinary.image.url($t(`home.extend-${index}.image-right`), { fetch_format: 'auto', quality: 'auto', width: 572 })).replace('http', 'https')" alt="Images">
       </div>
       <div class="image-left">
-        <img :src="$cloudinary.image.url($t(`home.extend-${index}.image-left`), { fetch_format: 'auto', quality: 'auto', width: 572 })" alt="Images">
+        <img :src="($cloudinary.image.url($t(`home.extend-${index}.image-left`), { fetch_format: 'auto', quality: 'auto', width: 572 })).replace('http', 'https')" alt="Images">
       </div>
     </div>
     <div class="container">
