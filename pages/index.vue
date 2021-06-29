@@ -22,6 +22,9 @@ export default {
     metaTag
   ],
   layout: 'revamp',
+  asyncData ({ res }) {
+    res.statusCode = 200
+  },
   data () {
     return {
       identifier: 'home'
