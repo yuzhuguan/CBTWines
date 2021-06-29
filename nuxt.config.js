@@ -68,7 +68,18 @@ module.exports = {
     ['nuxt-i18n', i18nConfig],
     ['@nuxtjs/google-analytics', gaConfig],
     '@nuxtjs/dotenv',
-    '@nuxtjs/cloudinary'
+    '@nuxtjs/cloudinary',
+    [
+      'nuxt-compress',
+      {
+        gzip: {
+          cache: true
+        },
+        brotli: {
+          threshold: 0
+        }
+      }
+    ]
   ],
 
   /*
@@ -87,18 +98,6 @@ module.exports = {
   */
   serverMiddleware: [
     '~/api/index.js'
-  ],
-
-  buildModules: [
-    'nuxt-compress',
-    {
-      gzip: {
-        cache: true
-      },
-      brotli: {
-        threshold: 0
-      }
-    }
   ],
 
   /*
