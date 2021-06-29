@@ -2,7 +2,7 @@
   <div class="home">
     <div class="background" style="background: url(https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1612189163/cbtwines/home_BG_r8eerr.png) top left / cover fixed;">
       <div class="content">
-        <img src="https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1612189161/cbtwines/company_label_laipot.png" alt="Images" width="400px" height="auto">
+        <img src="https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1612189161/cbtwines/company_label_laipot.png" alt="Images" width="400px" height="206px">
         <div class="quote">
           <p class="quote-text">
             “Where there is no wine, <br>there is no love”
@@ -45,6 +45,7 @@ export default {
       width: 400px;
       @media (max-width: 490px) {
         width: 80%;
+        height: auto;
         margin: 5% 10% 0;
       }
     }
