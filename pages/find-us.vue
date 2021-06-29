@@ -2,12 +2,12 @@
   <div class="find-us">
     <div class="find-us-container">
       <div class="find-us-hero">
-        <div class="image-container" :style="{ backgroundImage: 'url(https://res.cloudinary.com/dinad7iot/image/upload/v1612189163/cbtwines/find-us_cxsilt.png)'}">
+        <div class="image-container" :style="{ backgroundImage: 'url(https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1612189163/cbtwines/find-us_cxsilt.png)'}">
           <h1>{{ $t('find-us.title') }}</h1>
         </div>
         <div class="content">
           <div class="logo-container">
-            <img :src="($cloudinary.image.url('v1612189161/cbtwines/logo_jzvi2t.png', { fetch_format: 'auto', quality: 'auto', width: 225 })).replace('http', 'https')" alt="Images">
+            <img src="https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1612189161/cbtwines/logo_jzvi2t.png" alt="Images">
           </div>
           <div class="content-detail">
             <v-col :cols="undefined" class="pt-11">

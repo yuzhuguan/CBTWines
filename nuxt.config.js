@@ -68,7 +68,6 @@ module.exports = {
     ['nuxt-i18n', i18nConfig],
     ['@nuxtjs/google-analytics', gaConfig],
     '@nuxtjs/dotenv',
-    '@nuxtjs/cloudinary',
     [
       'nuxt-compress',
       {

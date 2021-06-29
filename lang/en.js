@@ -60,24 +60,24 @@ export default {
       paragraph: 'We offer an impressive diversity of wines with excellent quality from over 100 wine producers. With such stunning variety, there is sure to be a bottle that suits every person.',
       button_text: 'View Wine List',
       button_url: '/wine-list',
-      'image-right': 'v1614964460/cbtwines/session-one-horizontal_vbtkpk.png',
-      'image-left': 'v1614965116/cbtwines/session-one-vertical_iyjnvl.png'
+      'image-right': 'https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1614964460/cbtwines/session-one-horizontal_vbtkpk.png',
+      'image-left': 'https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1614965116/cbtwines/session-one-vertical_iyjnvl.png'
     },
     'extend-2': {
       title: 'Want Something New?',
       paragraph: 'Check out our latest wines in {month}. We stock a vast variety of wines globally. Click the button below to seek for the new arrivals!',
       button_text: 'View New Arrivals',
       button_url: '/new-arrivals',
-      'image-right': 'v1615054333/cbtwines/kv-pc_1_y0b1yx.png',
-      'image-left': 'v1615054335/cbtwines/pexels-photo-3171770_1_yt9lnt.png'
+      'image-right': 'https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1615054333/cbtwines/kv-pc_1_y0b1yx.png',
+      'image-left': 'https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1615054335/cbtwines/pexels-photo-3171770_1_yt9lnt.png'
     },
     'extend-3': {
       title: 'No Idea What To Choose?',
       paragraph: "Sometimes is just hard to find something you want when you are ran out of idea. Let's us offer you something special!",
       button_text: 'View Special Offers',
       button_url: '/special-offers',
-      'image-right': 'v1615105825/cbtwines/purple-grapes-vineyard-napa-valley-napa-vineyard-45209_1_snhuzf.png',
-      'image-left': 'v1615105825/cbtwines/pexels-photo-4946398_1_k6n28d.png'
+      'image-right': 'https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1615105825/cbtwines/purple-grapes-vineyard-napa-valley-napa-vineyard-45209_1_snhuzf.png',
+      'image-left': 'https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1615105825/cbtwines/pexels-photo-4946398_1_k6n28d.png'
     }
   },
   'about-us': {

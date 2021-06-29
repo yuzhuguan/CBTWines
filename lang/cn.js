@@ -60,24 +60,24 @@ export default {
       paragraph: '我们提供来自100多家葡萄酒生产商的优质葡萄酒。有如此惊人数目的种类，总有一款适合你的葡萄酒。',
       button_text: '查看酒单',
       button_url: '/cn/wine-list',
-      'image-right': 'v1614964460/cbtwines/session-one-horizontal_vbtkpk.png',
-      'image-left': 'v1614965116/cbtwines/session-one-vertical_iyjnvl.png'
+      'image-right': 'https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1614964460/cbtwines/session-one-horizontal_vbtkpk.png',
+      'image-left': 'https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1614965116/cbtwines/session-one-vertical_iyjnvl.png'
     },
     'extend-2': {
       title: '想找新的感觉吗？',
       paragraph: '查看{month}我们在全球搜罗的最新货品。点击以下按钮以寻找新的葡萄酒！',
       button_text: '查看新酒到货',
       button_url: '/hk/new-arrivals',
-      'image-right': 'v1615054333/cbtwines/kv-pc_1_y0b1yx.png',
-      'image-left': 'v1615054335/cbtwines/pexels-photo-3171770_1_yt9lnt.png'
+      'image-right': 'https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1615054333/cbtwines/kv-pc_1_y0b1yx.png',
+      'image-left': 'https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1615054335/cbtwines/pexels-photo-3171770_1_yt9lnt.png'
     },
     'extend-3': {
       title: '不知道该选择什么？',
       paragraph: '有时候，当您失去想法时，很难找到想要的东西。让我们为您提供一些特别的葡萄酒吧！',
       button_text: '查看特别推介',
       button_url: '/cn/special-offers',
-      'image-right': 'v1615105825/cbtwines/purple-grapes-vineyard-napa-valley-napa-vineyard-45209_1_snhuzf.png',
-      'image-left': 'v1615105825/cbtwines/pexels-photo-4946398_1_k6n28d.png'
+      'image-right': 'https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1615105825/cbtwines/purple-grapes-vineyard-napa-valley-napa-vineyard-45209_1_snhuzf.png',
+      'image-left': 'https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1615105825/cbtwines/pexels-photo-4946398_1_k6n28d.png'
     }
   },
   'about-us': {
