@@ -68,7 +68,7 @@ export default {
       paragraph: '查看{month}我们在全球搜罗的最新货品。点击以下按钮以寻找新的葡萄酒！',
       button_text: '查看新酒到货',
       button_url: '/hk/new-arrivals',
-      'image-right': 'https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1615054333/cbtwines/kv-pc_1_y0b1yx.png',
+      'image-right': 'https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto,w_553,h_374/v1615054333/cbtwines/kv-pc_1_y0b1yx.png',
       'image-left': 'https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1615054335/cbtwines/pexels-photo-3171770_1_yt9lnt.png'
     },
     'extend-3': {

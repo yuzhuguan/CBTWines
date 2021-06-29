@@ -124,8 +124,8 @@ export default {
       a {
         font-family: 'Raleway', sans-serif;
         padding: 1rem 2rem;
-        background: #FFC49A;
-        color: #ffffff;
+        background: #FFD9C2;
+        color: #A3124A;
         text-decoration: none;
         border-radius: 8px;
         font-weight: bold;

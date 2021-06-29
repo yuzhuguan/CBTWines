@@ -68,7 +68,7 @@ export default {
       paragraph: 'Check out our latest wines in {month}. We stock a vast variety of wines globally. Click the button below to seek for the new arrivals!',
       button_text: 'View New Arrivals',
       button_url: '/new-arrivals',
-      'image-right': 'https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1615054333/cbtwines/kv-pc_1_y0b1yx.png',
+      'image-right': 'https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto,w_553,h_374/v1615054333/cbtwines/kv-pc_1_y0b1yx.png',
       'image-left': 'https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1615054335/cbtwines/pexels-photo-3171770_1_yt9lnt.png'
     },
     'extend-3': {
