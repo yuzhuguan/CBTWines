@@ -383,9 +383,6 @@ export default {
       ]
     }
   },
-  async fetch ({ store }) {
-    await store.dispatch('loadWineList')
-  },
   computed: {
     ...mapState(['wines']),
     formTitle () {
@@ -422,10 +419,6 @@ export default {
         )
         .then((res) => {
           console.log(res)
-          if (res.status === 200) {
-            // alert(res.data.message)
-            this.$store.dispatch('loadWineList')
-          }
           return res.status
         })
         .catch((e) => {
@@ -445,10 +438,6 @@ export default {
           )
           .then((res) => {
             console.log(res)
-            if (res.status === 200) {
-              // alert(res.data.message)
-              this.$store.dispatch('loadWineList')
-            }
             return res.status
           })
           .catch((e) => {
@@ -463,10 +452,6 @@ export default {
             },
             { headers: { token: localStorage.getItem('token') } }
           )
-          .then((res) => {
-            this.$store.dispatch('loadWineList')
-            return res.status
-          })
           .catch((e) => {
             console.log(e)
           })

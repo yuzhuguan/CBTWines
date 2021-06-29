@@ -87,9 +87,6 @@ export default {
     metaTag
   ],
   layout: 'revamp',
-  async asyncData (context) {
-    await context.store.dispatch('loadWineList')
-  },
   data () {
     return {
       search: '',
