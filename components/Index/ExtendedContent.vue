@@ -2,10 +2,10 @@
   <section class="extend-content">
     <div class="container image-container" :class="{ reverse: reverse }">
       <div class="image-right">
-        <img :src="$t(`home.extend-${index}.image-right`)" alt="Images">
+        <img :src="$t(`home.extend-${index}.image-right`)" alt="Images" width="553px" height="374px">
       </div>
       <div class="image-left">
-        <img :src="$t(`home.extend-${index}.image-left`)" alt="Images">
+        <img :src="$t(`home.extend-${index}.image-left`)" alt="Images" width="573px" height="652px">
       </div>
     </div>
     <div class="container">

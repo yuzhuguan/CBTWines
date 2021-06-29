@@ -2,7 +2,7 @@
   <div class="about-us">
     <div class="main-container">
       <div class="right-block">
-        <img src="https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1612189163/cbtwines/about-us_nxfwvy.png" alt="Images">
+        <img src="https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1612189163/cbtwines/about-us_nxfwvy.png" alt="Images" width="100%" height="100%">
       </div>
       <div class="left-block">
         <div class="top-block" />

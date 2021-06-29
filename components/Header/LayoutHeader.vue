@@ -3,7 +3,7 @@
     <div class="header-container">
       <div class="logo-container">
         <nuxt-link :to="$t('header.nav')[0].link">
-          <img src="/media/logo.png" alt="logo">
+          <img src="/media/logo.png" alt="logo" width="144px" height="70px">
         </nuxt-link>
       </div>
       <div class="navlist">
@@ -115,7 +115,7 @@ export default {
           }
           .current-page {
             .current-page-tag {
-              color: #909090 !important;
+              color: #A44C4F !important;
             }
           }
           .nav-item {
