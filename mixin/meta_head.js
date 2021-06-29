@@ -1,9 +1,9 @@
 export const metaTag = {
   head () {
     const htmlAttrs = {
-      en: 'en-hk',
-      hk: 'zh-hk',
-      cn: 'zh-cn'
+      en: 'en-HK',
+      hk: 'zh-HK',
+      cn: 'zh-CN'
     }
     return {
       htmlAttrs: {
@@ -16,11 +16,11 @@ export const metaTag = {
         { hid: 'description', name: 'description', content: this.getMeta('description') },
         { hid: 'keywords', name: 'keywords', content: this.getMeta('keywords') },
         ...this.getOg()
-      ],
-      link: [
-        { hid: 'canonical', rel: 'canonical', content: `http://${this.$t('meta.base.url')}/${this.getMeta('slug')}` },
-        ...this.getHrefLink()
       ]
+      // link: [
+      //   { hid: 'canonical', rel: 'canonical', content: `https://${this.$t('meta.base.url')}/${this.getMeta('slug')}` },
+      //   ...this.getHrefLink()
+      // ]
     }
   },
   methods: {
@@ -53,8 +53,8 @@ export const metaTag = {
       ]
       for (const locale of locales) {
         const hrefUrl = locale.href === 'en'
-          ? `http://${this.$t('meta.base.url')}/${this.getMeta('slug')}`
-          : `http://${this.$t('meta.base.url')}/${locale.href}/${this.getMeta('slug')}`
+          ? `https://${this.$t('meta.base.url')}/${this.getMeta('slug')}`
+          : `https://${this.$t('meta.base.url')}/${locale.href}/${this.getMeta('slug')}`
         href.push({
           rel: 'alternate',
           href: hrefUrl,
@@ -70,7 +70,7 @@ export const metaTag = {
         { hid: 'og:title', name: 'og:title', content: this.getMeta('title') },
         { hid: 'og:description', name: 'og:description', content: this.getMeta('description') },
         { hid: 'og:keywords', name: 'og:keywords', content: this.getMeta('keywords') },
-        { hid: 'og:url', name: 'og:url', content: `http://${this.$t('meta.base.url')}/${this.getMeta('slug')}` },
+        { hid: 'og:url', name: 'og:url', content: `https://${this.$t('meta.base.url')}/${this.getMeta('slug')}` },
         { hid: 'og:img', name: 'og:img', content: this.$t('meta.base.image') }
       ]
     }

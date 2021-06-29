@@ -174,8 +174,8 @@ export default {
   },
   meta: {
     base: {
-      url: 'www.cbtwines.co/hk',
-      image: 'http://cbtwines.co/media/logo.png'
+      url: 'https://www.cbtwines.co/hk',
+      image: 'https://cbtwines.co/media/logo.png'
     },
     home: {
       title: '尋找與享受你理想中的葡萄酒 | 香貝田酒業有限公司',

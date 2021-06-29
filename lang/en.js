@@ -174,8 +174,8 @@ export default {
   },
   meta: {
     base: {
-      url: 'www.cbtwines.co',
-      image: 'http://cbtwines.co/media/logo.png'
+      url: 'https://www.cbtwines.co',
+      image: 'https://cbtwines.co/media/logo.png'
     },
     home: {
       title: 'CBT Wines Company Limited',

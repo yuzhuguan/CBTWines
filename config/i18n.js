@@ -27,5 +27,6 @@ module.exports = {
     syncMessages: false,
     syncRouteParams: true
   },
-  seo: false
+  seo: true,
+  baseUrl: 'https://www.cbtwines.co'
 }
