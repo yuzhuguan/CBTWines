@@ -174,7 +174,7 @@ export default {
   },
   meta: {
     base: {
-      url: 'https://cbtwines.co/cn',
+      url: 'https://www.cbtwines.co/cn',
       image: 'https://cbtwines.co/media/logo.png'
     },
     home: {
