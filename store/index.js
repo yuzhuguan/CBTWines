@@ -23,8 +23,8 @@ export const mutations = {
 }
 
 export const actions = {
-  async loadWineList ({ commit }) {
-    const response = await axios.get('/api/wines')
+  async nuxtServerInit ({ commit }) {
+    const response = await axios.get('https://cbtwines.co/api/wines')
     commit('SET_WINELIST', response.data)
 
     const specialOfferList = response.data.filter((el) => {
