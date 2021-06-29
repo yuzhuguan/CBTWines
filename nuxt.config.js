@@ -89,6 +89,18 @@ module.exports = {
     '~/api/index.js'
   ],
 
+  buildModules: [
+    'nuxt-compress',
+    {
+      gzip: {
+        cache: true
+      },
+      brotli: {
+        threshold: 0
+      }
+    }
+  ],
+
   /*
   ** Build configuration
   */
