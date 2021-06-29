@@ -32,15 +32,19 @@ export const metaTag = {
       const locales = [
         {
           href: 'en',
-          hreflang: 'en-us'
+          hreflang: 'en'
+        },
+        {
+          href: 'en',
+          hreflang: 'en-HK'
         },
         {
           href: 'hk',
-          hreflang: 'zh-hk'
+          hreflang: 'zh-HK'
         },
         {
           href: 'cn',
-          hreflang: 'zh-cn'
+          hreflang: 'zh-CN'
         },
         {
           href: 'hk',
