@@ -21,12 +21,23 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { hid: 'og:type', name: 'og:type', content: this.post && this.post.type === 'blog' ? 'blog-post' : 'blog' },
       {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
+        rel: 'preload',
+        as: 'style',
+        href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons',
+        onload: "this.rel='stylesheet'"
       },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap' }
+      {
+        rel: 'preload',
+        as: 'style',
+        href: 'https://fonts.googleapis.com/css?family=Roboto',
+        onload: "this.rel='stylesheet'"
+      },
+      {
+        rel: 'preload',
+        as: 'style',
+        href: 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap',
+        onload: "this.rel='stylesheet'"
+      }
     ]
   },
 
