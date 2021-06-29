@@ -108,6 +108,7 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+      config.resolve.alias["vue$"] = "vue/dist/vue.esm.js"
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
@@ -116,6 +117,24 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
+      }
+      config.node = {
+        net: 'empty',
+        child_process: 'empty',
+        fs: 'empty'
+      }
+    },
+    terser: {
+      cache: true,
+      parallel: 1,
+      sourceMap: true,
+      terserOptions: {
+        compress: {
+          // drop_console: (process.env.SERVER_ENV !== 'local' && process.env.SERVER_ENV !== 'staging'),
+          pure_funcs: (process.env.SERVER_ENV === 'local' || process.env.SERVER_ENV === 'staging') ? [] : [
+            'console.log'
+          ]
+        }
       }
     }
   }
