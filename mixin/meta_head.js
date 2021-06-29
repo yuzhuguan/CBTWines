@@ -41,19 +41,21 @@ export const metaTag = {
         {
           href: 'cn',
           hreflang: 'zh-cn'
+        },
+        {
+          href: 'hk',
+          hreflang: 'zh'
         }
       ]
       for (const locale of locales) {
-        if (this.$i18n.locale !== locale.href) {
-          const hrefUrl = locale.href === 'en'
-            ? `http://${this.$t('meta.base.url')}/${this.getMeta('slug')}`
-            : `http://${this.$t('meta.base.url')}/${locale.href}/${this.getMeta('slug')}`
-          href.push({
-            rel: 'alternate',
-            href: hrefUrl,
-            hreflang: locale.hreflang
-          })
-        }
+        const hrefUrl = locale.href === 'en'
+          ? `http://${this.$t('meta.base.url')}/${this.getMeta('slug')}`
+          : `http://${this.$t('meta.base.url')}/${locale.href}/${this.getMeta('slug')}`
+        href.push({
+          rel: 'alternate',
+          href: hrefUrl,
+          hreflang: locale.hreflang
+        })
       }
       return href
     },
