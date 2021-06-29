@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <div class="background" style="background: url(https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto,w_400,h_207/v1612189163/cbtwines/home_BG_r8eerr.png) top left / cover fixed;">
+    <div class="background" style="background: url(https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1612189163/cbtwines/home_BG_r8eerr.png) top left / cover fixed;">
       <div class="content">
-        <img src="https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1612189161/cbtwines/company_label_laipot.png" alt="Images" width="400px" height="207px">
+        <img src="https://res.cloudinary.com/dinad7iot/image/upload/f_auto,q_auto/v1612189161/cbtwines/company_label_laipot.png" alt="Images" width="400px" height="auto">
         <div class="quote">
           <p class="quote-text">
             “Where there is no wine, <br>there is no love”
