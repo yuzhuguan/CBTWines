@@ -34,12 +34,27 @@
         </v-row>
       </v-form>
     </v-card>
-    <canvas class="background" />
+    <vue-particles
+      color="#dedede"
+      :particle-opacity="0.7"
+      :particles-number="50"
+      shape-type="circle"
+      :particle-size="4"
+      lines-color="#dedede"
+      :lines-width="1"
+      :line-linked="true"
+      :line-opacity="0.4"
+      :lines-distance="150"
+      :move-speed="3"
+      :hover-effect="true"
+      hover-mode="grab"
+      :click-effect="true"
+      click-mode="push"
+    />
   </div>
 </template>
 
 <script>
-import Particles from 'particlesjs'
 import { metaTag } from '~/mixin/meta_head'
 export default {
   name: 'ContactUsPage',
@@ -56,27 +71,6 @@ export default {
     }
   },
   mounted () {
-    Particles.init({
-      selector: '.background',
-      maxParticles: 80,
-      sizeVariations: 3,
-      color: '#dadada',
-      connectParticles: true,
-      responsive: [
-        {
-          breakpoint: 768,
-          options: {
-            maxParticles: 40
-          }
-        },
-        {
-          breakpoint: 325,
-          options: {
-            maxParticles: 20
-          }
-        }
-      ]
-    })
     window.addEventListener('resize', this.onResize)
     this.isMinRow = window.innerWidth <= 375
   },
@@ -93,6 +87,10 @@ export default {
 
 <style lang="scss">
   .contact-us {
+    .particles-js-canvas-el {
+      position: absolute;
+      top: 0;
+    }
     overflow: hidden;
     height: 100%;
     position: relative;

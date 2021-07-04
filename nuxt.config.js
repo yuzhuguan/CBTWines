@@ -57,7 +57,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/aos', ssr: false }
+    { src: '~/plugins/aos', ssr: false },
+    { src: '~/plugins/particles' }
   ],
 
   /*
@@ -107,7 +108,7 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
-      config.resolve.alias["vue$"] = "vue/dist/vue.esm.js"
+      config.resolve.alias.vue$ = 'vue/dist/vue.esm.js'
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
@@ -133,9 +134,11 @@ module.exports = {
       terserOptions: {
         compress: {
           // drop_console: (process.env.SERVER_ENV !== 'local' && process.env.SERVER_ENV !== 'staging'),
-          pure_funcs: (process.env.SERVER_ENV === 'local' || process.env.SERVER_ENV === 'staging') ? [] : [
-            'console.log'
-          ]
+          pure_funcs: (process.env.SERVER_ENV === 'local' || process.env.SERVER_ENV === 'staging')
+            ? []
+            : [
+                'console.log'
+              ]
         }
       }
     },
@@ -144,6 +147,7 @@ module.exports = {
         minSize: 10000,
         maxSize: 250000
       }
-    }
+    },
+    transpile: ['vue-particles']
   }
 }

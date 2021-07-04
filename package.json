@@ -28,10 +28,10 @@
     "nuxt": "^2.15.7",
     "nuxt-compress": "^5.0.0",
     "nuxt-i18n": "^6.27.1",
-    "particlesjs": "^2.2.3",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
+    "vue-particles": "^1.0.9",
     "vue-videobg": "^2.0.0"
   },
   "devDependencies": {
