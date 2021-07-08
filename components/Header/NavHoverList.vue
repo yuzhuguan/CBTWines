@@ -4,8 +4,10 @@
     <span v-for="(item, index) in items" :key="index">
       <v-list-item class="hover-list-item">
         <v-list-item-title>
-          <a v-if="type === 'lang-switcher'" :href="langPath(item.link) ">{{ item.title }}</a>
-          <nuxt-link v-else :to="item.link">{{ item.title }}</nuxt-link>
+          <nuxt-link :to="type === 'lang-switcher'? switchLocalePath(item.locale) : item.link">
+            <span v-if="type !== 'lang-switcher'">{{ item.title }}</span>
+            <img v-else :src="item.flag" alt="Country Flag" width="40px" height="40px">
+          </nuxt-link>
         </v-list-item-title>
       </v-list-item>
       <v-list-item class="line" />
@@ -28,17 +30,6 @@ export default {
     type: {
       default: 'default',
       type: String
-    }
-  },
-  methods: {
-    langPath (link) {
-      if (this.$i18n.locale === 'en') {
-        return link + this.$route.path
-      }
-      if (link === '/en') {
-        return this.$route.path.split(`/${this.$i18n.locale}`)[1]
-      }
-      return link + this.$route.path.split(`/${this.$i18n.locale}`)[1]
     }
   }
 }

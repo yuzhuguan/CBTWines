@@ -38,8 +38,8 @@ export default {
       title: 'LANGUAGE',
       showList: false,
       lang: [
-        { title: 'Chinese_HK', link: '/hk' },
-        { title: 'Chinese_CN', link: '/cn' }
+        { flag: '/media/country-icon/hk.svg', locale: 'hk' },
+        { flag: '/media/country-icon/cn.svg', locale: 'cn' }
       ]
     },
     mobileMenu: [

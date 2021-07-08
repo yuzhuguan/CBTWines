@@ -14,6 +14,15 @@
             </v-list-item-title>
           </nuxt-link>
         </v-list-item>
+        <v-list-item class="lang-switcher-mobile" @click="toggleMobileMenu">
+          <nuxt-link :to="switchLocalePath($t('header.lang-switcher.lang[0].locale'))" class="lang-left">
+            <img :src="$t('header.lang-switcher.lang[0].flag')" alt="country flag" width="30px" height="30px">
+          </nuxt-link>
+          <span class="flag-separator" />
+          <nuxt-link :to="switchLocalePath($t('header.lang-switcher.lang[1].locale'))" class="lang-right">
+            <img :src="$t('header.lang-switcher.lang[1].flag')" alt="country flag" width="30px" height="30px">
+          </nuxt-link>
+        </v-list-item>
       </v-list>
     </div>
     <Footer />
@@ -172,6 +181,32 @@ export default {
         height: 100%;
         padding: 20px 0;
       }
+      &.lang-switcher-mobile {
+        display: flex;
+        padding-top: 0;
+        padding-bottom: 0;
+        .flag-separator {
+          background: #bd5558;
+          width: 1px;
+          height: 25px;
+        }
+        .lang-left {
+          justify-content: flex-end;
+          padding-right: 1rem;
+          padding-top: 0;
+          padding-bottom: 0;
+          display: flex;
+          align-items: center;
+        }
+        .lang-right {
+          justify-content: flex-start;
+          padding-left: 1rem;
+          padding-top: 0;
+          padding-bottom: 0;
+          display: flex;
+          align-items: center;
+        }
+      }
       a.nuxt-link-exact-active{
         color: #bd5558;
       }
@@ -207,6 +242,32 @@ export default {
         }
         a.nuxt-link-exact-active{
           color: #bd5558;
+        }
+        &.lang-switcher-mobile {
+          display: flex;
+          padding-top: 0;
+          padding-bottom: 0;
+          .flag-separator {
+            background: #bd5558;
+            width: 1px;
+            height: 25px;
+          }
+          .lang-left {
+            justify-content: flex-end;
+            padding-right: 1rem;
+            padding-top: 0;
+            padding-bottom: 0;
+            display: flex;
+            align-items: center;
+          }
+          .lang-right {
+            justify-content: flex-start;
+            padding-left: 1rem;
+            padding-top: 0;
+            padding-bottom: 0;
+            display: flex;
+            align-items: center;
+          }
         }
       }
     }
