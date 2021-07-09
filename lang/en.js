@@ -135,7 +135,8 @@ export default {
       { text: 'Vintage', value: 'vintage' },
       { text: 'Rating', value: 'rating' },
       { text: 'Price(HKD)', value: 'price' }
-    ]
+    ],
+    search: 'Search'
   },
   'new-arrivals': {
     title: 'New Arrivals',
@@ -149,7 +150,8 @@ export default {
       { text: 'Rating', value: 'rating' },
       { text: 'Price(HKD)', value: 'price' }
     ],
-    paragraph: "Do you want some <a href='/special-offers'>Special Offers</a>? Or check out our wine list <a href='/wine-list'>here</a>."
+    paragraph: "Do you want some <a href='/special-offers'>Special Offers</a>? Or check out our wine list <a href='/wine-list'>here</a>.",
+    search: 'Search'
   },
   'special-offers': {
     title: 'Special Offers',
@@ -164,7 +166,8 @@ export default {
       { text: 'Price(HKD)', value: 'price' },
       { text: 'Discounted Price', value: 'discountPrice' }
     ],
-    paragraph: "Do you want some <a href='/new-arrivals'>New Arrivals</a>? Or check out our wine list <a href='/wine-list'>here</a>."
+    paragraph: "Do you want some <a href='/new-arrivals'>New Arrivals</a>? Or check out our wine list <a href='/wine-list'>here</a>.",
+    search: 'Search'
   },
   footer: {
     text: 'Under the law of Hong Kong, intoxicating liquor must not be sold or supplied to a minor (under 18) in the course of business.'

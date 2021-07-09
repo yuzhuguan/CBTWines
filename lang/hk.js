@@ -135,7 +135,8 @@ export default {
       { text: '年份', value: 'vintage' },
       { text: '評級', value: 'rating' },
       { text: '價錢(港幣)', value: 'price' }
-    ]
+    ],
+    search: '搜尋'
   },
   'new-arrivals': {
     title: '新酒到貨',
@@ -149,7 +150,8 @@ export default {
       { text: '評級', value: 'rating' },
       { text: '價錢(港幣)', value: 'price' }
     ],
-    paragraph: "對我們的<a href='/hk/special-offers'>特别推介</a>有興趣嗎? 還是看看我們的<a href='/hk/wine-list'>酒單</a>。"
+    paragraph: "對我們的<a href='/hk/special-offers'>特别推介</a>有興趣嗎? 還是看看我們的<a href='/hk/wine-list'>酒單</a>。",
+    search: '搜尋'
   },
   'special-offers': {
     title: '特别推介',
@@ -164,7 +166,8 @@ export default {
       { text: '價錢(港幣)', value: 'price' },
       { text: '折後價', value: 'discountPrice' }
     ],
-    paragraph: "對我們的<a href='/hk/new-arrivals'>新酒到貨</a>有興趣嗎? 還是看看我們的<a href='/hk/wine-list'>酒單</a>。"
+    paragraph: "對我們的<a href='/hk/new-arrivals'>新酒到貨</a>有興趣嗎? 還是看看我們的<a href='/hk/wine-list'>酒單</a>。",
+    search: '搜尋'
   },
   footer: {
     text: '根據香港法律,不得在業務過程中,向未成年人(18歲以下人士)售賣或供應令人醺醉的酒類。'

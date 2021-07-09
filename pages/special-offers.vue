@@ -64,9 +64,14 @@
       </v-card>
     </v-app>
     <div class="mobile-content">
+      <div class="search-bar">
+        <label>
+          <input v-model="search" type="text" :placeholder="$t('special-offers.search')">
+        </label>
+      </div>
       <ul>
         <li
-          v-for="(wine, index) in wines"
+          v-for="(wine, index) in searchedWines"
           :key="index"
           :class="index%2===0 ? 'product-name even-row' + ' product-' + index : 'product-name odd-row' + ' product-' + index"
           @click="showProductDetail(wine , index)"
@@ -96,6 +101,23 @@ export default {
   computed: {
     wines () {
       return this.$store.getters.specialOffers
+    },
+    searchedWines () {
+      if (!this.search) {
+        return this.wines
+      }
+      const filtered = []
+      for (const wine of this.wines) {
+        if (wine.name.toString().toLowerCase().includes(this.search.toLowerCase()) ||
+          wine.appellation.toString().toLowerCase().includes(this.search.toLowerCase()) ||
+          wine.vintage.toString().toLowerCase().includes(this.search.toLowerCase()) ||
+          wine.rating.toString().toLowerCase().includes(this.search.toLowerCase()) ||
+          wine.chineseName.includes(this.search)
+        ) {
+          filtered.push(wine)
+        }
+      }
+      return filtered
     }
   },
   mounted () {},
@@ -198,6 +220,18 @@ export default {
     margin-top: 3%;
     @media (max-width: 1050px) {
       display: block;
+    }
+    .search-bar {
+      width: 95%;
+      margin: 1rem auto 1rem;
+      input {
+        width: 100%;
+        border-bottom: 1px solid #aaaaaa;
+        height: 30px;
+        &:focus {
+          outline: none;
+        }
+      }
     }
     ul {
       width: 95%;
