@@ -123,8 +123,9 @@ export default {
       { name: 'Whisky', displayname: '威士忌' },
       { name: 'Italy', displayname: '義大利' },
       { name: 'U.S.A.', displayname: '美國' },
-      { name: 'Accessory', displayname: '其他' },
-      { name: 'Sake', displayname: '清酒' }
+      { name: 'New Zealand', displayname: '新西蘭' },
+      { name: 'Sake', displayname: '清酒' },
+      { name: 'Accessory', displayname: '其他' }
     ],
     headers: [
       { text: '酒名', value: 'name' },

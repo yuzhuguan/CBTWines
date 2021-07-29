@@ -123,8 +123,9 @@ export default {
       { name: 'Whisky', displayname: 'Whisky' },
       { name: 'Italy', displayname: 'Italy' },
       { name: 'U.S.A.', displayname: 'U.S.A.' },
-      { name: 'Accessory', displayname: 'Accessory' },
-      { name: 'Sake', displayname: 'Sake' }
+      { name: 'New Zealand', displayname: 'New Zealand' },
+      { name: 'Sake', displayname: 'Sake' },
+      { name: 'Accessory', displayname: 'Accessory' }
     ],
     headers: [
       { text: 'Product', value: 'name' },
