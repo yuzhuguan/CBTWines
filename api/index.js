@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const passport = require('passport')
 const Promise = require('bluebird')
+const axios = require('axios')
 const getToken = require('./auth')
 
 const Wines = require('./model/wine')
@@ -11,6 +12,32 @@ Promise.promisifyAll(User)
 
 app.get('/echo/:what', (req, res) => {
   res.json(req.params)
+})
+
+app.get('/rarity', async (req, res) => {
+  const hash = req.query.hash
+  const data = JSON.stringify({
+    collection: 'rarities',
+    database: 'chefiese-dev',
+    dataSource: 'chefiese-dev',
+    filter: {
+      hash
+    }
+  })
+
+  const config = {
+    method: 'post',
+    url: 'https://data.mongodb-api.com/app/data-onqqc/endpoint/data/beta/action/findOne',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Request-Headers': '*',
+      'api-key': 'RZAXpmD6LTRFDHKPTTl9TqySCBT62KJ3VoJwLF0hL0tQD3ySZVo3tiVwCpJayw0n'
+    },
+    data
+  }
+
+  const result = await axios(config)
+  res.json(result.data.document)
 })
 
 // @route         GET /api/wines
